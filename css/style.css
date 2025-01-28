@@ -2414,7 +2414,7 @@ h3 {
   transform: translateX(-50%);
   content: '';
   background: rgba(255, 255, 255, 2);/*line color*/
-  height: 73%;
+  height: 90%;
   width: 1px;
   top: 0;
   bottom: 0;
@@ -5777,3 +5777,4 @@ h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
