@@ -248,14 +248,20 @@ h3 {
   position: absolute;
   content: "";
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0.8+100 */
-  background: -moz-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: -moz-linear-gradient(top, rgba(255, 0, 0, 0.8) 0%, rgba(255, 255, 0, 0.8) 25%, rgba(0, 255, 0, 0.8) 50%, rgba(0, 0, 255, 0.8) 75%, rgba(128, 0, 128, 0.8) 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, black 0%, rgba(0, 0, 0, 0.8) 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, black 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: -webkit-linear-gradient(top, rgba(255, 0, 0, 0.8) 0%, rgba(255, 255, 0, 0.8) 25%, rgba(0, 255, 0, 0.8) 50%, rgba(0, 0, 255, 0.8) 75%, rgba(128, 0, 128, 0.8) 100%);
+  /* Chrome10-25, Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.8) 0%, rgba(255, 255, 0, 0.8) 25%, rgba(0, 255, 0, 0.8) 50%, rgba(0, 0, 255, 0.8) 75%, rgba(128, 0, 128, 0.8) 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#cc000000',GradientType=0 );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CCFF0000', endColorstr='#CC800080', GradientType=0 );
   /* IE6-9 */
+  
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99FF4500', endColorstr='#998A2BE2', GradientType=0 );
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+  /* IE6-9 */
+  
   top: 0;
   left: 0;
   width: 100%;
@@ -2383,7 +2389,8 @@ h3 {
 
 /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_program_details.scss */
 .detials_bg_1 {
-  background-image: url(../img/program_details/Schedule1.jpg);
+  background-image: url(../assets/images/);
+  
 }
 
 /* line 4, ../../Arafath/CL/December/236. Event-02/HTML/scss/_program_details.scss */
