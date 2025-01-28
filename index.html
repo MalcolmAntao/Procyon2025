@@ -604,7 +604,7 @@
             document.getElementById('day2Events').style.display = 'block';
         }
     }
-
+    
     function showEventDetails(day, eventId) {
         const eventDetails = {
             day1: {
@@ -617,7 +617,7 @@
                     participants: "Teams of 2",
                     duration: "2 hours",
                     judgement: "Code Efficiency & Creativity",
-                    instructions: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum sagittis mauris, ut feugiat lorem placerat et. Duis tempor, eros a tempus placerat, mi magna cursus libero, non maximus nisi magna sit amet urna. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Nulla facilisi. Fusce tincidunt libero sed sem ultricies, non pretium arcu congue. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam. Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Curabitur malesuada hendrerit est. Suspendisse potenti. Nunc euismod, ante eu iaculis viverra, erat felis euismod nisl, a aliquet urna magna at nisl. Fusce malesuada sem id lectus dictum, ac ultricies arcu tempus. Nam vestibulum diam et vehicula dictum. Pellentesque aliquam nunc at massa vehicula, at suscipit enim ultricies. Curabitur non magna nec ligula lacinia malesuada ac ac leo. Aliquam erat volutpat. In ac dui velit",
+                    instructions: "Bring a laptop.",
                     studentCoordinator: "John Doe",
                     facultyCoordinator: "Dr. Smith",
                     contact: "+91 12345 67890",
@@ -652,33 +652,43 @@
             document.getElementById("eventDuration").innerText = details.duration;
             document.getElementById("eventJudgement").innerText = details.judgement;
             document.getElementById("eventInstructions").innerText = details.instructions;
-            document.getElementById("studentCoordinator").innerText =
-                details.studentCoordinator;
-            document.getElementById("facultyCoordinator").innerText =
-                details.facultyCoordinator;
+            document.getElementById("studentCoordinator").innerText = details.studentCoordinator;
+            document.getElementById("facultyCoordinator").innerText = details.facultyCoordinator;
             document.getElementById("contactNumber").innerText = details.contact;
         }
     
-        // Show the modal
         const modal = document.getElementById("eventDetailsModal");
         modal.style.display = "flex";
+    
+        // Close modal on outside click
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
     }
     
     function closeModal() {
         const modal = document.getElementById("eventDetailsModal");
         modal.style.display = "none";
     }
-
-    function showGeneralRules() {
-    const modal = document.getElementById("generalRulesModal");
-    modal.style.display = "flex";
-}
-
-function closeGeneralRulesModal() {
-    const modal = document.getElementById("generalRulesModal");
-    modal.style.display = "none";
-}
     
+    function showGeneralRules() {
+        const modal = document.getElementById("generalRulesModal");
+        modal.style.display = "flex";
+    
+        // Close modal on outside click
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                closeGeneralRulesModal();
+            }
+        });
+    }
+    
+    function closeGeneralRulesModal() {
+        const modal = document.getElementById("generalRulesModal");
+        modal.style.display = "none";
+    }
     
 </script>
 
@@ -741,7 +751,8 @@ function closeGeneralRulesModal() {
 }
 
 .modal-content {
-    background: linear-gradient(135deg, #ff005b, #2d27ff); /* Gradient */
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    
     width: 80%;
     max-width: 600px;
     height: 80%; /* Fixed height */
@@ -827,12 +838,12 @@ function closeGeneralRulesModal() {
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-    background: #2d27ff; /* Blue */
+    background: #2e27ff00; /* Blue */
     border-radius: 6px;
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
-    background: #ff005b; /* Pink on hover */
+    background: #79727480; /* Pink on hover */
 }
 
 .modal-content::-webkit-scrollbar-track {
