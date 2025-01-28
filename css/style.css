@@ -2576,8 +2576,8 @@ h3 {
 
 /* line 9, ../../Arafath/CL/December/236. Event-02/HTML/scss/_footer.scss */
 .footer .footer_top {
-  padding-top: 148px;
-  padding-bottom: 140px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 @media (max-width: 767px) {
