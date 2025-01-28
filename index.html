@@ -456,11 +456,89 @@
 <div id="generalRulesModal" class="modal" style="display: none;">
     <div class="modal-content">
         <span class="close" onclick="closeGeneralRulesModal()">&times;</span>
-        <div class="modal-body">
+        <div class="modal-body text-center">
             <h3>General Rules</h3>
-            <ul id="generalRulesList">
-                <!-- Rules will be dynamically added here -->
-            </ul>
+            <hr>
+            
+            <h4>Point System</h4>
+            <table border="1" class="table table-bordered mx-auto">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Gold</th>
+                        <th>Silver</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1st</td>
+                        <td>200</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>100</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table border="1" class="table table-bordered mx-auto mt-3">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Bronze</th>
+                        <th>Fun</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1st</td>
+                        <td>100</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td>50</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td>25</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table border="1" class="table table-bordered mx-auto mt-3">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Platinum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>-</td>
+                        <td>50</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="mt-4">Note</h4>
+            <ol class="text-center">
+                <li>All participants must follow the rules and guidelines strictly.</li>
+                <li>Use of unfair means will lead to disqualification.</li>
+            </ol>
+
+            <h4 class="mt-4">General Instructions</h4>
+            <ol class="text-center">
+                <li>Arrive 15 minutes before the scheduled time.</li>
+                <li>Carry college ID cards.</li>
+                <li>Maintain discipline and decorum.</li>
+            </ol>
+
+            <hr>
         </div>
     </div>
 </div>
@@ -575,31 +653,14 @@
     }
 
     function showGeneralRules() {
-        const generalRules = [
-            "Participants must arrive at the venue 15 minutes before the scheduled time.",
-            "All participants must carry their college ID cards.",
-            "Use of mobile phones or any electronic devices during events is prohibited unless stated otherwise.",
-            "Decisions made by the judges will be final and binding.",
-            "Participants must maintain discipline and decorum throughout the event."
-        ];
-    
-        const rulesList = document.getElementById("generalRulesList");
-        rulesList.innerHTML = ""; // Clear previous rules
-        generalRules.forEach(rule => {
-            const listItem = document.createElement("li");
-            listItem.textContent = rule;
-            rulesList.appendChild(listItem);
-        });
-    
-        // Show the modal
-        const modal = document.getElementById("generalRulesModal");
-        modal.style.display = "flex";
-    }
-    
-    function closeGeneralRulesModal() {
-        const modal = document.getElementById("generalRulesModal");
-        modal.style.display = "none";
-    }
+    const modal = document.getElementById("generalRulesModal");
+    modal.style.display = "flex";
+}
+
+function closeGeneralRulesModal() {
+    const modal = document.getElementById("generalRulesModal");
+    modal.style.display = "none";
+}
     
     
 </script>
