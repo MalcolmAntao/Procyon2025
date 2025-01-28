@@ -2413,7 +2413,7 @@ h3 {
   left: 50%;
   transform: translateX(-50%);
   content: '';
-  background: rgba(255, 255, 255, 0.2);/*line color*/
+  background: rgba(255, 255, 255, 2);/*line color*/
   height: 73%;
   width: 1px;
   top: 0;
