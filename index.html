@@ -64,7 +64,7 @@
                                             <li><a href="#glimpses">Glimpses</a></li>
                                             <li><a href="#schedule">Schedule</a></li>
                                             
-                                            <li><a href="#sponsor">Sponsor</a></li>
+                                            <li><a href="#sponsor">Sponsors</a></li>
                                             <li><a href="#contact">Contact</a></li>
                                         </ul>
                                     </nav>
@@ -167,115 +167,6 @@
       </div>
     </div>
   </section>
-  
-
-  <div class="performar_area black_bg" id="glimpses">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section_title mb-50">
-                    <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="text-align: center;">Glimpses</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div id="performerCarousel" class="relative">
-                    <!-- Carousel Items -->
-                    <div class="overflow-hidden relative h-96">
-                        <div class="flex transition-transform ease-in-out duration-700" id="carouselItems">
-                            <div class="flex-none w-full">
-                                <div class="single_performer wow fadeInUp">
-                                    <div data-tilt class="thumb">
-                                        <img src="img/performer/1.png" alt="" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="performer_heading text-center mt-4">
-                                        <h4 class="text-lg font-semibold">Mr. Zosoldos</h4>
-                                        <span class="text-gray-500">Acoustic drum</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-none w-full">
-                                <div class="single_performer wow fadeInUp">
-                                    <div data-tilt class="thumb">
-                                        <img src="img/performer/2.png" alt="" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="performer_heading text-center mt-4">
-                                        <h4 class="text-lg font-semibold">Protik Hasan</h4>
-                                        <span class="text-gray-500">Acoustic drum</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-none w-full">
-                                <div class="single_performer wow fadeInUp">
-                                    <div data-tilt class="thumb">
-                                        <img src="img/performer/3.png" alt="" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="performer_heading text-center mt-4">
-                                        <h4 class="text-lg font-semibold">Salmon Vicky</h4>
-                                        <span class="text-gray-500">Acoustic drum</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex-none w-full">
-                                <div class="single_performer wow fadeInUp">
-                                    <div data-tilt class="thumb">
-                                        <img src="img/performer/4.png" alt="" class="w-full h-full object-cover">
-                                    </div>
-                                    <div class="performer_heading text-center mt-4">
-                                        <h4 class="text-lg font-semibold">Filaris Habol</h4>
-                                        <span class="text-gray-500">Acoustic drum</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Navigation Arrows -->
-                    <button id="prevButton" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md -ml-12">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <button id="nextButton" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md -mr-12">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    const carouselItems = document.getElementById('carouselItems');
-    const prevButton = document.getElementById('prevButton');
-    const nextButton = document.getElementById('nextButton');
-    const totalItems = carouselItems.children.length;
-    let currentIndex = 0;
-
-    function updateCarousel() {
-        carouselItems.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-        updateCarousel();
-    });
-
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateCarousel();
-    });
-
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateCarousel();
-    }, 5000);
-</script>
-
-<!-- glimpses_area_end  -->
  
 <div class="program_details_area detials_bg_1 overlay2" id="schedule">
     <div class="container">
@@ -825,7 +716,113 @@
 
 </style>
 
+<div class="performar_area black_bg" id="glimpses">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_title mb-50">
+                    <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="text-align: center;">Glimpses</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div id="performerCarousel" class="relative">
+                    <!-- Carousel Items -->
+                    <div class="overflow-hidden relative h-96">
+                        <div class="flex transition-transform ease-in-out duration-700" id="carouselItems">
+                            <div class="flex-none w-full">
+                                <div class="single_performer wow fadeInUp">
+                                    <div data-tilt class="thumb">
+                                        <img src="img/performer/1.png" alt="" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="performer_heading text-center mt-4">
+                                        <h4 class="text-lg font-semibold">Mr. Zosoldos</h4>
+                                        <span class="text-gray-500">Acoustic drum</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-none w-full">
+                                <div class="single_performer wow fadeInUp">
+                                    <div data-tilt class="thumb">
+                                        <img src="img/performer/2.png" alt="" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="performer_heading text-center mt-4">
+                                        <h4 class="text-lg font-semibold">Protik Hasan</h4>
+                                        <span class="text-gray-500">Acoustic drum</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-none w-full">
+                                <div class="single_performer wow fadeInUp">
+                                    <div data-tilt class="thumb">
+                                        <img src="img/performer/3.png" alt="" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="performer_heading text-center mt-4">
+                                        <h4 class="text-lg font-semibold">Salmon Vicky</h4>
+                                        <span class="text-gray-500">Acoustic drum</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-none w-full">
+                                <div class="single_performer wow fadeInUp">
+                                    <div data-tilt class="thumb">
+                                        <img src="img/performer/4.png" alt="" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="performer_heading text-center mt-4">
+                                        <h4 class="text-lg font-semibold">Filaris Habol</h4>
+                                        <span class="text-gray-500">Acoustic drum</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Navigation Arrows -->
+                    <button id="prevButton" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md -ml-12">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <button id="nextButton" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md -mr-12">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const carouselItems = document.getElementById('carouselItems');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
+    const totalItems = carouselItems.children.length;
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        carouselItems.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    });
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    }, 5000);
+</script>
+
+<!-- glimpses_area_end  -->
 
     <!-- map_area_start -->
 <div class="map_area" style="padding: 20px 0;">
