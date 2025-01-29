@@ -777,24 +777,23 @@
       modal.style.display = "none";
     }
 
-    // Open the modal
-function openRegisterModal() {
-  document.getElementById("registerModal").style.display = "flex";
-}
+    function openRegisterModal() {
+      document.getElementById("registerModal").style.display = "flex";
+    }
 
-// Close the modal
-function closeRegisterModal() {
-  document.getElementById("registerModal").style.display = "none";
-}
+    function closeRegisterModal() {
+      document.getElementById("registerModal").style.display = "none";
+    }
 
-// Close modal when clicking outside of it
-window.onclick = function (event) {
-  let modal = document.getElementById("registerModal");
-  if (event.target === modal) {
-    closeRegisterModal();
-  }
-};
+    document.getElementById("registerForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const password = document.getElementById("password").value;
+      const eventType = document.getElementById("eventType").value;
 
+      alert(`Registered with Name: ${name}, Event Type: ${eventType}`);
+      closeRegisterModal();
+    });
   </script>
 
   <!-- CSS for Modal -->
