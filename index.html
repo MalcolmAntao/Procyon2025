@@ -75,7 +75,7 @@
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div class="buy_tkt">
                                     <div class="book_btn d-none d-lg-block">
-                                        <a href="#">Register</a>
+                                        <button id="registerbtn" onclick="openRegisterModal()" class="boxed-btn3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">Register</button>
                                     </div>
                                 </div>
                             </div>
@@ -597,11 +597,11 @@
         
     </div>
 </div>
-
 <!-- Register Modal -->
 <div id="registerModal" class="modal" style="display: none;">
     <div class="modal-content">
-        <h2>Login</h2>
+        <span class="close" onclick="closeRegisterModal()">&times;</span>
+        <h2 style=" display: flex; font-size: 2rem; align-items: center; justify-content: center;">Login</h2>
         <form id="registerForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -611,14 +611,12 @@
             
             <label for="eventType">Event Type:</label>
             <select id="eventType" name="eventType" required>
-                <option value="Coding">Coding</option>
-                <option value="Design">Design</option>
-                <option value="Robotics">Robotics</option>
+                <option value="Department">Department</option>
+                <option value="Class">Class</option>
             </select>
             
-            <button type="submit">Submit</button>
+            <button type="submit" class="submit-btn">Submit</button>
         </form>
-        <button onclick="closeRegisterModal()">Close</button>
     </div>
 </div>
 
@@ -923,6 +921,50 @@
     height: 100%;
     object-fit: cover; /* Ensure the image covers the entire carousel item without stretching */
   }
+
+  form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        flex-grow: 1;
+        justify-content: center;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input, select {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        color: black;
+    }
+
+    select option {
+        color: black;
+    }
+
+    .submit-btn {
+        background: linear-gradient(45deg, #ff6b6b, #ffb6b9);
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+        background: linear-gradient(45deg, #ff4b4b, #ff9090);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
   
 </style>
 
