@@ -139,7 +139,7 @@
   </section>
 
   <!--Procyon Cultural Fiesta-->
-  <section class="w-full py-20 min-h-scree text-black">
+  <section class="w-full min-h-scree text-black">
     <div class="max-w-7xl mx-auto px-8 flex flex-col items-center justify-center gap-8">
       <!-- Header -->
       <div class="section_title text-center mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
@@ -151,7 +151,7 @@
         to showcase their talents in various cultural activities on a common platform. This year, several
         activities are being organized, including:
       </p>
-      <div class="bg-gray-800 text-gray-200 p-6 rounded-lg shadow-lg max-w-4xl wow fadeInRight" data-wow-duration="1s"
+      <div class="bg-gray-800 text-gray-200 p-20 rounded-lg shadow-lg max-w-4xl wow fadeInRight" data-wow-duration="1s"
         data-wow-delay=".4s">
         <ul class="list-disc list-inside space-y-2">
           <li style="text-align: center;">Ghumat Aarti</li>
@@ -989,6 +989,8 @@
       const name = document.getElementById("name").value;
       const password = document.getElementById("password").value;
       const eventType = document.getElementById("eventType").value;
+
+      alert(`Registered with Name: ${name}, Event Type: ${eventType}`);
       closeRegisterModal();
     });
 
