@@ -625,42 +625,44 @@
     </div>
   </div>
   <!-- Modal Popup for Event Details -->
-<div id="eventDetailsModal" class="modal" style="display: none">
-  <div class="modal-content">
+  <div id="eventDetailsModal" class="modal" style="display: none">
+    <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <div class="modal-body">
-          <h3 id="eventAKA" class="modal-text">Event AKA</h3>
-          <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
-          <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
-          <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
-          <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
-          <p><strong class="modal-text">Participants:</strong> <span id="eventParticipants" class="modal-text"></span></p>
-          <p><strong class="modal-text">Duration:</strong> <span id="eventDuration" class="modal-text"></span></p>
-          <p><strong class="modal-text">Judgement Criteria:</strong><br /><span id="eventJudgement" class="modal-text"></span></p>
-          <br />
-          <p><strong class="modal-text">Instructions:</strong><br /><span id="eventInstructions" class="modal-text"></span></p>
-          <br />
+        <h3 id="eventAKA" class="modal-text">Event AKA</h3>
+        <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
+        <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
+        <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
+        <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
+        <p><strong class="modal-text">Participants:</strong> <span id="eventParticipants" class="modal-text"></span></p>
+        <p><strong class="modal-text">Duration:</strong> <span id="eventDuration" class="modal-text"></span></p>
+        <p><strong class="modal-text">Judgement Criteria:</strong><br /><span id="eventJudgement"
+            class="modal-text"></span></p>
+        <br />
+        <p><strong class="modal-text">Instructions:</strong><br /><span id="eventInstructions"
+            class="modal-text"></span></p>
+        <br />
 
-          <div class="coordinator-container">
-              <div class="coordinator-item">
-                  <p><strong class="modal-text">Student Coordinators:</strong></p>
-                  <div id="studentCoordinators" class="modal-text"></div> <!-- Dynamic student coordinators -->
-              </div>
-              <div class="coordinator-item">
-                  <p><strong class="modal-text">Contact:</strong></p>
-                  <div id="contactNumbers" class="modal-text"></div> <!-- Dynamic contact numbers -->
-              </div>
+        <div class="coordinator-container">
+          <div class="coordinator-item">
+            <p><strong class="modal-text">Student Coordinators:</strong></p>
+            <div id="studentCoordinators" class="modal-text"></div> <!-- Dynamic student coordinators -->
           </div>
-          <br />
-          <div class="coordinator-container">
-              <div class="coordinator-item">
-                  <p><strong class="modal-text">Faculty Coordinators:</strong></p>
-                  <div id="facultyCoordinators" class="modal-text"></div> <!-- Dynamic faculty coordinators -->
-              </div>
+          <div class="coordinator-item">
+            <p><strong class="modal-text">Contact:</strong></p>
+            <div id="contactNumbers" class="modal-text"></div> <!-- Dynamic contact numbers -->
           </div>
+        </div>
+        <br />
+        <div class="coordinator-container">
+          <div class="coordinator-item">
+            <p><strong class="modal-text">Faculty Coordinators:</strong></p>
+            <div id="facultyCoordinators" class="modal-text"></div> <!-- Dynamic faculty coordinators -->
+          </div>
+        </div>
       </div>
+    </div>
   </div>
-</div>
 
   <!-- Register Modal -->
   <div id="registerModal" class="modal1" style="display: none;">
@@ -686,203 +688,209 @@
   </div>
 
   <style>
-/* Modal Background */
-.modal1 {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-  backdrop-filter: blur(5px); /* Blurry effect */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 0.3s ease-in-out;
-  padding: 10px; /* Prevents content from sticking to the edges */
-}
+    /* Modal Background */
+    .modal1 {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      /* Dark overlay */
+      backdrop-filter: blur(5px);
+      /* Blurry effect */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 0.3s ease-in-out;
+      padding: 10px;
+      /* Prevents content from sticking to the edges */
+    }
 
-/* Modal Content Box */
-.modal-content1 {
-  background: white;
-  width: 400px;
-  max-width: 90%; /* Responsive width */
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-  animation: slideIn 0.3s ease-in-out;
-  margin: 20px; /* Added margin for spacing */
-}
+    /* Modal Content Box */
+    .modal-content1 {
+      background: white;
+      width: 400px;
+      max-width: 90%;
+      /* Responsive width */
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      animation: slideIn 0.3s ease-in-out;
+      margin: 20px;
+      /* Added margin for spacing */
+    }
 
-/* Close Button */
-.close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    /* Close Button */
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 24px;
+      color: #333;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.close:hover {
-  color: #ff4b4b;
-  transform: scale(1.2);
-}
+    .close:hover {
+      color: #ff4b4b;
+      transform: scale(1.2);
+    }
 
-/* Form Styles */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  justify-content: center;
-}
+    /* Form Styles */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      justify-content: center;
+    }
 
-label {
-  font-weight: bold;
-  color: #333;
-}
+    label {
+      font-weight: bold;
+      color: #333;
+    }
 
-input,
-select {
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  width: 100%;
-  color: #333;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
-}
+    input,
+    select {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      width: 100%;
+      color: #333;
+      font-size: 16px;
+      transition: all 0.3s ease-in-out;
+    }
 
-input:focus,
-select:focus {
-  border-color: #ff6b6b;
-  box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
-  outline: none;
-}
+    input:focus,
+    select:focus {
+      border-color: #ff6b6b;
+      box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+      outline: none;
+    }
 
-/* Submit Button */
-.submit-btn {
-  background: linear-gradient(45deg, #ff6b6b, #ffb6b9);
-  color: white;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  margin-top: 10px;
-}
+    /* Submit Button */
+    .submit-btn {
+      background: linear-gradient(45deg, #ff6b6b, #ffb6b9);
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      margin-top: 10px;
+    }
 
-.submit-btn:hover {
-  background: linear-gradient(45deg, #ff4b4b, #ff9090);
-  transform: scale(1.05);
-}
+    .submit-btn:hover {
+      background: linear-gradient(45deg, #ff4b4b, #ff9090);
+      transform: scale(1.05);
+    }
 
-/* Exit Button */
-.exit-btn {
-  background: #ff4b4b;
-  color: white;
-  padding: 10px;
-  margin-top: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
+    /* Exit Button */
+    .exit-btn {
+      background: #ff4b4b;
+      color: white;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
 
-.exit-btn:hover {
-  background: #c33;
-  transform: scale(1.05);
-}
+    .exit-btn:hover {
+      background: #c33;
+      transform: scale(1.05);
+    }
 
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
 
-@keyframes slideIn {
-  from {
-    transform: translateY(-30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+      to {
+        opacity: 1;
+      }
+    }
 
-/* Responsive Tweaks */
-@media (max-width: 480px) {
-  .modal-content1 {
-    max-width: 95%;
-    padding: 20px;
-  }
+    @keyframes slideIn {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
 
-  input,
-  select {
-    font-size: 14px;
-    padding: 10px;
-  }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 
-  .submit-btn,
-  .exit-btn {
-    font-size: 14px;
-    padding: 10px;
-  }
-}
+    /* Responsive Tweaks */
+    @media (max-width: 480px) {
+      .modal-content1 {
+        max-width: 95%;
+        padding: 20px;
+      }
 
+      input,
+      select {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .submit-btn,
+      .exit-btn {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
   </style>
   <!-- JavaScript -->
   <script>
     function showEventDetails(day, eventId) {
-    const eventDetails = {
+      const eventDetails = {
         day1: {
-            1: {
-                aka: "Coding Blitz",
-                date: "12 Feb 2020",
-                type: "Coding",
-                scoring: "Points-based",
-                venue: "Main Hall",
-                participants: "Teams of 2",
-                duration: "2 hours",
-                judgement: "Code Efficiency & Creativity",
-                instructions: "Bring a laptop.",
-                studentCoordinators: ["John Doe", "Alice Smith"],
-                facultyCoordinators: ["Dr. Smith", "Prof. Green"],
-                contactNumbers: ["+91 12345 67890", "+91 09876 54321"],
-            },
+          1: {
+            aka: "Coding Blitz",
+            date: "12 Feb 2020",
+            type: "Coding",
+            scoring: "Points-based",
+            venue: "Main Hall",
+            participants: "Teams of 2",
+            duration: "2 hours",
+            judgement: "Code Efficiency & Creativity",
+            instructions: "Bring a laptop.",
+            studentCoordinators: ["John Doe", "Alice Smith"],
+            facultyCoordinators: ["Dr. Smith", "Prof. Green"],
+            contactNumbers: ["+91 12345 67890", "+91 09876 54321"],
+          },
         },
         day2: {
-            1: {
-                aka: "Design Sprint",
-                date: "13 Feb 2020",
-                type: "Design",
-                scoring: "Creativity and Feasibility",
-                venue: "Room 202",
-                participants: "Individual",
-                duration: "3 hours",
-                judgement: "Design Presentation",
-                instructions: "Bring a sketch pad.",
-                studentCoordinators: ["Jane Roe"],
-                facultyCoordinators: ["Dr. Brown"],
-                contactNumbers: ["+91 98765 43210"],
-            },
+          1: {
+            aka: "Design Sprint",
+            date: "13 Feb 2020",
+            type: "Design",
+            scoring: "Creativity and Feasibility",
+            venue: "Room 202",
+            participants: "Individual",
+            duration: "3 hours",
+            judgement: "Design Presentation",
+            instructions: "Bring a sketch pad.",
+            studentCoordinators: ["Jane Roe"],
+            facultyCoordinators: ["Dr. Brown"],
+            contactNumbers: ["+91 98765 43210"],
+          },
         },
-    };
+      };
 
-    const details = eventDetails[day][eventId];
-    if (details) {
+      const details = eventDetails[day][eventId];
+      if (details) {
         document.getElementById("eventAKA").innerText = details.aka;
         document.getElementById("eventDate").innerText = details.date;
         document.getElementById("eventType").innerText = details.type;
@@ -897,45 +905,45 @@ select:focus {
         const studentCoordinatorContainer = document.getElementById("studentCoordinators");
         studentCoordinatorContainer.innerHTML = ''; // Clear any previous content
         details.studentCoordinators.forEach(coordinator => {
-            const coordinatorItem = document.createElement('p');
-            coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
-            studentCoordinatorContainer.appendChild(coordinatorItem);
+          const coordinatorItem = document.createElement('p');
+          coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
+          studentCoordinatorContainer.appendChild(coordinatorItem);
         });
 
         // Display Faculty Coordinators
         const facultyCoordinatorContainer = document.getElementById("facultyCoordinators");
         facultyCoordinatorContainer.innerHTML = ''; // Clear any previous content
         details.facultyCoordinators.forEach(coordinator => {
-            const coordinatorItem = document.createElement('p');
-            coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
-            facultyCoordinatorContainer.appendChild(coordinatorItem);
+          const coordinatorItem = document.createElement('p');
+          coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
+          facultyCoordinatorContainer.appendChild(coordinatorItem);
         });
 
         // Display Contact Numbers
         const contactContainer = document.getElementById("contactNumbers");
         contactContainer.innerHTML = ''; // Clear any previous content
         details.contactNumbers.forEach(contact => {
-            const contactItem = document.createElement('p');
-            contactItem.innerHTML = `<strong>${contact}</strong>`;
-            contactContainer.appendChild(contactItem);
+          const contactItem = document.createElement('p');
+          contactItem.innerHTML = `<strong>${contact}</strong>`;
+          contactContainer.appendChild(contactItem);
         });
+      }
+
+      const modal = document.getElementById("eventDetailsModal");
+      modal.style.display = "flex";
+
+      // Close modal on outside click
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
     }
 
-    const modal = document.getElementById("eventDetailsModal");
-    modal.style.display = "flex";
-
-    // Close modal on outside click
-    modal.addEventListener("click", function (e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-}
-
-function closeModal() {
-    const modal = document.getElementById("eventDetailsModal");
-    modal.style.display = "none";
-}
+    function closeModal() {
+      const modal = document.getElementById("eventDetailsModal");
+      modal.style.display = "none";
+    }
 
 
     function showGeneralRules() {
@@ -955,30 +963,30 @@ function closeModal() {
       modal.style.display = "none";
     }
     function openRegisterModal() {
-    document.getElementById("registerModal").style.display = "flex";
-}
-
-function closeRegisterModal() {
-    document.getElementById("registerModal").style.display = "none";
-}
-
-// Close modal when clicking outside of the modal content
-window.addEventListener("click", function(event) {
-    const modal = document.getElementById("registerModal");
-    if (event.target === modal) {
-        closeRegisterModal();
+      document.getElementById("registerModal").style.display = "flex";
     }
-});
 
-document.getElementById("registerForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const name = document.getElementById("name").value;
-    const password = document.getElementById("password").value;
-    const eventType = document.getElementById("eventType").value;
+    function closeRegisterModal() {
+      document.getElementById("registerModal").style.display = "none";
+    }
 
-    alert(`Registered with Name: ${name}, Event Type: ${eventType}`);
-    closeRegisterModal();
-});
+    // Close modal when clicking outside of the modal content
+    window.addEventListener("click", function (event) {
+      const modal = document.getElementById("registerModal");
+      if (event.target === modal) {
+        closeRegisterModal();
+      }
+    });
+
+    document.getElementById("registerForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const password = document.getElementById("password").value;
+      const eventType = document.getElementById("eventType").value;
+
+      alert(`Registered with Name: ${name}, Event Type: ${eventType}`);
+      closeRegisterModal();
+    });
 
   </script>
 
@@ -1032,11 +1040,12 @@ document.getElementById("registerForm").addEventListener("submit", function(even
       color: #333;
       /* Adjust color if needed */
     }
+
     #studentCoordinators p,
-#contactNumbers p,
-#facultyCoordinators p {
-    color: white;
-}
+    #contactNumbers p,
+    #facultyCoordinators p {
+      color: white;
+    }
 
     .modal {
       position: fixed;
@@ -1262,161 +1271,166 @@ document.getElementById("registerForm").addEventListener("submit", function(even
         <div class="col-lg-8">
           <div id="performerCarousel" class="relative">
             <!-- Carousel Items -->
-            <style>
-              .slider {
-                  width: 100%;
-                  max-width: 1300px;
-                  height: 400px;
-                  margin: auto;
-                  position: relative;
-                  overflow: hidden;
-              }
-              .slider .list {
-                  position: absolute;
-                  width: max-content;
-                  height: 100%;
-                  left: 0;
-                  top: 0;
-                  display: flex;
-                  transition: 1s;
-              }
-              .slider .list img {
-                  width: 100vw;
-                  max-width: 1300px;
-                  height: 100%;
-                  object-fit: cover;
-              }
-              .slider .buttons {
-                  position: absolute;
-                  top: 50%;
-                  left: 5%;
-                  width: 90%;
-                  display: flex;
-                  justify-content: space-between;
-              }
-              .slider .buttons button {
-                  width: 40px;
-                  height: 40px;
-                  border-radius: 50%;
-                  background-color: rgba(255, 255, 255, 0.5);
-                  color: #fff;
-                  border: none;
-                  font-size: 18px;
-                  font-weight: bold;
-                  cursor: pointer;
-              }
-              .slider .dots {
-                  position: absolute;
-                  bottom: 10px;
-                  left: 0;
-                  width: 100%;
-                  display: flex;
-                  justify-content: center;
-              }
-              .slider .dots li {
-                  list-style: none;
-                  width: 10px;
-                  height: 10px;
-                  background-color: #fff;
-                  margin: 5px;
-                  border-radius: 50%;
-                  transition: 0.5s;
-                  cursor: pointer;
-              }
-              .slider .dots li.active {
-                  width: 25px;
-                  border-radius: 20px;
-              }
-              @media screen and (max-width: 768px) {
-                  .slider {
-                      height: 300px;
-                  }
-              }
-              @media screen and (max-width: 480px) {
-                  .slider {
-                      height: 250px;
-                  }
-                  .slider .buttons button {
-                      width: 30px;
-                      height: 30px;
-                      font-size: 14px;
-                  }
-              }
-          </style>
-      </head>
-      <body>
-          <div class="slider">
+            <div class="slider">
               <div class="list">
-                  <div class="item"><img src="img/1.jpg" alt=""></div>
-                  <div class="item"><img src="img/2.jpg" alt=""></div>
-                  <div class="item"><img src="img/3.jpg" alt=""></div>
-                  <div class="item"><img src="img/4.jpg" alt=""></div>
-                  <div class="item"><img src="img/5.jpg" alt=""></div>
+                <div class="item"><img src="img/1.jpg" alt=""></div>
+                <div class="item"><img src="img/2.jpg" alt=""></div>
+                <div class="item"><img src="img/3.jpg" alt=""></div>
+                <div class="item"><img src="img/4.jpg" alt=""></div>
+                <div class="item"><img src="img/5.jpg" alt=""></div>
               </div>
+              <!-- Navigation Arrows -->
               <div class="buttons">
-                  <button id="prev">&#10094;</button>
-                  <button id="next">&#10095;</button>
+                <button id="prev">&#10094;</button>
+                <button id="next">&#10095;</button>
               </div>
               <ul class="dots">
-                  <li class="active"></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
               </ul>
-          </div>
-      
-          <script>
-              let slider = document.querySelector('.slider .list');
-              let items = document.querySelectorAll('.slider .list .item');
-              let next = document.getElementById('next');
-              let prev = document.getElementById('prev');
-              let dots = document.querySelectorAll('.slider .dots li');
-              
-              let lengthItems = items.length - 1;
-              let active = 0;
-              
-              next.onclick = function() {
-                  active = active + 1 <= lengthItems ? active + 1 : 0;
-                  reloadSlider();
-              }
-              
-              prev.onclick = function() {
-                  active = active - 1 >= 0 ? active - 1 : lengthItems;
-                  reloadSlider();
-              }
-              
-              let refreshInterval = setInterval(() => { next.click() }, 3000);
-              
-              function reloadSlider() {
-                  slider.style.left = -items[active].offsetLeft + 'px';
-                  let lastActiveDot = document.querySelector('.slider .dots li.active');
-                  lastActiveDot.classList.remove('active');
-                  dots[active].classList.add('active');
-                  clearInterval(refreshInterval);
-                  refreshInterval = setInterval(() => { next.click() }, 3000);
-              }
-              
-              dots.forEach((li, key) => {
-                  li.addEventListener('click', () => {
-                      active = key;
-                      reloadSlider();
-                  });
-              });
-              
-              window.onresize = function() {
-                  reloadSlider();
-              };
-          </script>
-            <!-- Navigation Arrows -->
-
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
- 
+  <style>
+    .slider {
+      width: 100%;
+      max-width: 1300px;
+      height: 400px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider .list {
+      position: absolute;
+      width: max-content;
+      height: 100%;
+      left: 0;
+      top: 0;
+      display: flex;
+      transition: 1s;
+    }
+
+    .slider .list img {
+      width: 100vw;
+      max-width: 1300px;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slider .buttons {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .slider .buttons button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .slider .dots {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .slider .dots li {
+      list-style: none;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      margin: 5px;
+      border-radius: 50%;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    .slider .dots li.active {
+      width: 25px;
+      border-radius: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .slider {
+        height: 300px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .slider {
+        height: 250px;
+      }
+
+      .slider .buttons button {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+      }
+    }
+  </style>
+  <script>
+    let slider = document.querySelector('.slider .list');
+    let items = document.querySelectorAll('.slider .list .item');
+    let next = document.getElementById('next');
+    let prev = document.getElementById('prev');
+    let dots = document.querySelectorAll('.slider .dots li');
+
+    let lengthItems = items.length - 1;
+    let active = 0;
+
+    next.onclick = function () {
+      active = active + 1 <= lengthItems ? active + 1 : 0;
+      reloadSlider();
+    }
+
+    prev.onclick = function () {
+      active = active - 1 >= 0 ? active - 1 : lengthItems;
+      reloadSlider();
+    }
+
+    let refreshInterval = setInterval(() => { next.click() }, 3000);
+
+    function reloadSlider() {
+      slider.style.left = -items[active].offsetLeft + 'px';
+      let lastActiveDot = document.querySelector('.slider .dots li.active');
+      lastActiveDot.classList.remove('active');
+      dots[active].classList.add('active');
+      clearInterval(refreshInterval);
+      refreshInterval = setInterval(() => { next.click() }, 3000);
+    }
+
+    dots.forEach((li, key) => {
+      li.addEventListener('click', () => {
+        active = key;
+        reloadSlider();
+      });
+    });
+
+    window.onresize = function () {
+      reloadSlider();
+    };
+  </script>
 
   <!-- glimpses_area_end  -->
 
