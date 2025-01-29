@@ -671,8 +671,8 @@
 
         <label for="eventType">Event Type:</label>
         <select id="eventType" name="eventType" required>
-          <option value="Department">Department</option>
-          <option value="Class">Class</option>
+          <option value="Department" style="color: #333;">Department</option>
+          <option value="Class" style="color: #333;">Class</option>
         </select>
 
         <button type="submit" class="submit-btn">Submit</button>
@@ -777,23 +777,24 @@
       modal.style.display = "none";
     }
 
-    function openRegisterModal() {
-      document.getElementById("registerModal").style.display = "flex";
-    }
+    // Open the modal
+function openRegisterModal() {
+  document.getElementById("registerModal").style.display = "flex";
+}
 
-    function closeRegisterModal() {
-      document.getElementById("registerModal").style.display = "none";
-    }
+// Close the modal
+function closeRegisterModal() {
+  document.getElementById("registerModal").style.display = "none";
+}
 
-    document.getElementById("registerForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value;
-      const password = document.getElementById("password").value;
-      const eventType = document.getElementById("eventType").value;
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+  let modal = document.getElementById("registerModal");
+  if (event.target === modal) {
+    closeRegisterModal();
+  }
+};
 
-      alert(`Registered with Name: ${name}, Event Type: ${eventType}`);
-      closeRegisterModal();
-    });
   </script>
 
   <!-- CSS for Modal -->
@@ -876,7 +877,7 @@
       position: relative;
       animation: fadeIn 0.4s ease-in-out;
       font-family: 'Arial', sans-serif;
-      color: #ffffff;
+     
       /* Text color to match gradient */
       overflow: auto;
       /* Enable scrolling if content exceeds the height */
@@ -1005,56 +1006,139 @@
       /* Ensure the image covers the entire carousel item without stretching */
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      flex-grow: 1;
-      justify-content: center;
-    }
+   /* Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  backdrop-filter: blur(5px); /* Blurry effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
 
-    label {
-      font-weight: bold;
-    }
+/* Modal Content Box */
+.modal-content {
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: slideIn 0.3s ease-in-out;
+}
 
-    input,
-    select {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      width: 100%;
-      color: black;
-    }
+/* Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    select option {
-      color: black;
-    }
+.close:hover {
+  color: #ff4b4b;
+  transform: scale(1.2);
+}
 
-    .submit-btn {
-      background: linear-gradient(45deg, #ff6b6b, #ffb6b9);
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
 
-    .submit-btn:hover {
-      background: linear-gradient(45deg, #ff4b4b, #ff9090);
-    }
+label {
+  font-weight: bold;
+  color: #333;
+}
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
+input,
+select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  color: #333;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
 
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+input:focus,
+select:focus {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+  outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(45deg, #ff6b6b, #ffb6b9);
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #ff4b4b, #ff9090);
+  transform: scale(1.05);
+}
+
+/* Exit Button */
+.exit-btn {
+  background: #ff4b4b;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.exit-btn:hover {
+  background: #c33;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
   </style>
 
   <div class="performar_area black_bg" id="glimpses">
