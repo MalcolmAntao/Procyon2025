@@ -203,8 +203,7 @@
 
           <!-- Day 1 and Day 2 Buttons -->
           <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center">
-            <button id="day1Btn" class="btn btn-primary mb-3 mb-sm-0 ml-sm-4" onclick="showEvents('day1')">Day 1 (3rd
-              March)</button>
+            <button id="day1Btn" class="btn btn-primary mb-3 mb-sm-0 ml-sm-4" onclick="showEvents('day1')">Day 1 (3rd March)</button>
             <button id="day2Btn" class="btn btn-primary ml-sm-4" onclick="showEvents('day2')">Day 2 (4th March)</button>
           </div>
         </div>
@@ -853,6 +852,15 @@
   </style>
   <!-- JavaScript -->
   <script>
+    function showEvents(day) {
+      document.getElementById('day1Events').style.display = 'none';
+      document.getElementById('day2Events').style.display = 'none';
+      if (day === 'day1') {
+          document.getElementById('day1Events').style.display = 'block';
+      } else if (day === 'day2') {
+          document.getElementById('day2Events').style.display = 'block';
+      }
+  }
     function showEventDetails(day, eventId) {
       const eventDetails = {
         day1: {
