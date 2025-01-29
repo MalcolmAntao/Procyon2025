@@ -198,9 +198,9 @@
       <div class="row justify-content-center mb-5">
         <div class="col-lg-12 text-center">
           <!-- General Rules Button -->
-          <button id="generalRulesBtn" class="btn btn-secondary mb-3 " onclick="showGeneralRules()">General
-            Rules</button>
-
+          <button id="generalRulesBtn" class="btn btn-secondary mb-3 " onclick="showGeneralRules()">General Rules</button>
+          <!-- Event Order Button -->
+          <button id="eventOrderBtn" class="btn btn-secondary mb-3" onclick="showEventOrder()">Event Order</button>
           <!-- Day 1 and Day 2 Buttons -->
           <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center">
             <button id="day1Btn" class="btn btn-primary mb-3 mb-sm-0 ml-sm-4" onclick="showEvents('day1')">Day 1 (3rd March)</button>
@@ -678,45 +678,57 @@
   }
 </style>
 
-  <!-- Modal Popup for Event Details -->
-  <div id="eventDetailsModal" class="modal" style="display: none">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div class="modal-body">
-        <h3 id="eventAKA" class="modal-text">Event AKA</h3>
-        <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
-        <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
-        <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
-        <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
-        <p><strong class="modal-text">Participants:</strong> <span id="eventParticipants" class="modal-text"></span></p>
-        <p><strong class="modal-text">Duration:</strong> <span id="eventDuration" class="modal-text"></span></p>
-        <p><strong class="modal-text">Judgement Criteria:</strong><br /><span id="eventJudgement"
-            class="modal-text"></span></p>
-        <br />
-        <p><strong class="modal-text">Instructions:</strong><br /><span id="eventInstructions"
-            class="modal-text"></span></p>
-        <br />
+<!-- Event Order Modal -->
+<div id="eventOrderModal" class="modal" style="display: none;" onclick="closeEventOrderModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close" onclick="closeEventOrderModal()">&times;</span>
+    <div class="modal-body">
+      <h3 class="text-center">Event Order</h3>
 
-        <div class="coordinator-container">
-          <div class="coordinator-item">
-            <p><strong class="modal-text">Student Coordinators:</strong></p>
-            <div id="studentCoordinators" class="modal-text"></div> <!-- Dynamic student coordinators -->
-          </div>
-          <div class="coordinator-item">
-            <p><strong class="modal-text">Contact:</strong></p>
-            <div id="contactNumbers" class="modal-text"></div> <!-- Dynamic contact numbers -->
-          </div>
-        </div>
-        <br />
-        <div class="coordinator-container">
-          <div class="coordinator-item">
-            <p><strong class="modal-text">Faculty Coordinators:</strong></p>
-            <div id="facultyCoordinators" class="modal-text"></div> <!-- Dynamic faculty coordinators -->
-          </div>
-        </div>
+      <!-- Department Events Table -->
+      <h4 class="text-center mt-3">Department Events</h4>
+      <div class="table-container">
+        <table border="1" class="table table-bordered mx-auto mt-3">
+          <tbody>
+            <tr><td class="text-center">1. Computer Department</td></tr>
+            <tr><td class="text-center">2. Civil Department</td></tr>
+            <tr><td class="text-center">3. ETC / ECS Department</td></tr>
+            <tr><td class="text-center">4. Mechanical Department</td></tr>
+          </tbody>
+        </table>
       </div>
+
+      <!-- Class Events Table -->
+      <h4 class="text-center mt-3">Class Events</h4>
+      <div class="table-container">
+        <table border="1" class="table table-bordered mx-auto mt-3">
+          <tbody>
+            <tr><td class="text-center">1. FE ECS</td></tr>
+            <tr><td class="text-center">2. BE ETC</td></tr>
+            <tr><td class="text-center">3. TE COMP</td></tr>
+            <tr><td class="text-center">4. TE CIVIL</td></tr>
+            <tr><td class="text-center">5. FE COMP 2</td></tr>
+            <tr><td class="text-center">6. TE MECH</td></tr>
+            <tr><td class="text-center">7. TE ETC</td></tr>
+            <tr><td class="text-center">8. BE CIVIL</td></tr>
+            <tr><td class="text-center">9. SE COMP</td></tr>
+            <tr><td class="text-center">10. BE COMP</td></tr>
+            <tr><td class="text-center">11. FE COMP 1</td></tr>
+            <tr><td class="text-center">12. SE ECS</td></tr>
+            <tr><td class="text-center">13. FE CIVIL</td></tr>
+            <tr><td class="text-center">14. FE MECH</td></tr>
+            <tr><td class="text-center">15. SE CIVIL</td></tr>
+            <tr><td class="text-center">16. BE MECH</td></tr>
+            <tr><td class="text-center">17. SE Mech</td></tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </div>
+</div>
+
+
 
   <!-- Register Modal -->
   <div id="registerModal" class="modal1" style="display: none;">
@@ -1051,12 +1063,22 @@
       closeRegisterModal();
     });
 
+    function showEventOrder() {
+      document.getElementById('eventOrderModal').style.display = 'flex';
+    }
+  
+    function closeEventOrderModal(event) {
+      if (event.target === document.getElementById('eventOrderModal')) {
+        document.getElementById('eventOrderModal').style.display = 'none';
+      }
+    }
+
   </script>
 
   <!-- CSS for Modal -->
   <style>
     /* Modal Styles */
-    #generalRulesBtn {
+    #generalRulesBtn, #eventOrderBtn {
       background: linear-gradient(45deg, rgb(211, 16, 211), turquoise);
       color: white;
       /* Text color */
@@ -1065,7 +1087,7 @@
     }
 
     /* Ensure the generalRulesBtn stays centered and above the day buttons */
-    #generalRulesBtn {
+    #generalRulesBtn, #eventOrderBtn {
       display: block;
       margin: 0 auto 15px;
       /* Centers the button and adds space below it */
