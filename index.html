@@ -658,8 +658,8 @@
     </div>
   </div>
   <!-- Register Modal -->
-  <div id="registerModal" class="modal" style="display: none;">
-    <div class="modal-content">
+  <div id="registerModal" class="modal1" style="display: none;">
+    <div class="modal-content1">
       <span class="close" onclick="closeRegisterModal()">&times;</span>
       <h2 style=" display: flex; font-size: 2rem; align-items: center; justify-content: center;">Login</h2>
       <form id="registerForm">
@@ -680,6 +680,141 @@
     </div>
   </div>
 
+  <style>
+/* Modal Background */
+.modal1 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  backdrop-filter: blur(5px); /* Blurry effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Modal Content Box */
+.modal-content1 {
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: slideIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ff4b4b;
+  transform: scale(1.2);
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+input,
+select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  color: #333;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus,
+select:focus {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 5px rgba(255, 107, 107, 0.5);
+  outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(45deg, #ff6b6b, #ffb6b9);
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(45deg, #ff4b4b, #ff9090);
+  transform: scale(1.05);
+}
+
+/* Exit Button */
+.exit-btn {
+  background: #ff4b4b;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.exit-btn:hover {
+  background: #c33;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+  </style>
   <!-- JavaScript -->
   <script>
     function showEvents(day) {
