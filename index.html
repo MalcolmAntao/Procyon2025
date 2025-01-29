@@ -777,23 +777,24 @@
       modal.style.display = "none";
     }
 
-    function openRegisterModal() {
-      document.getElementById("registerModal").style.display = "flex";
-    }
+   // Open the modal
+function openRegisterModal() {
+  document.getElementById("registerModal").style.display = "flex";
+}
 
-    function closeRegisterModal() {
-      document.getElementById("registerModal").style.display = "none";
-    }
+// Close the modal
+function closeRegisterModal() {
+  document.getElementById("registerModal").style.display = "none";
+}
 
-    document.getElementById("registerForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value;
-      const password = document.getElementById("password").value;
-      const eventType = document.getElementById("eventType").value;
+// Close modal when clicking outside of it
+window.onclick = function (event) {
+  let modal = document.getElementById("registerModal");
+  if (event.target === modal) {
+    closeRegisterModal();
+  }
+};
 
-      alert(`Registered with Name: ${name}, Event Type: ${eventType}`);
-      closeRegisterModal();
-    });
   </script>
 
   <!-- CSS for Modal -->
