@@ -679,6 +679,46 @@
   }
 </style>
 
+ <!-- Modal Popup for Event Details -->
+ <div id="eventDetailsModal" class="modal" style="display: none">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div class="modal-body">
+      <h3 id="eventAKA" class="modal-text">Event AKA</h3>
+      <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
+      <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
+      <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
+      <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
+      <p><strong class="modal-text">Participants:</strong> <span id="eventParticipants" class="modal-text"></span></p>
+      <p><strong class="modal-text">Duration:</strong> <span id="eventDuration" class="modal-text"></span></p>
+      <p><strong class="modal-text">Judgement Criteria:</strong><br /><span id="eventJudgement"
+          class="modal-text"></span></p>
+      <br />
+      <p><strong class="modal-text">Instructions:</strong><br /><span id="eventInstructions"
+          class="modal-text"></span></p>
+      <br />
+
+      <div class="coordinator-container">
+        <div class="coordinator-item">
+          <p><strong class="modal-text">Student Coordinators:</strong></p>
+          <div id="studentCoordinators" class="modal-text"></div> <!-- Dynamic student coordinators -->
+        </div>
+        <div class="coordinator-item">
+          <p><strong class="modal-text">Contact:</strong></p>
+          <div id="contactNumbers" class="modal-text"></div> <!-- Dynamic contact numbers -->
+        </div>
+      </div>
+      <br />
+      <div class="coordinator-container">
+        <div class="coordinator-item">
+          <p><strong class="modal-text">Faculty Coordinators:</strong></p>
+          <div id="facultyCoordinators" class="modal-text"></div> <!-- Dynamic faculty coordinators -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Event Order Modal -->
 <div id="eventOrderModal" class="modal" style="display: none;" onclick="closeEventOrderModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
