@@ -777,37 +777,21 @@
       modal.style.display = "none";
     }
 
-    function openRegisterModal() {
-      document.getElementById("registerModal").style.display = "flex";
-    }
+   // Open the modal
+function openRegisterModal() {
+  document.getElementById("registerModal").style.display = "flex";
+}
 
-    function closeRegisterModal() {
-      document.getElementById("registerModal").style.display = "none";
-    }
+// Close the modal
+function closeRegisterModal() {
+  document.getElementById("registerModal").style.display = "none";
+}
 
-<<<<<<< Updated upstream
-=======
-    // Close modal when clicking outside of the modal content
-    window.addEventListener("click", function (event) {
-      const modal = document.getElementById("registerModal");
-      if (event.target === modal) {
-        closeRegisterModal();
-      }
-    });
-
->>>>>>> Stashed changes
     document.getElementById("registerForm").addEventListener("submit", function (event) {
       event.preventDefault();
       const name = document.getElementById("name").value;
       const password = document.getElementById("password").value;
       const eventType = document.getElementById("eventType").value;
-<<<<<<< Updated upstream
-=======
-
-      alert(`Registered with Name: ${name}, Event Type: ${eventType}`);
-      closeRegisterModal();
-    });
->>>>>>> Stashed changes
 
       alert(`Registered with Name: ${name}, Event Type: ${eventType}`);
       closeRegisterModal();
