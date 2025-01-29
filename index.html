@@ -701,18 +701,20 @@
   align-items: center;
   justify-content: center;
   animation: fadeIn 0.3s ease-in-out;
+  padding: 10px; /* Prevents content from sticking to the edges */
 }
 
 /* Modal Content Box */
 .modal-content1 {
   background: white;
   width: 100%;
-  max-width: 400px;
+  max-width: 90%; /* Responsive width */
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   position: relative;
   animation: slideIn 0.3s ease-in-out;
+  margin: 20px; /* Added margin for spacing */
 }
 
 /* Close Button */
@@ -773,6 +775,7 @@ select:focus {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  margin-top: 10px;
 }
 
 .submit-btn:hover {
@@ -816,6 +819,26 @@ select:focus {
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 480px) {
+  .modal-content1 {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .submit-btn,
+  .exit-btn {
+    font-size: 14px;
+    padding: 10px;
   }
 }
 
