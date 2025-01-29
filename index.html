@@ -678,6 +678,300 @@
       </div>
     </div>
   </div>
+  <!-- CSS for Modal -->
+  <style>
+    /* Modal Styles */
+    #generalRulesBtn {
+      background: linear-gradient(45deg, rgb(211, 16, 211), turquoise);
+      color: white;
+      /* Text color */
+      border: none;
+      transition: background 0.3s ease;
+    }
+
+    /* Ensure the generalRulesBtn stays centered and above the day buttons */
+    #generalRulesBtn {
+      display: block;
+      margin: 0 auto 15px;
+      /* Centers the button and adds space below it */
+      font-size: 20px;
+    }
+
+    .d-flex {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      /* Stacks the buttons vertically on small screens */
+    }
+
+    /* Flexbox layout for the coordinator info */
+    .coordinator-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      /* Adds space between the two columns */
+    }
+
+    .coordinator-item {
+      flex: 1;
+    }
+
+    .coordinator-item p {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .coordinator-item span {
+      display: block;
+      font-size: 1rem;
+      color: #333;
+      /* Adjust color if needed */
+    }
+
+    .modal {
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      /* Darker background */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background-image: linear-gradient(to right top,
+          #d16ba5,
+          #c777b9,
+          #ba83ca,
+          #aa8fd8,
+          #9a9ae1,
+          #8aa7ec,
+          #79b3f4,
+          #69bff8,
+          #52cffe,
+          #41dfff,
+          #46eefa,
+          #5ffbf1);
+
+      width: 80%;
+      max-width: 600px;
+      height: 80%;
+      /* Fixed height */
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+        0 0 15px rgba(101, 90, 255, 0.8);
+      /* Glow effect */
+      position: relative;
+      animation: fadeIn 0.4s ease-in-out;
+      font-family: "Arial", sans-serif;
+      color: #ffffff;
+      /* Text color to match gradient */
+      overflow: auto;
+      /* Enable scrolling if content exceeds the height */
+    }
+
+    #studentCoordinators p,
+    #contactNumbers p,
+    #facultyCoordinators p {
+      color: white;
+    }
+
+    .modal-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+      padding-bottom: 10px;
+    }
+
+    .modal-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .modal-content strong {
+      font-weight: 600;
+    }
+
+    .modal-content span {
+      color: #ffffff;
+    }
+
+    .modal-content .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .modal-content .close:hover {
+      color: #ff4c4c;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Glow animation for the modal */
+    @keyframes glow {
+      0% {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+          0 0 10px rgba(101, 90, 255, 0.6);
+      }
+
+      50% {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+          0 0 20px rgba(101, 90, 255, 1);
+      }
+
+      100% {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+          0 0 10px rgba(101, 90, 255, 0.6);
+      }
+    }
+
+    .modal-content {
+      animation: glow 1.5s infinite alternate;
+      /* Glow animation */
+    }
+
+    /* Styling the Scrollbar */
+    .modal-content::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+      background: #2e27ff00;
+      /* Blue */
+      border-radius: 6px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb:hover {
+      background: #79727480;
+      /* Pink on hover */
+    }
+
+    .modal-content::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+      /* Dark background for track */
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 90%;
+        padding: 20px;
+        height: 70%;
+        /* Adjust height for smaller screens */
+      }
+
+      .modal-content h3 {
+        font-size: 1.5rem;
+      }
+
+      .modal-content p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .carousel-inner {
+      width: 100%;
+      height: 100vh;
+      /* Set the carousel height to full viewport height */
+      overflow: hidden;
+      /* Hide any overflow content */
+    }
+
+    .carousel-image {
+      height: 100%;
+      object-fit: cover;
+      /* Ensure the image covers the entire carousel item without stretching */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    label {
+      color: black;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      color: black;
+    }
+
+    select {
+      -webkit-appearance: none;
+      /* For Chrome and Safari */
+      -moz-appearance: none;
+      /* For Firefox */
+      appearance: none;
+      color: black;
+      /* Text color */
+    }
+
+    select option {
+      color: black !important;
+      background-color: white !important;
+    }
+
+    .submit-btn {
+      background: linear-gradient(45deg, #ff6b6b, #ffb6b9);
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(45deg, #ff4b4b, #ff9090);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
 
   <!-- Modal Popup for Event Details -->
   <!-- Modal Popup for Event Details -->
@@ -1066,7 +1360,32 @@
       </div>
     </div>
   </div>
+  <script>
+    const carouselItems = document.getElementById("carouselItems");
+    const prevButton = document.getElementById("prevButton");
+    const nextButton = document.getElementById("nextButton");
+    const totalItems = carouselItems.children.length;
+    let currentIndex = 0;
 
+    function updateCarousel() {
+      carouselItems.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+      updateCarousel();
+    });
+
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    });
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalItems;
+      updateCarousel();
+    }, 5000);
+  </script>
   <!-- glimpses_area_end  -->
 
   <body class="bg-gradient-to-br from-pink-500 via-purple-500 to-yellow-500 min-h-screen flex flex-col">
