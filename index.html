@@ -1138,50 +1138,46 @@
         </div>
       </div>
     </div>
+
     <!-- Modal Popup for Event Details -->
-    <div id="eventDetailsModal" class="modal" style="display: none">
-      <div class="modal-content">
+    <!-- Modal Popup for Event Details -->
+<div id="eventDetailsModal" class="modal" style="display: none">
+    <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <div class="modal-body">
-          <h3 id="eventAKA">Event AKA</h3>
-          <p><strong>Date:</strong> <span id="eventDate"></span></p>
-          <p><strong>Type:</strong> <span id="eventType"></span></p>
-          <p><strong>Scoring:</strong> <span id="eventScoring"></span></p>
-          <p><strong>Venue:</strong> <span id="eventVenue"></span></p>
-          <p>
-            <strong>Participants:</strong> <span id="eventParticipants"></span>
-          </p>
-          <p><strong>Duration:</strong> <span id="eventDuration"></span></p>
-          <p>
-            <strong>Judgement Criteria:</strong><br />
-            <span id="eventJudgement"></span>
-          </p>
-          <br />
-          <p>
-            <strong>Instructions:</strong> <br /><span
-              id="eventInstructions"
-            ></span>
-          </p>
-          <br />
+            <h3 id="eventAKA" class="modal-text">Event AKA</h3>
+            <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
+            <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
+            <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
+            <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
+            <p><strong class="modal-text">Participants:</strong> <span id="eventParticipants" class="modal-text"></span></p>
+            <p><strong class="modal-text">Duration:</strong> <span id="eventDuration" class="modal-text"></span></p>
+            <p><strong class="modal-text">Judgement Criteria:</strong><br /><span id="eventJudgement" class="modal-text"></span></p>
+            <br />
+            <p><strong class="modal-text">Instructions:</strong><br /><span id="eventInstructions" class="modal-text"></span></p>
+            <br />
 
-          <div class="coordinator-container">
-            <div class="coordinator-item">
-              <p><strong>Student Coordinator:</strong></p>
-              <span id="studentCoordinator"></span>
+            <div class="coordinator-container">
+                <div class="coordinator-item">
+                    <p><strong class="modal-text">Student Coordinators:</strong></p>
+                    <div id="studentCoordinators" class="modal-text"></div> <!-- Dynamic student coordinators -->
+                </div>
+                <div class="coordinator-item">
+                    <p><strong class="modal-text">Contact:</strong></p>
+                    <div id="contactNumbers" class="modal-text"></div> <!-- Dynamic contact numbers -->
+                </div>
             </div>
-            <div class="coordinator-item">
-              <p><strong>Contact:</strong></p>
-              <span id="contactNumber"></span>
+            <br />
+            <div class="coordinator-container">
+                <div class="coordinator-item">
+                    <p><strong class="modal-text">Faculty Coordinators:</strong></p>
+                    <div id="facultyCoordinators" class="modal-text"></div> <!-- Dynamic faculty coordinators -->
+                </div>
             </div>
-          </div>
-          <br />
-          <p>
-            <strong>Faculty Coordinator:</strong><br />
-            <span id="facultyCoordinator"></span>
-          </p>
         </div>
-      </div>
     </div>
+</div>
+
     <!-- Register Modal -->
     <div id="registerModal" class="modal" style="display: none">
       <div class="modal-content">
@@ -1216,88 +1212,98 @@
 
     <!-- JavaScript -->
     <script>
-      function showEvents(day) {
-        document.getElementById("day1Events").style.display = "none";
-        document.getElementById("day2Events").style.display = "none";
-        if (day === "day1") {
-          document.getElementById("day1Events").style.display = "block";
-        } else if (day === "day2") {
-          document.getElementById("day2Events").style.display = "block";
-        }
-      }
-
       function showEventDetails(day, eventId) {
-        const eventDetails = {
-          day1: {
+    const eventDetails = {
+        day1: {
             1: {
-              aka: "Coding Blitz",
-              date: "12 Feb 2020",
-              type: "Coding",
-              scoring: "Points-based",
-              venue: "Main Hall",
-              participants: "Teams of 2",
-              duration: "2 hours",
-              judgement: "Code Efficiency & Creativity",
-              instructions: "Bring a laptop.",
-              studentCoordinator: "John Doe",
-              facultyCoordinator: "Dr. Smith",
-              contact: "+91 12345 67890",
+                aka: "Coding Blitz",
+                date: "12 Feb 2020",
+                type: "Coding",
+                scoring: "Points-based",
+                venue: "Main Hall",
+                participants: "Teams of 2",
+                duration: "2 hours",
+                judgement: "Code Efficiency & Creativity",
+                instructions: "Bring a laptop.",
+                studentCoordinators: ["John Doe", "Alice Smith"],
+                facultyCoordinators: ["Dr. Smith", "Prof. Green"],
+                contactNumbers: ["+91 12345 67890", "+91 09876 54321"],
             },
-          },
-          day2: {
+        },
+        day2: {
             1: {
-              aka: "Design Sprint",
-              date: "13 Feb 2020",
-              type: "Design",
-              scoring: "Creativity and Feasibility",
-              venue: "Room 202",
-              participants: "Individual",
-              duration: "3 hours",
-              judgement: "Design Presentation",
-              instructions: "Bring a sketch pad.",
-              studentCoordinator: "Jane Roe",
-              facultyCoordinator: "Dr. Brown",
-              contact: "+91 98765 43210",
+                aka: "Design Sprint",
+                date: "13 Feb 2020",
+                type: "Design",
+                scoring: "Creativity and Feasibility",
+                venue: "Room 202",
+                participants: "Individual",
+                duration: "3 hours",
+                judgement: "Design Presentation",
+                instructions: "Bring a sketch pad.",
+                studentCoordinators: ["Jane Roe"],
+                facultyCoordinators: ["Dr. Brown"],
+                contactNumbers: ["+91 98765 43210"],
             },
-          },
-        };
+        },
+    };
 
-        const details = eventDetails[day][eventId];
-        if (details) {
-          document.getElementById("eventAKA").innerText = details.aka;
-          document.getElementById("eventDate").innerText = details.date;
-          document.getElementById("eventType").innerText = details.type;
-          document.getElementById("eventScoring").innerText = details.scoring;
-          document.getElementById("eventVenue").innerText = details.venue;
-          document.getElementById("eventParticipants").innerText =
-            details.participants;
-          document.getElementById("eventDuration").innerText = details.duration;
-          document.getElementById("eventJudgement").innerText =
-            details.judgement;
-          document.getElementById("eventInstructions").innerText =
-            details.instructions;
-          document.getElementById("studentCoordinator").innerText =
-            details.studentCoordinator;
-          document.getElementById("facultyCoordinator").innerText =
-            details.facultyCoordinator;
-          document.getElementById("contactNumber").innerText = details.contact;
-        }
+    const details = eventDetails[day][eventId];
+    if (details) {
+        document.getElementById("eventAKA").innerText = details.aka;
+        document.getElementById("eventDate").innerText = details.date;
+        document.getElementById("eventType").innerText = details.type;
+        document.getElementById("eventScoring").innerText = details.scoring;
+        document.getElementById("eventVenue").innerText = details.venue;
+        document.getElementById("eventParticipants").innerText = details.participants;
+        document.getElementById("eventDuration").innerText = details.duration;
+        document.getElementById("eventJudgement").innerText = details.judgement;
+        document.getElementById("eventInstructions").innerText = details.instructions;
 
-        const modal = document.getElementById("eventDetailsModal");
-        modal.style.display = "flex";
-
-        // Close modal on outside click
-        modal.addEventListener("click", function (e) {
-          if (e.target === modal) {
-            closeModal();
-          }
+        // Display Student Coordinators
+        const studentCoordinatorContainer = document.getElementById("studentCoordinators");
+        studentCoordinatorContainer.innerHTML = ''; // Clear any previous content
+        details.studentCoordinators.forEach(coordinator => {
+            const coordinatorItem = document.createElement('p');
+            coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
+            studentCoordinatorContainer.appendChild(coordinatorItem);
         });
-      }
 
-      function closeModal() {
-        const modal = document.getElementById("eventDetailsModal");
-        modal.style.display = "none";
-      }
+        // Display Faculty Coordinators
+        const facultyCoordinatorContainer = document.getElementById("facultyCoordinators");
+        facultyCoordinatorContainer.innerHTML = ''; // Clear any previous content
+        details.facultyCoordinators.forEach(coordinator => {
+            const coordinatorItem = document.createElement('p');
+            coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
+            facultyCoordinatorContainer.appendChild(coordinatorItem);
+        });
+
+        // Display Contact Numbers
+        const contactContainer = document.getElementById("contactNumbers");
+        contactContainer.innerHTML = ''; // Clear any previous content
+        details.contactNumbers.forEach(contact => {
+            const contactItem = document.createElement('p');
+            contactItem.innerHTML = `<strong>${contact}</strong>`;
+            contactContainer.appendChild(contactItem);
+        });
+    }
+
+    const modal = document.getElementById("eventDetailsModal");
+    modal.style.display = "flex";
+
+    // Close modal on outside click
+    modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+}
+
+function closeModal() {
+    const modal = document.getElementById("eventDetailsModal");
+    modal.style.display = "none";
+}
+
 
       function showGeneralRules() {
         const modal = document.getElementById("generalRulesModal");
@@ -1332,9 +1338,7 @@
         }
       });
 
-      document
-        .getElementById("registerForm")
-        .addEventListener("submit", function (event) {
+      document.getElementById("registerForm").addEventListener("submit", function (event) {
           event.preventDefault();
           const name = document.getElementById("name").value;
           const password = document.getElementById("password").value;
@@ -1433,7 +1437,10 @@
         color: #ffffff; /* Text color to match gradient */
         overflow: auto; /* Enable scrolling if content exceeds the height */
       }
-
+      
+      #studentCoordinators p, #contactNumbers p, #facultyCoordinators p {
+        color: white;
+        }
       .modal-content h3 {
         font-size: 1.8rem;
         margin-bottom: 20px;

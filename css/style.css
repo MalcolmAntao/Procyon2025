@@ -2635,98 +2635,8 @@ h3 {
   color: #FF4533;
 }
 
-/*=================== contact banner start ====================*/
-/* line 3, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.dropdown .dropdown-menu {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
 
-/* line 10, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.contact-info {
-  margin-bottom: 25px;
-}
 
-/* line 13, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.contact-info__icon {
-  margin-right: 20px;
-}
-
-/* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.contact-info__icon i, .contact-info__icon span {
-  color: #8f9195;
-  font-size: 27px;
-}
-
-/* line 24, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.contact-info .media-body h3 {
-  font-size: 16px;
-  margin-bottom: 0;
-  font-size: 16px;
-  color: #2a2a2a;
-}
-
-/* line 30, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.contact-info .media-body h3 a:hover {
-  color: #ff5e13;
-}
-
-/* line 36, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.contact-info .media-body p {
-  color: #8a8a8a;
-}
-
-/*=================== contact banner end ====================*/
-/*=================== contact form start ====================*/
-/* line 45, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.contact-title {
-  font-size: 27px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-/* line 53, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.form-contact label {
-  font-size: 14px;
-}
-
-/* line 57, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.form-contact .form-group {
-  margin-bottom: 30px;
-}
-
-/* line 61, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.form-contact .form-control {
-  border: 1px solid #e5e6e9;
-  border-radius: 0px;
-  height: 48px;
-  padding-left: 18px;
-  font-size: 13px;
-  background: transparent;
-}
-
-/* line 69, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.form-contact .form-control:focus {
-  outline: 0;
-  box-shadow: none;
-}
-
-/* line 74, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.form-contact .form-control::placeholder {
-  font-weight: 300;
-  color: #999999;
-}
-
-/* line 80, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
-.form-contact textarea {
-  border-radius: 0px;
-  height: 100% !important;
-}
-
-/*=================== contact form end ====================*/
 /* Contact Success and error Area css
 ============================================================================================ */
 /* line 97, ../../Arafath/CL/December/236. Event-02/HTML/scss/_contact.scss */
@@ -4023,68 +3933,6 @@ h6 {
   right: 20px;
 }
 
-/* line 1042, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
-.form-select {
-  height: 40px;
-  width: 100%;
-}
-
-/* line 1045, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
-.form-select .nice-select {
-  border: none;
-  border-radius: 0px;
-  height: 40px;
-  background: #f9f9ff;
-  padding-left: 45px;
-  padding-right: 40px;
-  width: 100%;
-}
-
-/* line 1053, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
-.form-select .nice-select .list {
-  margin-top: 0;
-  border: none;
-  border-radius: 0px;
-  box-shadow: none;
-  width: 100%;
-  padding: 10px 0 10px 0px;
-}
-
-/* line 1060, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
-.form-select .nice-select .list .option {
-  font-weight: 300;
-  -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-  line-height: 28px;
-  min-height: 28px;
-  font-size: 12px;
-  padding-left: 45px;
-}
-
-/* line 1067, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
-.form-select .nice-select .list .option.selected {
-  color: #ff5e13;
-  background: transparent;
-}
-
-/* line 1071, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
-.form-select .nice-select .list .option:hover {
-  color: #ff5e13;
-  background: transparent;
-}
-
-/* line 1078, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
-.form-select .current {
-  margin-right: 50px;
-  font-weight: 300;
-}
-
-/* line 1082, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
-.form-select .nice-select::after {
-  right: 20px;
-}
 
 /* line 1086, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
 .mt-10 {
@@ -4778,28 +4626,6 @@ h6 {
   margin-top: 0px;
 }
 
-/* line 672, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.blog_right_sidebar .search_widget .form-control {
-  height: 50px;
-  border-color: #f0e9ff;
-  font-size: 13px;
-  color: #999999;
-  padding-left: 20px;
-  border-radius: 0;
-  border-right: 0;
-}
-
-/* line 681, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.blog_right_sidebar .search_widget .form-control::placeholder {
-  color: #999999;
-}
-
-/* line 685, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.blog_right_sidebar .search_widget .form-control:focus {
-  border-color: #f0e9ff;
-  outline: 0;
-  box-shadow: none;
-}
 
 /* line 694, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
 .blog_right_sidebar .search_widget .input-group button {
@@ -4817,27 +4643,6 @@ h6 {
   color: #999999;
 }
 
-/* line 713, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.blog_right_sidebar .newsletter_widget .form-control {
-  height: 50px;
-  border-color: #f0e9ff;
-  font-size: 13px;
-  color: #999999;
-  padding-left: 20px;
-  border-radius: 0;
-}
-
-/* line 722, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.blog_right_sidebar .newsletter_widget .form-control::placeholder {
-  color: #999999;
-}
-
-/* line 726, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.blog_right_sidebar .newsletter_widget .form-control:focus {
-  border-color: #f0e9ff;
-  outline: 0;
-  box-shadow: none;
-}
 
 /* line 735, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
 .blog_right_sidebar .newsletter_widget .input-group button {
@@ -5391,113 +5196,6 @@ h6 {
   font-size: 14px;
   display: block;
   font-weight: 400;
-}
-
-/* line 1408, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form {
-  border-top: 1px solid #eee;
-  padding-top: 45px;
-  margin-top: 50px;
-  margin-bottom: 20px;
-}
-
-/* line 1416, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form .form-group {
-  margin-bottom: 30px;
-}
-
-/* line 1420, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form h4 {
-  margin-bottom: 40px;
-  font-size: 18px;
-  line-height: 22px;
-}
-
-/* line 1428, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form .name {
-  padding-left: 0px;
-}
-
-@media (max-width: 767px) {
-  /* line 1428, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-  .comment-form .name {
-    padding-right: 0px;
-    margin-bottom: 1rem;
-  }
-}
-
-/* line 1437, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form .email {
-  padding-right: 0px;
-}
-
-@media (max-width: 991px) {
-  /* line 1437, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-  .comment-form .email {
-    padding-left: 0px;
-  }
-}
-
-/* line 1445, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form .form-control {
-  border: 1px solid #f0e9ff;
-  border-radius: 5px;
-  height: 48px;
-  padding-left: 18px;
-  font-size: 13px;
-  background: transparent;
-}
-
-/* line 1453, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form .form-control:focus {
-  outline: 0;
-  box-shadow: none;
-}
-
-/* line 1458, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form .form-control::placeholder {
-  font-weight: 300;
-  color: #999999;
-}
-
-/* line 1463, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form .form-control::placeholder {
-  color: #777777;
-}
-
-/* line 1468, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form textarea {
-  padding-top: 18px;
-  border-radius: 12px;
-  height: 100% !important;
-}
-
-/* line 1474, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form ::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  font-size: 13px;
-  color: #777;
-}
-
-/* line 1480, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form ::-moz-placeholder {
-  /* Firefox 19+ */
-  font-size: 13px;
-  color: #777;
-}
-
-/* line 1486, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form :-ms-input-placeholder {
-  /* IE 10+ */
-  font-size: 13px;
-  color: #777;
-}
-
-/* line 1492, ../../Arafath/CL/December/236. Event-02/HTML/scss/_blog.scss */
-.comment-form :-moz-placeholder {
-  /* Firefox 18- */
-  font-size: 13px;
-  color: #777;
 }
 
 /*============ End Blog Single Styles  =============*/
