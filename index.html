@@ -776,24 +776,32 @@
       const modal = document.getElementById("generalRulesModal");
       modal.style.display = "none";
     }
-
     function openRegisterModal() {
-      document.getElementById("registerModal").style.display = "flex";
+    document.getElementById("registerModal").style.display = "flex";
+}
+
+function closeRegisterModal() {
+    document.getElementById("registerModal").style.display = "none";
+}
+
+// Close modal when clicking outside of the modal content
+window.addEventListener("click", function(event) {
+    const modal = document.getElementById("registerModal");
+    if (event.target === modal) {
+        closeRegisterModal();
     }
+});
 
-    function closeRegisterModal() {
-      document.getElementById("registerModal").style.display = "none";
-    }
+document.getElementById("registerForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const password = document.getElementById("password").value;
+    const eventType = document.getElementById("eventType").value;
 
-    document.getElementById("registerForm").addEventListener("submit", function (event) {
-      event.preventDefault();
-      const name = document.getElementById("name").value;
-      const password = document.getElementById("password").value;
-      const eventType = document.getElementById("eventType").value;
+    alert(`Registered with Name: ${name}, Event Type: ${eventType}`);
+    closeRegisterModal();
+});
 
-      alert(`Registered with Name: ${name}, Event Type: ${eventType}`);
-      closeRegisterModal();
-    });
   </script>
 
   <!-- CSS for Modal -->
