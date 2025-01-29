@@ -1141,7 +1141,7 @@ h3 {
 }
 
 /* line 100, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
-.header-area .main-header-area .buy_tkt .book_btn button {
+.header-area .main-header-area .buy_tkt .book_btn a {
   background: #FF4533;
   font-family: "Anton", sans-serif;
   padding: 12px 46px;
@@ -1157,13 +1157,13 @@ h3 {
 
 @media (min-width: 992px) and (max-width: 1200px) {
   /* line 100, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
-  .header-area .main-header-area .buy_tkt .book_btn button {
+  .header-area .main-header-area .buy_tkt .book_btn a {
     padding: 12px 20px;
   }
 }
 
 /* line 113, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
-.header-area .main-header-area .buy_tkt .book_btn button:hover {
+.header-area .main-header-area .buy_tkt .book_btn a:hover {
   border-color: #FF4533;
   color: #FF4533;
   background: transparent;
