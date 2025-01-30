@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tropical Fish - Lipstick Tang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url("/underwater.jpg");
+      background-repeat: no-repeat;
+      background-blend-mode: overlay;
+    }
+
+    .glow-overlay {
+      --glow-size: 35rem;
+      --glow-color: #0ea5e9; /* Blue glow color */
+
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      user-select: none;
+      opacity: var(--glow-opacity, 0);
+      mask: radial-gradient(var(--glow-size) var(--glow-size) at var(--glow-x) var(--glow-y),
+          var(--glow-color) 1%, transparent 50%);
+      transition: 400ms mask ease;
+      will-change: mask;
+    }
+
+    .glow-capture {
+      position: relative;
+    }
+
+    /* TailwindCSS Glow Custom Plugin */
+    .glow {
+      box-shadow: 0 0 15px 3px var(--glow-color);
+    }
+
+    .glow-ring {
+      box-shadow: 0 0 0 2px var(--glow-color);
+    }
+
+    .glow-border-glow {
+      border-color: var(--glow-color);
+    }
+
+    .glow-bg-glow {
+      background-color: rgba(57, 175, 218, 0.15);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Fish 3 -->
+  <div class="relative glow-capture">
+    <div class="bg-zinc-900/50 border-4 border-white/5 rounded-2xl p-10 shadow-lg shadow-black/80 flex md:flex-row flex-col flex-wrap md:items-start items-center md:justify-between justify-center gap-6 backdrop-blur-md glow glow:ring-1 glow:border-glow glow:ring-glow glow:bg-glow/[.15]">
+      <div class="flex-1 md:order-1 order-2">
+        <p class="opacity-50">Tropical fish</p>
+        <h2 class="font-bold text-4xl tracking-tighter mb-3 glow:text-glow/[.15]">Lipstick Tang</h2>
+        <div class="md:prose-base prose-lg prose-zinc prose-invert text-opacity-90">
+          <p>The Lipstick Tang, distinct for its striking blue body and vivid red-orange lips, resembles a vibrant splash
+            of lipstick in the ocean.</p>
+          <p>This eye-catching fish is a favorite among reef enthusiasts, gracefully navigating through coral gardens
+            with elegance.</p>
+        </div>
+        <button class="font-semibold px-6 bg-zinc-950/50 backdrop-blur-md py-3 rounded-xl text-white/90 border-2 border-white/10 mt-6 glow:ring-1 glow:border-glow glow:ring-glow">Learn
+          more</button>
+      </div>
+
+      <img src="fish-3.jpg" alt="Banana Wrasse" class="max-w-sm rounded-full object-cover w-40 h-40 border-4 border-white/5 md:order-2 order-1 glow glow:ring-1 glow:border-glow/[.5] glow:ring-glow shadow-inner" />
+    </div>
+    <div class="glow-overlay"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const captures = document.querySelectorAll(".glow-capture");
+
+      captures.forEach((capture) => {
+        // Clone a child element. For example, we can clone the first child.
+        const clonedChild = capture.children[0].cloneNode(true);
+        const overlay = capture.querySelector(".glow-overlay");
+
+        // Append the cloned child to the overlay.
+        overlay.appendChild(clonedChild);
+
+        capture.addEventListener("mousemove", (event) => {
+          const x = event.pageX - capture.offsetLeft;
+          const y = event.pageY - capture.offsetTop;
+
+          overlay.style.setProperty("--glow-x", `${x}px`);
+          overlay.style.setProperty("--glow-y", `${y}px`);
+          overlay.style.setProperty("--glow-opacity", "1");
+        });
+
+        // Add mouseleave event to remove the glow effect
+        capture.addEventListener("mouseleave", () => {
+          overlay.style.setProperty("--glow-opacity", "0");
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
