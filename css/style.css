@@ -3346,27 +3346,42 @@ h6 {
 
 /* line 475, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
 .ordered-list {
-  counter-reset: list-counter;
-}
-
-.ordered-list li {
-  position: relative;
-  list-style: none;
-  color: #000000; /* Black text */
-  font-weight: 500;
-  line-height: 1.5em !important;
-  padding-left: 30px; /* Space for custom numbering */
-  margin-bottom: 12px; /* Adds spacing between each point */
-}
-
-.ordered-list li::before {
-  content: counter(list-counter, decimal-leading-zero) ".";
-  counter-increment: list-counter;
-  position: absolute;
-  left: 0;
-  color: #ffffff; /* White numbering */
-  border-radius: 4px;
-}
+    counter-reset: list-counter;
+    padding-left: 0px; /* Removes extra left padding */
+    }
+    
+    .ordered-list li {
+      position: relative;
+      list-style: none;
+      color: #000000; /* Black text */
+      font-weight: 500;
+      line-height: 1.5em !important;
+      padding-left: 20px; /* Adjust space for numbering */
+      margin-bottom: 12px; /* Adds spacing between each point */
+      margin-left: -20px; /* Shifts the item to the left */
+    }
+    
+    .ordered-list li::before {
+      content: counter(list-counter, decimal-leading-zero) ".";
+      counter-increment: list-counter;
+      position: absolute;
+      left: -30px; /* Moves the number further left */
+      color: #ffffff; /* White numbering */
+      border-radius: 4px;
+    }
+    
+    /* Responsive adjustment for mobile */
+    @media (max-width: 768px) {
+      .ordered-list li {
+        margin-left: -15px; /* Adjust shift for smaller screens */
+        padding-left: 15px;
+      }
+      
+      .ordered-list li::before {
+        left: -25px; /* Adjust number position for mobile */
+      }
+    }
+  
 
 /* line 480, ../../Arafath/CL/December/236. Event-02/HTML/scss/_elements.scss */
 .ordered-list li span {
