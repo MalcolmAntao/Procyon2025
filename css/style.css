@@ -3354,7 +3354,7 @@ h6 {
   list-style: none;
   color: #000000; /* Black text */
   font-weight: 500;
-  line-height: 1.82em !important;
+  line-height: 1.5em !important;
   padding-left: 30px; /* Space for custom numbering */
   margin-bottom: 12px; /* Adds spacing between each point */
 }
