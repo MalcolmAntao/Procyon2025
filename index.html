@@ -72,6 +72,7 @@
   </div>
   
   <!-- Mobile Menu -->
+<<<<<<< Updated upstream
   <div class="nav-links absolute top-[-100%] left-0 w-full bg-gray-800 text-center py-4 transition-all duration-300 md:hidden z-10">
       <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
       <a href="#about" class="block py-2 hover:text-blue-400">About</a>
@@ -88,7 +89,31 @@
     e.name = e.name === 'menu' ? 'close' : 'menu'; // Toggle between menu and close icon
     document.querySelector('.nav-links').classList.toggle('top-[9%]'); // Toggle the visibility of the mobile menu
 }
+=======
+  <div class="nav-links absolute top-[-100%] left-0 w-full bg-gray-800 text-center py-4 transition-all duration-300 md:hidden z-40">
+    <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
+    <a href="#about" class="block py-2 hover:text-blue-400">About</a>
+    <a href="#schedule" class="block py-2 hover:text-blue-400">Schedule</a>
+    <a href="#glimpses" class="block py-2 hover:text-blue-400">Glimpses</a>
+    <a href="#sponsor" class="block py-2 hover:text-blue-400">Sponsors</a>
+    <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
+    <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 mt-3" 
+      id="registerbtnMobile" 
+      onclick="openRegisterModal()">
+      Register
+    </button>
+  </div>
+</header>
+
+<script>
+    function onToggleMenu(e) {
+        e.name = e.name === 'menu' ? 'close' : 'menu';
+        document.querySelector('.nav-links').classList.toggle('top-0');
+        document.querySelector('.nav-links').classList.toggle('top-[-100%]');
+    }
+>>>>>>> Stashed changes
 </script>
+
   <!-- slider_area_start -->
   <div class="slider_area" id="home">
     <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
