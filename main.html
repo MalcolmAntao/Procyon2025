@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</head>
+
+<body class="font-[Poppins] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] v-screen">
+    <header class="bg-white">
+        <header class="flex justify-between items-center w-[92%]  mx-auto">
+           <!-- Include Google Fonts -->
+
+
+<div class="text-blue-500 font-bold text-lg p-3" style="font-family: 'Lobster', cursive;">
+    PROCYON 2025
+</div>
+
+<div class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5 z-50">
+    <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+        <li>
+            <a class="hover:text-blue-500" href="#">Home</a>
+        </li>
+        <li>
+            <a class="hover:text-blue-500" href="#">About</a>
+        </li>
+        <li>
+            <a class="hover:text-blue-500" href="#">Schedule</a>
+        </li>
+        <li>
+            <a class="hover:text-blue-500" href="#">Glimpses</a>
+        </li>
+        <li>
+            <a class="hover:text-blue-500" href="#">Sponsors</a>
+        </li>
+        <li>
+            <a class="hover:text-blue-500" href="#">Contact</a>
+        </li>
+    </ul>
+</div>
+
+          
+            <div class="flex items-center gap-6">
+                <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-[#87acec]">Register</button>
+                <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
+            </div>
+     
+</header>
+    <!-- Hero Section -->
+    <div 
+    class="relative bg-cover bg-center h-[70vh]" 
+    style="background-image: url('./assets/images/head-featured-bg.jpg');">
+    <!-- Background Overlay -->
+    <div class="absolute inset-0 bg-pink-900 bg-opacity-50"></div>
+    
+    <!-- Centered Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-10">
+        <!-- Event Badge -->
+        <div class="bg-white text-pink-900 font-bold text-2xl md:text-4xl px-4 py-2 rounded-md mb-5">
+            PROCYON 2K24
+        </div>
+        <!-- Heading -->
+        <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold text-white tracking-wide uppercase mb-4 drop-shadow-lg">
+            Welcome!
+        </h1>
+        
+        <!-- Subheading -->
+        <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-light mb-4 text-white">
+            The Biggest Cultural Event in DBCE
+        </p>
+        
+        
+        <!-- Event Date -->
+        <span class="bg-white text-black px-4 py-2 rounded-md text-xs sm:text-sm md:text-base">
+            4th & 5th March, 2024
+        </span>
+    </div>
+</div>
+
+    <script>
+        const navLinks = document.querySelector('.nav-links')
+        function onToggleMenu(e){
+            e.name = e.name === 'menu' ? 'close' : 'menu'
+            navLinks.classList.toggle('top-[9%]')
+        }
+    </script>
+</body>
+
+</html>
