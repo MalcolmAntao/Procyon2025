@@ -25,6 +25,10 @@
 /* small mobile :320px. */
 /* Large Mobile :480px. */
 /* line 6, ../../Arafath/CL/December/236. Event-02/HTML/scss/theme-default.scss */
+* {
+  caret-color: transparent;
+}
+
 body {
   font-family: "Muli", sans-serif;
   font-weight: normal;
