@@ -63,7 +63,11 @@
         
         <!-- Register Button & Menu Icon -->
         <div class="flex items-center gap-4">
-            <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition hidden md:block">Register</button>
+          <button 
+          class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition hidden md:block"
+          id="registerbtn" 
+          onclick="openRegisterModal()">Register</button>
+        
             <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
         </div>
     </div>
@@ -903,27 +907,28 @@
 
 
   <!-- Register Modal -->
-  <div id="registerModal" class="modal1" style="display: none;">
-    <div class="modal-content1">
-      <span class="close" onclick="closeRegisterModal()">&times;</span>
-      <h2 style=" display: flex; font-size: 2rem; align-items: center; justify-content: center;">Login</h2>
-      <form id="registerForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+<div id="registerModal" class="modal1" style="display: none;">
+  <div class="modal-content1">
+    <span class="close" onclick="closeRegisterModal()">&times;</span>
+    <h2 style=" display: flex; font-size: 2rem; align-items: center; justify-content: center;">Login</h2>
+    <form id="registerForm" action="login.php" method="POST"> <!-- Added action and method -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="username" required> <!-- Changed name to 'username' -->
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
 
-        <label for="eventType">Event Type:</label>
-        <select id="eventType" name="eventType" required>
-          <option value="Department">Department</option>
-          <option value="Class">Class</option>
-        </select>
+      <label for="eventType">Event Type:</label>
+      <select id="eventType" name="event-category" required> <!-- Changed name to 'event-category' -->
+        <option value="class-event">Class</option>
+        <option value="department-event">Department</option>
+      </select>
 
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
-    </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
   </div>
+</div>
+
 
   <style>
     /* Modal Background */
@@ -1959,6 +1964,17 @@ ul{
   	 				<a href="#"><i class="fab fa-instagram"></i></a>
   	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
   	 			</div>
+          
+           <div class="col-xl-3 col-lg-3 d-none d-lg-block mt-3 mb-3">
+            <div class="buy_tkt">
+              <div class="book_btn d-none d-lg-block">
+                <button id="registerbtn" onclick="openRegisterModal()" class="boxed-btn3 wow fadeInUp"
+                  data-wow-duration="1s" data-wow-delay=".6s">Register</button>
+              </div>
+            </div>
+          </div>
+          
+
   	 		</div>
   	 	</div>
   	 </div>
