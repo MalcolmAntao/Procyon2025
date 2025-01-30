@@ -190,6 +190,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
+           <!-- Top Row: General Rules & Event Order -->
+           <div class="button-row">
+            <button id="generalRulesBtn" class="btn custom-btn" onclick="showGeneralRules()">General Rules</button>
+            <button id="eventOrderBtn" class="btn custom-btn" onclick="showEventOrder()">Event Order</button>
+          </div>
           <div class="section_title text-center mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
             <h3>Schedule</h3>
           </div>
@@ -198,15 +203,14 @@
       <!-- Day Buttons -->
       <div class="row justify-content-center mb-5">
         <div class="col-lg-12 text-center">
-          <!-- General Rules Button -->
-          <button id="generalRulesBtn" class="btn btn-secondary mb-3 " onclick="showGeneralRules()">General Rules</button>
-          <!-- Event Order Button -->
-          <button id="eventOrderBtn" class="btn btn-secondary mb-3" onclick="showEventOrder()">Event Order</button>
-          <!-- Day 1 and Day 2 Buttons -->
-          <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center">
-            <button id="day1Btn" class="btn btn-primary mb-3 mb-sm-0 ml-sm-4" onclick="showEvents('day1')">Day 1 (3rd March)</button>
-            <button id="day2Btn" class="btn btn-primary mb-3 mb-sm-0 ml-sm-4" onclick="showEvents('day2')">Day 2 (4th March)</button>
+          <div class="button-container">
+            <!-- Bottom Row: Day 1 & Day 2 -->
+            <div class="button-row">
+              <button id="day1Btn" class="btn custom-btn" onclick="showEvents('day1')">Day 1 (3rd March)</button>
+              <button id="day2Btn" class="btn custom-btn" onclick="showEvents('day2')">Day 2 (4th March)</button>
+            </div>
           </div>
+          
         </div>
       </div>
 
@@ -1140,29 +1144,43 @@
 
   <!-- CSS for Modal -->
   <style>
-    /* Modal Styles */
-    #generalRulesBtn, #eventOrderBtn {
-      background: linear-gradient(45deg, rgb(211, 16, 211), turquoise);
-      color: white;
-      /* Text color */
-      border: none;
-      transition: background 0.3s ease;
-    }
+   /* Button Styling */
+.custom-btn {
+  background: linear-gradient(45deg, rgb(211, 16, 211), turquoise);
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  transition: background 0.3s ease;
+  margin: 5px; /* Adds spacing between buttons */
+  min-width: 160px; /* Ensures uniform button size */
+  text-align: center;
+}
 
-    /* Ensure the generalRulesBtn stays centered and above the day buttons */
-    #generalRulesBtn, #eventOrderBtn {
-      display: block;
-      margin: 0 auto 15px;
-      /* Centers the button and adds space below it */
-      font-size: 20px;
-    }
+/* Container for all buttons */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    .d-flex {
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      /* Stacks the buttons vertically on small screens */
-    }
+/* Align buttons in rows */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Adds space between buttons */
+  margin-bottom: 15px;
+}
+
+/* Responsive Behavior */
+@media (max-width: 576px) {
+  .button-row {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+}
+
 
     /* Flexbox layout for the coordinator info */
     .coordinator-container {
