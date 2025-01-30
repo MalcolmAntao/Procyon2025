@@ -820,6 +820,7 @@
     </div>
   </div>
 
+
   <!-- Event Order Modal -->
   <div id="eventOrderModal" class="modal" style="display: none;" onclick="closeEventOrderModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
@@ -1092,19 +1093,23 @@
         font-size: 14px;
         padding: 10px;
       }
+
+      .modal-text-container p {
+        color: white; /* Set text color to white */
+        line-height: 1.2; /* Reduce line spacing */
+        margin: 2px 0; /* Reduce margin to keep text closer */
+      }
+      
     }
+    .modal-text-container p {
+  color: white; /* Set text color to white */
+  line-height: 1.2; /* Reduce line spacing */
+  margin: 2px 0; /* Reduce margin to keep text closer */
+}
+
   </style>
   <!-- JavaScript -->
   <script>
-    function showEvents(day) {
-      document.getElementById('day1Events').style.display = 'none';
-      document.getElementById('day2Events').style.display = 'none';
-      if (day === 'day1') {
-        document.getElementById('day1Events').style.display = 'block';
-      } else if (day === 'day2') {
-        document.getElementById('day2Events').style.display = 'block';
-      }
-    }
     function showEventDetails(day, eventId) {
       const eventDetails = {
         day1: {
@@ -1162,27 +1167,27 @@
           studentCoordinatorContainer.appendChild(coordinatorItem);
         });
 
-        // Display Faculty Coordinators
-        const facultyCoordinatorContainer = document.getElementById("facultyCoordinators");
-        facultyCoordinatorContainer.innerHTML = ''; // Clear any previous content
-        details.facultyCoordinators.forEach(coordinator => {
-          const coordinatorItem = document.createElement('p');
-          coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
-          facultyCoordinatorContainer.appendChild(coordinatorItem);
-        });
+    // Display Faculty Coordinators
+    const facultyCoordinatorContainer = document.getElementById("facultyCoordinators");
+    facultyCoordinatorContainer.innerHTML = "";
+    details.facultyCoordinators.forEach((coordinator) => {
+      const coordinatorItem = document.createElement("p");
+      coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
+      facultyCoordinatorContainer.appendChild(coordinatorItem);
+    });
 
-        // Display Contact Numbers
-        const contactContainer = document.getElementById("contactNumbers");
-        contactContainer.innerHTML = ''; // Clear any previous content
-        details.contactNumbers.forEach(contact => {
-          const contactItem = document.createElement('p');
-          contactItem.innerHTML = `<strong>${contact}</strong>`;
-          contactContainer.appendChild(contactItem);
-        });
-      }
+    // Display Contact Numbers
+    const contactContainer = document.getElementById("contactNumbers");
+    contactContainer.innerHTML = "";
+    details.contactNumbers.forEach((contact) => {
+      const contactItem = document.createElement("p");
+      contactItem.innerHTML = `<strong>${contact}</strong>`;
+      contactContainer.appendChild(contactItem);
+    });
+  }
 
-      const modal = document.getElementById("eventDetailsModal");
-      modal.style.display = "flex";
+  const modal = document.getElementById("eventDetailsModal");
+  modal.style.display = "flex";
 
       // Close modal on outside click
       modal.addEventListener("click", function (e) {
