@@ -975,71 +975,101 @@ h3 {
   top: -1px;
 }
 
-/* Basic layout for header */
-header {
-  position: sticky;
+/* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+.header-area {
+  left: 0;
+  right: 0;
+  width: 100%;
   top: 0;
-  z-index: 10;
-  background-color: #1a202c; /* bg-gray-800 */
+  z-index: 99;
+  position: absolute;
 }
 
-/* Mobile view */
 @media (max-width: 767px) {
+  /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
   .header-area {
-      padding-top: 0;
-  }
-  /* Flex behavior for mobile */
-  header .container {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-  }
-  
-  .nav-links {
-      display: none; /* Hidden by default */
-  }
-
-  .nav-links.open {
-      top: 9%; /* Mobile menu open state */
-      display: block;
-  }
-
-  .nav-links a {
-      display: block;
-      padding: 1rem;
-      text-align: center;
-  }
-
-  ion-icon {
-      font-size: 1.5rem;
+    padding-top: 0;
   }
 }
 
-/* Desktop view */
-@media (min-width: 768px) {
-  .header-area .main-menu {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 1, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area {
+    padding-top: 0;
   }
-  
-  .nav-links {
-      display: none; /* Hide mobile menu */
-  }
-  
-  .nav-links.open {
-      display: block;
-  }
+}
 
-  header .container {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 20px;
-  }
+/* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+.header-area .main-header-area {
+  background: transparent;
+  padding-top: 28px;
+}
 
-  /* Register button */
-  #registerbtn {
-      display: inline-block;
+@media (max-width: 767px) {
+  /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding: 10px 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding: 10px 10px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding-top: 0px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  /* line 16, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area {
+    padding-top: 0px;
+  }
+}
+
+/* line 32, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+.header-area .main-header-area .logo-img {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  /* line 32, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 32, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img {
+    text-align: left;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  /* line 32, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img {
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
+  /* line 46, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img img {
+    width: 70px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 46, ../../Arafath/CL/December/236. Event-02/HTML/scss/_header.scss */
+  .header-area .main-header-area .logo-img img {
+    width: 70px;
   }
 }
 
