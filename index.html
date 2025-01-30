@@ -44,8 +44,8 @@
         <![endif]-->
 
   <!-- header-start hello -->
-  <header class="bg-gray-800 py-4 px-6 md:px-12 font-[Poppins] bg-gray-900 text-white sticky top-0 z-10">
-    <div class="flex justify-between items-center w-full">
+  <header class="bg-gray-800 py-4 px-6 md:px-12 font-[Poppins] bg-gray-900 text-white top-0 z-10 ">
+    <div class="flex justify-between items-center w-full sticky">
         <!-- Logo -->
         <div class="text-blue-400 font-bold text-2xl" style="font-family: 'Lobster', cursive;">
             PROCYON 2025
@@ -63,8 +63,7 @@
         
         <!-- Register Button & Menu Icon -->
         <div class="flex items-center gap-4">
-            <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition hidden md:block"  id="registerbtn" onclick="openRegisterModal()" class="boxed-btn3 wow fadeInUp"
-            data-wow-duration="1s" data-wow-delay=".6s">Register</button>
+            <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition hidden md:block">Register</button>
             <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
         </div>
     </div>
@@ -77,9 +76,10 @@
         <a href="#glimpses" class="block py-2 hover:text-blue-400">Glimpses</a>
         <a href="#sponsor" class="block py-2 hover:text-blue-400">Sponsors</a>
         <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
-        <button id="registerbtn" onclick="openRegisterModal()" class="boxed-btn3 wow fadeInUp"
-                      data-wow-duration="1s" data-wow-delay=".6s">Register</button>
-        
+       <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 mt-3"id="registerbtn" onclick="openRegisterModal()">
+  Register
+</button>
+
     </div>
 </header>
 
