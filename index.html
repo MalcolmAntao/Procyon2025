@@ -821,8 +821,10 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <div class="modal-body">
-        <h3 id="eventAKA" class="modal-text">Event AKA</h3>
+        <h3 id="eventTitle" class="modal-text">Event AKA</h3>
+        <p><strong class="modal-text">AKA:</strong> <span id="eventAKA" class="modal-text"></span></p>
         <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
+        <p><strong class="modal-text">Time:</strong> <span id="eventTime" class="modal-text"></span></p>
         <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
         <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
         <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
@@ -1626,8 +1628,10 @@
 
       const details = eventDetails[day][eventId];
       if (details) {
+        document.getElementById("eventTitle").innerText = details.title;
         document.getElementById("eventAKA").innerText = details.aka;
         document.getElementById("eventDate").innerText = details.date;
+        document.getElementById("eventTime").innerText = details.time;
         document.getElementById("eventType").innerText = details.type;
         document.getElementById("eventScoring").innerText = details.scoring;
         document.getElementById("eventVenue").innerText = details.venue;
