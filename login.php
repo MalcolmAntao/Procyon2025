@@ -42,8 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["event_category"] = $event_category;
 
         // Define Google Form links
-        $classEventForm = "https://docs.google.com/forms/d/e/YOUR_CLASS_FORM_ID/viewform"; // Replace with actual link
-        $departmentEventForm = "https://docs.google.com/forms/d/e/YOUR_DEPARTMENT_FORM_ID/viewform"; // Replace with actual link
+        $classEventForm = "https://forms.gle/9Q9Lg4a4E3dYNK8bA"; // Replace with actual link
+        $departmentEventForm = "https://forms.gle/9Q9Lg4a4E3dYNK8bA"; // Replace with actual link
 
         // Redirect based on event type
         if ($event_category == "class-event") {
