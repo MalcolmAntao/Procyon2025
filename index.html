@@ -1288,7 +1288,7 @@
               "6. Skill",
               "7. Overall performance"
             ],
-            genres: [
+            genre: [
               "1. Rock/Alternative Rock",
               "2. Pop/Pop Rock",
               "3. Blues/Jazz",
@@ -1831,7 +1831,7 @@
             element.parentElement.style.display = "none"; // Hide parent container if undefined
           }
         });
-
+        
         // Display Judging Criteria
         const judgementContainer = document.getElementById("eventJudgement");
         if (details.judgement && details.judgement.length > 0) {
@@ -1846,6 +1846,39 @@
         } else {
           judgementContainer.parentElement.style.display = "none";
         }
+// Display Pantry
+const pantryContainer = document.getElementById("eventPantry");
+const pantryParent = pantryContainer.parentElement; // The <p> tag that contains the Pantry section
+if (details.pantry && details.pantry.length > 0) {
+  pantryContainer.innerHTML = ""; // Clear previous content
+  details.pantry.forEach((item) => {
+    const p = document.createElement("p");
+    p.innerText = item;
+    p.classList.add("modal-text-container");
+    pantryContainer.appendChild(p);
+  });
+  pantryParent.style.display = "block"; // Show the section if data exists
+} else {
+  pantryContainer.innerHTML = ""; // Clear any previous content
+  pantryParent.style.display = "none"; // Hide the section if data is absent
+}
+
+// Display Genre
+const genreContainer = document.getElementById("eventGenre");
+const genreParent = genreContainer.parentElement; // The <p> tag that contains the Genre section
+if (details.genre && details.genre.length > 0) {
+  genreContainer.innerHTML = ""; // Clear previous content
+  details.genre.forEach((item) => {
+    const p = document.createElement("p");
+    p.innerText = item;
+    p.classList.add("modal-text-container");
+    genreContainer.appendChild(p);
+  });
+  genreParent.style.display = "block"; // Show the section if data exists
+} else {
+  genreContainer.innerHTML = ""; // Clear any previous content
+  genreParent.style.display = "none"; // Hide the section if data is absent
+}
 
         // Display Instructions
         const instructionsContainer = document.getElementById("eventInstructions");
@@ -1866,6 +1899,7 @@
               if (instruction.subInstructions) {
                 instruction.subInstructions.forEach((subInstruction) => {
                   const subP = document.createElement("p");
+                  subP.style.color = "white";
                   subP.innerText = `    ${subInstruction}`;
                   subP.style.marginLeft = "20px";
                   subP.classList.add("modal-text-container");
