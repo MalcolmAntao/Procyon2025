@@ -2,7 +2,6 @@
 session_start(); // Start session for user authentication
 require_once "connection.php"; // Include database connection
 ?>
-
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -220,7 +219,7 @@ require_once "connection.php"; // Include database connection
         </div>
         <div
           class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-          <h3 class="text-lg text-white">Lights Camera Action 💡🎥🎬<</h3>
+          <h3 class="text-lg text-white">Lights Camera Action 💡🎥<</h3>
         </div>
         <div
           class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
@@ -989,7 +988,7 @@ require_once "connection.php"; // Include database connection
           <option value="department-event">Department</option>
         </select>
 
-        <button type="submit" class="submit-btn">Submit</button>
+        <button type="submit" class="submit-btn">Login</button>
       </form>
     </div>
   </div>
