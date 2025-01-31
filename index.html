@@ -1123,10 +1123,16 @@
               "3. Optimization of Algorithms"
             ],
             instructions: [
-              "1. Bring a laptop.",
-              "2. Ensure your code runs efficiently.",
-              "3. Internet access will not be provided."
-            ],
+            "1. Bring a laptop.",
+            {
+              text: "2. Ensure your code runs efficiently.",
+              subInstructions: [
+                "i. Use optimal data structures.",
+                "ii. Avoid redundant loops."
+              ]
+            },
+            "3. Internet access will not be provided."
+          ],
             studentCoordinators: ["John Doe", "Alice Smith"],
             facultyCoordinators: ["Dr. Smith", "Prof. Green"],
             contactNumbers: ["+91 12345 67890", "+91 09876 54321"],
@@ -1179,14 +1185,32 @@
     });
     
     // Display Instructions
-    const instructionsContainer = document.getElementById("eventInstructions");
-    instructionsContainer.innerHTML = ""; // Clear previous content
-    details.instructions.forEach((instruction) => {
-      const p = document.createElement("p");
-      p.innerText = instruction;
-      p.classList.add("modal-text-container"); // Apply styling
-      instructionsContainer.appendChild(p);
-    });
+const instructionsContainer = document.getElementById("eventInstructions");
+instructionsContainer.innerHTML = ""; // Clear previous content
+details.instructions.forEach((instruction) => {
+  if (typeof instruction === "string") {
+    const p = document.createElement("p");
+    p.innerText = instruction;
+    p.classList.add("modal-text-container"); // Apply styling
+    instructionsContainer.appendChild(p);
+  } else if (typeof instruction === "object") {
+    const mainInstruction = document.createElement("p");
+    mainInstruction.innerText = instruction.text;
+    mainInstruction.classList.add("modal-text-container");
+    instructionsContainer.appendChild(mainInstruction);
+
+    if (instruction.subInstructions) {
+      instruction.subInstructions.forEach((subInstruction) => {
+        const subP = document.createElement("p");
+        subP.innerText = `    ${subInstruction}`; // Add tab-like spacing
+        subP.style.marginLeft = "20px"; // Or use CSS classes for consistent styling
+        subP.classList.add("modal-text-container");
+        instructionsContainer.appendChild(subP);
+      });
+    }
+  }
+});
+
     
     
         // Display Student Coordinators
