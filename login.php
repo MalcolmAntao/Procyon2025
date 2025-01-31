@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "connection.php"; // Ensure this file contains a valid PDO connection
+require_once "connection.php"; // Ensure this contains a valid PDO connection
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
@@ -8,7 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $event_category = $_POST["event-category"]; // Dropdown selection
 
     if (empty($username) || empty($password)) {
-        die("Please fill in all fields.");
+        echo "Please fill in all fields.";
+        exit();
     }
 
     try {
@@ -22,7 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } elseif ($event_category == "department-event") {
             $query = "SELECT * FROM departmentregistration WHERE REPLACE(LOWER(username), ' ', '') = :username AND password = :password";
         } else {
-            die("Invalid event category.");
+            echo "Invalid event category.";
+            exit();
         }
 
         $stmt = $pdo->prepare($query);
@@ -32,7 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if (!$user) {
-            die("Invalid credentials or not registered in this category.");
+            echo "Invalid credentials or not registered in this category.";
+            exit();
         }
 
         $_SESSION["username"] = $username;
@@ -44,15 +47,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Redirect based on event type
         if ($event_category == "class-event") {
-            header("Location: $classEventForm");
+            echo "<script>window.location.href = '$classEventForm';</script>";
         } elseif ($event_category == "department-event") {
-            header("Location: $departmentEventForm");
+            echo "<script>window.location.href = '$departmentEventForm';</script>";
         }
         exit();
     } catch (PDOException $e) {
-        die("Database error: " . $e->getMessage());
+        echo "Database error: " . $e->getMessage();
+        exit();
     }
 } else {
-    die("Invalid request.");
+    echo "Invalid request.";
+    exit();
 }
 ?>

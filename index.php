@@ -3,7 +3,6 @@ if (!isset($_SESSION)) {
 	session_start();
 }
 ?>
-
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -977,7 +976,7 @@ if (!isset($_SESSION)) {
     <div class="modal-content1">
       <span class="close" onclick="closeRegisterModal()">&times;</span>
       <h2 style=" display: flex; font-size: 2rem; align-items: center; justify-content: center;">Login</h2>
-      <form id="registerForm" action="login.php" method="POST"> <!-- Added action and method -->
+      <form id="registerForm" action="login.php" method="POST" onsubmit="return handleSubmit();">
         <label for="name">Name:</label>
         <input type="text" id="name" name="username" required> <!-- Changed name to 'username' -->
 
@@ -994,7 +993,15 @@ if (!isset($_SESSION)) {
       </form>
     </div>
   </div>
+<script>
+  function handleSubmit() {
+    setTimeout(() => {
+        document.getElementById("registerModal").style.display = "none";
+    }, 500);
+    return true; // Allow form submission
+}
 
+</script>
 
   <style>
     /* Modal Background */
