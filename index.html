@@ -821,8 +821,10 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <div class="modal-body">
-        <h3 id="eventAKA" class="modal-text">Event AKA</h3>
+        <h3 id="eventTitle" class="modal-text">Event AKA</h3>
+        <p><strong class="modal-text">AKA:</strong> <span id="eventAKA" class="modal-text"></span></p>
         <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
+        <p><strong class="modal-text">Time:</strong> <span id="eventTime" class="modal-text"></span></p>
         <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
         <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
         <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
@@ -1157,6 +1159,7 @@
         {
           1: 
           {
+            title: "Ghumat Aarti",
             aka: "Ghumat Aarti",
             date: "3rd March 2025",
             time: "10:30 AM - 11:30 AM",
@@ -1189,23 +1192,35 @@
           },
           2:
           {
-            aka: "Mr. & Mrs. Procyon",
-            date: "12 Feb 2020",
-            time: " ",
-            type: "Cultural",
-            scoring: "Judges' Scores",
-            venue: "Main Hall",
-            participants: "Teams of 2",
-            duration: "2 hours",
+            title: "The Voice",
+            aka: "Solo Singing ",
+            date: "3rd March 2025",
+            time: "11:30 AM - 1:30 PM",
+            type: "Class",
+            scoring: "Silver",
+            venue: "Main Stage",
+            participants: "Solo performance only",
+            duration: "5 minutes",
             judgement: [
-              "1. Talent",
-              "2. Stage Presence",
-              "3. Costume Design"
+              "1. Voice modulation",
+              "2. Beauty & quality of tone",
+              "3. Performance",
+              "4. Stage presence",
+              "5. Coordination with music"
             ],
             instructions: [
-              "1. Dress code: Traditional attire.",
-              "2. Participants must bring their own props.",
-              "3. Vulgarity is strictly prohibited."
+              "1. Participants can choose any song in any language.",
+              "2. Self-composed songs are allowed.",
+              "3. A maximum of two musicians can accompany the participant.",
+              "4. Participants will not be judged based on the musicians' skills.",
+              "5. Accompanying musicians must bring their own instruments.",
+              "6. Singers may play instruments as long as they sing as well.",
+              "7. The first 3 minutes will be for the participant’s chosen song; the next 2 minutes will be a challenge song.",
+              "8. The challenge song will be assigned by drawing lots.",
+              "9. Singers may provide karaoke tracks to the coordinators by 2nd March 2025, 5:00 PM.",
+            " 10. If the karaoke track contains any vocals (main or backup), the participant will be disqualified.",
+            " 11. Marks will be deducted if the participant exceeds the time limit.",
+            " 12. Indecent lyrics are strictly prohibited."
             ],
             studentCoordinators: ["Jane Doe", "Bob Smith"],
             facultyCoordinators: ["Dr. Brown", "Prof. White"],
@@ -1213,22 +1228,34 @@
           },
           3:
           {
-            aka: "Mr. & Mrs. Procyon",
-            date: "12 Feb 2020",
-            type: "Cultural",
-            scoring: "Judges' Scores",
-            venue: "Main Hall",
-            participants: "Teams of 2",
-            duration: "2 hours",
+            title:"Skit",
+            aka: "Skit",
+            date: "3rd March 2025",
+            time: "2:00 PM - 3:00 PM ",
+            type: "Department",
+            theme: "The Great Lab Escape",
+            scoring: "Gold",
+            venue: "Main Stage",
+            participants: "10-15 per department",
+            duration: "10-15 mins (including setup time)",
             judgement: [
-              "1. Talent",
-              "2. Stage Presence",
-              "3. Costume Design"
+              "1. Story",
+              "2. Acting",
+              "3. Stage presence",
+              "4. Role effectiveness",
+              "5. Overall performance",
+              "6. Costumes",
+              "7. Props"
             ],
             instructions: [
-              "1. Dress code: Traditional attire.",
-              "2. Participants must bring their own props.",
-              "3. Vulgarity is strictly prohibited."
+              "1. One skit per department.",
+              "2. A maximum of two faculty participants earns 25 bonus points.",
+              "3. Suicidal topics and vulgarity are strictly banned from portrayal in the event, as they will lead to disqualification of the entire team.",
+              "4. Participants are not allowed to make any brutal jokes about faculty; this will result in reduced points.",
+              "5. The use of props is allowed; however, no extra time will be given for stage setup.",
+              "6. Marks will be deducted if the team exceeds its appointed time.",
+              "7. Faculty members cannot be given a major role.",
+              "8. The entire skit cannot be narrated by narrators."
             ],
             studentCoordinators: ["Jane Doe", "Bob Smith"],
             facultyCoordinators: ["Dr. Brown", "Prof. White"],
@@ -1238,6 +1265,7 @@
           {
             aka: "Mr. & Mrs. Procyon",
             date: "12 Feb 2020",
+            time: " ",
             type: "Cultural",
             scoring: "Judges' Scores",
             venue: "Main Hall",
@@ -1261,6 +1289,7 @@
           {
             aka: "Mr. & Mrs. Procyon",
             date: "12 Feb 2020",
+            time: " ",
             type: "Cultural",
             scoring: "Judges' Scores",
             venue: "Main Hall",
@@ -1284,6 +1313,7 @@
           {
             aka: "Mr. & Mrs. Procyon",
             date: "12 Feb 2020",
+            time: " ",
             type: "Cultural",
             scoring: "Judges' Scores",
             venue: "Main Hall",
@@ -1307,6 +1337,7 @@
           {
             aka: "Mr. & Mrs. Procyon",
             date: "12 Feb 2020",
+            time: " ",
             type: "Cultural",
             scoring: "Judges' Scores",
             venue: "Main Hall",
@@ -1330,6 +1361,7 @@
           {
             aka: "Mr. & Mrs. Procyon",
             date: "12 Feb 2020",
+            time: " ",
             type: "Cultural",
             scoring: "Judges' Scores",
             venue: "Main Hall",
@@ -1353,6 +1385,7 @@
           {
             aka: "Mr. & Mrs. Procyon",
             date: "12 Feb 2020",
+            time: " ",
             type: "Cultural",
             scoring: "Judges' Scores",
             venue: "Main Hall",
@@ -1376,6 +1409,7 @@
           {
             aka: "Mr. & Mrs. Procyon",
             date: "12 Feb 2020",
+            time: " ",
             type: "Cultural",
             scoring: "Judges' Scores",
             venue: "Main Hall",
@@ -1402,6 +1436,7 @@
           {
             aka: "Design Sprint",
             date: "13 Feb 2020",
+            time: " ",
             type: "Design",
             scoring: "Creativity and Feasibility",
             venue: "Room 202",
@@ -1431,6 +1466,7 @@
           {
             aka: "Design Sprint",
             date: "13 Feb 2020",
+            time: " ",
             type: "Design",
             scoring: "Creativity and Feasibility",
             venue: "Room 202",
@@ -1460,6 +1496,7 @@
           {
             aka: "Design Sprint",
             date: "13 Feb 2020",
+            time: " ",
             type: "Design",
             scoring: "Creativity and Feasibility",
             venue: "Room 202",
@@ -1489,6 +1526,7 @@
           {
             aka: "Design Sprint",
             date: "13 Feb 2020",
+            time: " ",
             type: "Design",
             scoring: "Creativity and Feasibility",
             venue: "Room 202",
@@ -1518,6 +1556,7 @@
           {
             aka: "Design Sprint",
             date: "13 Feb 2020",
+            time: " ",
             type: "Design",
             scoring: "Creativity and Feasibility",
             venue: "Room 202",
@@ -1547,6 +1586,7 @@
           {
             aka: "Design Sprint",
             date: "13 Feb 2020",
+            time: " ",
             type: "Design",
             scoring: "Creativity and Feasibility",
             venue: "Room 202",
@@ -1576,6 +1616,7 @@
           {
             aka: "Design Sprint",
             date: "13 Feb 2020",
+            time: " ",
             type: "Design",
             scoring: "Creativity and Feasibility",
             venue: "Room 202",
@@ -1606,8 +1647,10 @@
 
       const details = eventDetails[day][eventId];
       if (details) {
+        document.getElementById("eventTitle").innerText = details.title;
         document.getElementById("eventAKA").innerText = details.aka;
         document.getElementById("eventDate").innerText = details.date;
+        document.getElementById("eventTime").innerText = details.time;
         document.getElementById("eventType").innerText = details.type;
         document.getElementById("eventScoring").innerText = details.scoring;
         document.getElementById("eventVenue").innerText = details.venue;
