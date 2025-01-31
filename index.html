@@ -19,7 +19,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   <!-- CSS here -->
@@ -44,51 +45,51 @@
         <![endif]-->
 
   <!-- header-start hello -->
-<header class="bg-gray-800 py-4 px-6 md:px-12 font-[Poppins] bg-gray-900 text-white top-0 z-10">
-  <div class="container mx-auto flex justify-between items-center">
+  <header class="bg-gray-800 py-4 px-6 md:px-12 font-[Poppins] bg-gray-900 text-white top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
       <!-- Logo -->
       <div class="text-blue-400 font-bold text-2xl" style="font-family: 'Lobster', cursive;">
-          PROCYON 2025
+        PROCYON 2025
       </div>
-      
+
       <!-- Navigation -->
       <nav class="hidden md:flex gap-8">
-          <a href="#home" class="hover:text-blue-400 transition">Home</a>
-          <a href="#about" class="hover:text-blue-400 transition">About</a>
-          <a href="#schedule" class="hover:text-blue-400 transition">Schedule</a>
-          <a href="#glimpses" class="hover:text-blue-400 transition">Glimpses</a>
-          <a href="#sponsor" class="hover:text-blue-400 transition">Sponsors</a>
-          <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+        <a href="#home" class="hover:text-blue-400 transition">Home</a>
+        <a href="#about" class="hover:text-blue-400 transition">About</a>
+        <a href="#schedule" class="hover:text-blue-400 transition">Schedule</a>
+        <a href="#glimpses" class="hover:text-blue-400 transition">Glimpses</a>
+        <a href="#sponsor" class="hover:text-blue-400 transition">Sponsors</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
       </nav>
-      
+
       <!-- Register Button & Menu Icon -->
       <div class="flex items-center gap-4">
-          <button 
-          class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition hidden md:block"
-          id="registerbtn" 
-          onclick="openRegisterModal()">Register</button>
-          <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
+        <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition hidden md:block"
+          id="registerbtn" onclick="openRegisterModal()">Register</button>
+        <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
       </div>
-  </div>
-  
-  <!-- Mobile Menu -->
-  <div class="nav-links absolute top-[-100%] left-0 w-full bg-gray-800 text-center py-4 transition-all duration-300 md:hidden z-10">
+    </div>
+
+    <!-- Mobile Menu -->
+    <div
+      class="nav-links absolute top-[-100%] left-0 w-full bg-gray-800 text-center py-4 transition-all duration-300 md:hidden z-10">
       <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
       <a href="#about" class="block py-2 hover:text-blue-400">About</a>
       <a href="#schedule" class="block py-2 hover:text-blue-400">Schedule</a>
       <a href="#glimpses" class="block py-2 hover:text-blue-400">Glimpses</a>
       <a href="#sponsor" class="block py-2 hover:text-blue-400">Sponsors</a>
       <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
-      <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 mt-3" id="registerbtn" onclick="openRegisterModal()">Register</button>
-  </div>
-</header>
-<!-- header-end -->
-<script>
-  function onToggleMenu(e) {
-    e.name = e.name === 'menu' ? 'close' : 'menu'; // Toggle between menu and close icon
-    document.querySelector('.nav-links').classList.toggle('top-[9%]'); // Toggle the visibility of the mobile menu
-}
-</script>
+      <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 mt-3"
+        id="registerbtn" onclick="openRegisterModal()">Register</button>
+    </div>
+  </header>
+  <!-- header-end -->
+  <script>
+    function onToggleMenu(e) {
+      e.name = e.name === 'menu' ? 'close' : 'menu'; // Toggle between menu and close icon
+      document.querySelector('.nav-links').classList.toggle('top-[9%]'); // Toggle the visibility of the mobile menu
+    }
+  </script>
   <!-- slider_area_start -->
   <div class="slider_area" id="home">
     <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
@@ -102,8 +103,10 @@
               <div class="shape_2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">
                 <img src="img/shape/shape_2.svg" alt="">
               </div>
-              <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s" style="position: relative";>PROCYON 2K25</h3>
-              <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s" style="position: relative";>3RD & 4TH MARCH 2025</span>
+              <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s" style="position: relative" ;>
+                PROCYON 2K25</h3>
+              <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s" style="position: relative" ;>3RD
+                & 4TH MARCH 2025</span>
             </div>
           </div>
         </div>
@@ -157,63 +160,81 @@
         activities are being organized, including:
       </p>
 
-      
-      <div class="p-6 rounded-lg shadow-lg bg-gray-800 flex flex-wrap gap-4 justify-center w-full max-w-5xl bg-gray-800">
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Ghumat Aarti</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">The Voice</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Skit</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Battle Of Bands</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Food Wizard</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Hoist The Banner</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">The Art Of Colors</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">DubbItUp</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Lights Camera Action</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Slow Mo</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Step Up Revolution</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Mr. and Ms. Procyon</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Rock The Ramp</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Street Play</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Treasure Hunt</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Face Painting</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Framed (On-Campus)</h3>
-        </div>
-    </div>
 
-      
-  
+      <div
+        class="p-6 rounded-lg shadow-lg bg-gray-800 flex flex-wrap gap-4 justify-center w-full max-w-5xl bg-gray-800">
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Ghumat Aarti</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">The Voice</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Skit</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Battle Of Bands</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Food Wizard</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Hoist The Banner</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">The Art Of Colors</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">DubbItUp</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Lights Camera Action</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Slow Mo</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Step Up Revolution</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Mr. and Ms. Procyon</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Rock The Ramp</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Street Play</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Treasure Hunt</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Face Painting</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Framed (On-Campus)</h3>
+        </div>
+      </div>
+
+
+
 
       <div class="text-center max-w-2xl">
         <h3 class="text-black text-base leading-relaxed" style="color: rgb(10, 10, 136);">
@@ -386,7 +407,8 @@
                       10:30 AM - 1:30 PM</h3>
                   </div>
                   <div class="thumb wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                    <img src="img/program_details/TheArtOfColorsNew.jpeg" alt="Event 1" onclick="showEventDetails('day1', 7)">
+                    <img src="img/program_details/TheArtOfColorsNew.jpeg" alt="Event 1"
+                      onclick="showEventDetails('day1', 7)">
                   </div>
                   <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"></h4>
                 </div>
@@ -571,8 +593,10 @@
       </div>
       <!-- Bottom Row: Day 1 & Day 2 -->
       <div class="button-row">
-        <button id="day1Btn" class="btn custom-btn" onclick="showEvents('day1')"><a href="#schedule">Day 1 (3rd March)</a> </button>
-        <button id="day2Btn" class="btn custom-btn" onclick="showEvents('day2')"><a href="#schedule">Day 2 (4th March)</a> </button>
+        <button id="day1Btn" class="btn custom-btn" onclick="showEvents('day1')"><a href="#schedule">Day 1 (3rd
+            March)</a> </button>
+        <button id="day2Btn" class="btn custom-btn" onclick="showEvents('day2')"><a href="#schedule">Day 2 (4th
+            March)</a> </button>
       </div>
     </div>
   </div>
@@ -775,45 +799,45 @@
     }
   </style>
 
-   <!-- Modal Popup for Event Details -->
- <div id="eventDetailsModal" class="modal" style="display: none">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-body">
-      <h3 id="eventAKA" class="modal-text">Event AKA</h3>
-      <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
-      <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
-      <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
-      <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
-      <p><strong class="modal-text">Participants:</strong> <span id="eventParticipants" class="modal-text"></span></p>
-      <p><strong class="modal-text">Duration:</strong> <span id="eventDuration" class="modal-text"></span></p>
-      <p><strong class="modal-text">Judgement Criteria:</strong></p>
-<div id="eventJudgement" class="modal-text-container"></div> <!-- Dynamic judging criteria -->
+  <!-- Modal Popup for Event Details -->
+  <div id="eventDetailsModal" class="modal" style="display: none">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-body">
+        <h3 id="eventAKA" class="modal-text">Event AKA</h3>
+        <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
+        <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
+        <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
+        <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
+        <p><strong class="modal-text">Participants:</strong> <span id="eventParticipants" class="modal-text"></span></p>
+        <p><strong class="modal-text">Duration:</strong> <span id="eventDuration" class="modal-text"></span></p>
+        <p><strong class="modal-text">Judgement Criteria:</strong></p>
+        <div id="eventJudgement" class="modal-text-container"></div> <!-- Dynamic judging criteria -->
 
-<p><strong class="modal-text">Instructions:</strong></p>
-<div id="eventInstructions" class="modal-text-container"></div> <!-- Dynamic instructions -->
+        <p><strong class="modal-text">Instructions:</strong></p>
+        <div id="eventInstructions" class="modal-text-container"></div> <!-- Dynamic instructions -->
 
 
-      <div class="coordinator-container">
-        <div class="coordinator-item">
-          <p><strong class="modal-text">Student Coordinators:</strong></p>
-          <div id="studentCoordinators" class="modal-text"></div> <!-- Dynamic student coordinators -->
+        <div class="coordinator-container">
+          <div class="coordinator-item">
+            <p><strong class="modal-text">Student Coordinators:</strong></p>
+            <div id="studentCoordinators" class="modal-text"></div> <!-- Dynamic student coordinators -->
+          </div>
+          <div class="coordinator-item">
+            <p><strong class="modal-text">Contact:</strong></p>
+            <div id="contactNumbers" class="modal-text"></div> <!-- Dynamic contact numbers -->
+          </div>
         </div>
-        <div class="coordinator-item">
-          <p><strong class="modal-text">Contact:</strong></p>
-          <div id="contactNumbers" class="modal-text"></div> <!-- Dynamic contact numbers -->
-        </div>
-      </div>
-      <br />
-      <div class="coordinator-container">
-        <div class="coordinator-item">
-          <p><strong class="modal-text">Faculty Coordinators:</strong></p>
-          <div id="facultyCoordinators" class="modal-text"></div> <!-- Dynamic faculty coordinators -->
+        <br />
+        <div class="coordinator-container">
+          <div class="coordinator-item">
+            <p><strong class="modal-text">Faculty Coordinators:</strong></p>
+            <div id="facultyCoordinators" class="modal-text"></div> <!-- Dynamic faculty coordinators -->
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
   <!-- Event Order Modal -->
   <div id="eventOrderModal" class="modal" style="display: none;" onclick="closeEventOrderModal(event)">
@@ -903,27 +927,27 @@
 
 
   <!-- Register Modal -->
-<div id="registerModal" class="modal1" style="display: none;">
-  <div class="modal-content1">
-    <span class="close" onclick="closeRegisterModal()">&times;</span>
-    <h2 style=" display: flex; font-size: 2rem; align-items: center; justify-content: center;">Login</h2>
-    <form id="registerForm" action="login.php" method="POST"> <!-- Added action and method -->
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="username" required> <!-- Changed name to 'username' -->
+  <div id="registerModal" class="modal1" style="display: none;">
+    <div class="modal-content1">
+      <span class="close" onclick="closeRegisterModal()">&times;</span>
+      <h2 style=" display: flex; font-size: 2rem; align-items: center; justify-content: center;">Login</h2>
+      <form id="registerForm" action="login.php" method="POST"> <!-- Added action and method -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="username" required> <!-- Changed name to 'username' -->
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
 
-      <label for="eventType">Event Type:</label>
-      <select id="eventType" name="event-category" required> <!-- Changed name to 'event-category' -->
-        <option value="class-event">Class</option>
-        <option value="department-event">Department</option>
-      </select>
+        <label for="eventType">Event Type:</label>
+        <select id="eventType" name="event-category" required> <!-- Changed name to 'event-category' -->
+          <option value="class-event">Class</option>
+          <option value="department-event">Department</option>
+        </select>
 
-      <button type="submit" class="submit-btn">Submit</button>
-    </form>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
   </div>
-</div>
 
 
   <style>
@@ -1089,10 +1113,14 @@
         padding: 10px;
       }
     }
+
     .modal-text-container p {
-      color: white; /* Set text color to white */
-      line-height: 0.5; /* Reduce line spacing */
-      margin: 2px 0; /* Reduce margin to keep text closer */
+      color: white;
+      /* Set text color to white */
+      line-height: 0.5;
+      /* Reduce line spacing */
+      margin: 2px 0;
+      /* Reduce margin to keep text closer */
     }
   </style>
   <!-- JavaScript -->
@@ -1109,7 +1137,8 @@
     function showEventDetails(day, eventId) {
       const eventDetails = {
         day1: {
-          1: {
+          1: 
+          {
             aka: "Coding Blitz",
             date: "12 Feb 2020",
             type: "Coding",
@@ -1123,20 +1152,43 @@
               "3. Optimization of Algorithms"
             ],
             instructions: [
-            "1. Bring a laptop.",
-            {
-              text: "2. Ensure your code runs efficiently.",
-              subInstructions: [
-                "i. Use optimal data structures.",
-                "ii. Avoid redundant loops."
-              ]
-            },
-            "3. Internet access will not be provided."
-          ],
+              "1. Bring a laptop.",
+              {
+                text: "2. Ensure your code runs efficiently.",
+                subInstructions: [
+                  "i. Use optimal data structures.",
+                  "ii. Avoid redundant loops."
+                ]
+              },
+              "3. Internet access will not be provided."
+            ],
             studentCoordinators: ["John Doe", "Alice Smith"],
             facultyCoordinators: ["Dr. Smith", "Prof. Green"],
             contactNumbers: ["+91 12345 67890", "+91 09876 54321"],
           },
+          2:
+          {
+            aka: "Mr. & Mrs. Procyon",
+            date: "12 Feb 2020",
+            type: "Cultural",
+            scoring: "Judges' Scores",
+            venue: "Main Hall",
+            participants: "Teams of 2",
+            duration: "2 hours",
+            judgement: [
+              "1. Talent",
+              "2. Stage Presence",
+              "3. Costume Design"
+            ],
+            instructions: [
+              "1. Dress code: Traditional attire.",
+              "2. Participants must bring their own props.",
+              "3. Vulgarity is strictly prohibited."
+            ],
+            studentCoordinators: ["Jane Doe", "Bob Smith"],
+            facultyCoordinators: ["Dr. Brown", "Prof. White"],
+            contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
+          }
         },
         day2: {
           1: {
@@ -1153,9 +1205,15 @@
               "Practical Feasibility"
             ],
             instructions: [
-              "Bring a sketch pad.",
-              "Prepare a 5-minute pitch.",
-              "Presentation slides are optional."
+              "1. Bring a laptop.",
+              {
+                text: "2. Ensure your code runs efficiently.",
+                subInstructions: [
+                  "i. Use optimal data structures.",
+                  "ii. Avoid redundant loops."
+                ]
+              },
+              "3. Internet access will not be provided."
             ],
             studentCoordinators: ["Jane Roe"],
             facultyCoordinators: ["Dr. Brown"],
@@ -1163,7 +1221,7 @@
           },
         },
       };
-    
+
       const details = eventDetails[day][eventId];
       if (details) {
         document.getElementById("eventAKA").innerText = details.aka;
@@ -1173,46 +1231,46 @@
         document.getElementById("eventVenue").innerText = details.venue;
         document.getElementById("eventParticipants").innerText = details.participants;
         document.getElementById("eventDuration").innerText = details.duration;
-    
-       // Display Judging Criteria
-    const judgementContainer = document.getElementById("eventJudgement");
-    judgementContainer.innerHTML = ""; // Clear previous content
-    details.judgement.forEach((point) => {
-      const p = document.createElement("p");
-      p.innerText = point;
-      p.classList.add("modal-text-container"); // Apply styling
-      judgementContainer.appendChild(p);
-    });
-    
-    // Display Instructions
-const instructionsContainer = document.getElementById("eventInstructions");
-instructionsContainer.innerHTML = ""; // Clear previous content
-details.instructions.forEach((instruction) => {
-  if (typeof instruction === "string") {
-    const p = document.createElement("p");
-    p.innerText = instruction;
-    p.classList.add("modal-text-container"); // Apply styling
-    instructionsContainer.appendChild(p);
-  } else if (typeof instruction === "object") {
-    const mainInstruction = document.createElement("p");
-    mainInstruction.innerText = instruction.text;
-    mainInstruction.classList.add("modal-text-container");
-    instructionsContainer.appendChild(mainInstruction);
 
-    if (instruction.subInstructions) {
-      instruction.subInstructions.forEach((subInstruction) => {
-        const subP = document.createElement("p");
-        subP.innerText = `    ${subInstruction}`; // Add tab-like spacing
-        subP.style.marginLeft = "20px"; // Or use CSS classes for consistent styling
-        subP.classList.add("modal-text-container");
-        instructionsContainer.appendChild(subP);
-      });
-    }
-  }
-});
+        // Display Judging Criteria
+        const judgementContainer = document.getElementById("eventJudgement");
+        judgementContainer.innerHTML = ""; // Clear previous content
+        details.judgement.forEach((point) => {
+          const p = document.createElement("p");
+          p.innerText = point;
+          p.classList.add("modal-text-container"); // Apply styling
+          judgementContainer.appendChild(p);
+        });
 
-    
-    
+        // Display Instructions
+        const instructionsContainer = document.getElementById("eventInstructions");
+        instructionsContainer.innerHTML = ""; // Clear previous content
+        details.instructions.forEach((instruction) => {
+          if (typeof instruction === "string") {
+            const p = document.createElement("p");
+            p.innerText = instruction;
+            p.classList.add("modal-text-container"); // Apply styling
+            instructionsContainer.appendChild(p);
+          } else if (typeof instruction === "object") {
+            const mainInstruction = document.createElement("p");
+            mainInstruction.innerText = instruction.text;
+            mainInstruction.classList.add("modal-text-container");
+            instructionsContainer.appendChild(mainInstruction);
+
+            if (instruction.subInstructions) {
+              instruction.subInstructions.forEach((subInstruction) => {
+                const subP = document.createElement("p");
+                subP.innerText = `    ${subInstruction}`; // Add tab-like spacing
+                subP.style.marginLeft = "20px"; // Or use CSS classes for consistent styling
+                subP.classList.add("modal-text-container");
+                instructionsContainer.appendChild(subP);
+              });
+            }
+          }
+        });
+
+
+
         // Display Student Coordinators
         const studentCoordinatorContainer = document.getElementById("studentCoordinators");
         studentCoordinatorContainer.innerHTML = "";
@@ -1221,7 +1279,7 @@ details.instructions.forEach((instruction) => {
           coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
           studentCoordinatorContainer.appendChild(coordinatorItem);
         });
-    
+
         // Display Faculty Coordinators
         const facultyCoordinatorContainer = document.getElementById("facultyCoordinators");
         facultyCoordinatorContainer.innerHTML = "";
@@ -1230,7 +1288,7 @@ details.instructions.forEach((instruction) => {
           coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
           facultyCoordinatorContainer.appendChild(coordinatorItem);
         });
-    
+
         // Display Contact Numbers
         const contactContainer = document.getElementById("contactNumbers");
         contactContainer.innerHTML = "";
@@ -1240,10 +1298,10 @@ details.instructions.forEach((instruction) => {
           contactContainer.appendChild(contactItem);
         });
       }
-    
+
       const modal = document.getElementById("eventDetailsModal");
       modal.style.display = "flex";
-    
+
       // Close modal on outside click
       modal.addEventListener("click", function (e) {
         if (e.target === modal) {
@@ -1251,62 +1309,62 @@ details.instructions.forEach((instruction) => {
         }
       });
     }
-    
-        function closeModal() {
-          const modal = document.getElementById("eventDetailsModal");
-          modal.style.display = "none";
+
+    function closeModal() {
+      const modal = document.getElementById("eventDetailsModal");
+      modal.style.display = "none";
+    }
+
+
+    function showGeneralRules() {
+      const modal = document.getElementById("generalRulesModal");
+      modal.style.display = "flex";
+
+      // Close modal on outside click
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeGeneralRulesModal();
         }
-    
-    
-        function showGeneralRules() {
-          const modal = document.getElementById("generalRulesModal");
-          modal.style.display = "flex";
-    
-          // Close modal on outside click
-          modal.addEventListener('click', function (e) {
-            if (e.target === modal) {
-              closeGeneralRulesModal();
-            }
-          });
-        }
-    
-        function closeGeneralRulesModal() {
-          const modal = document.getElementById("generalRulesModal");
-          modal.style.display = "none";
-        }
-        function openRegisterModal() {
-          document.getElementById("registerModal").style.display = "flex";
-        }
-    
-        function closeRegisterModal() {
-          document.getElementById("registerModal").style.display = "none";
-        }
-    
-        // Close modal when clicking outside of the modal content
-        window.addEventListener("click", function (event) {
-          const modal = document.getElementById("registerModal");
-          if (event.target === modal) {
-            closeRegisterModal();
-          }
-        });
-    
-        document.getElementById("registerForm").addEventListener("submit", function (event) {
-          event.preventDefault();
-          const name = document.getElementById("name").value;
-          const password = document.getElementById("password").value;
-          const eventType = document.getElementById("eventType").value
-          closeRegisterModal();
-        });
-    
-        function showEventOrder() {
-          document.getElementById('eventOrderModal').style.display = 'flex';
-        }
-    
-        function closeEventOrderModal(event) {
-          if (event.target === document.getElementById('eventOrderModal')) {
-            document.getElementById('eventOrderModal').style.display = 'none';
-          }
-        }
+      });
+    }
+
+    function closeGeneralRulesModal() {
+      const modal = document.getElementById("generalRulesModal");
+      modal.style.display = "none";
+    }
+    function openRegisterModal() {
+      document.getElementById("registerModal").style.display = "flex";
+    }
+
+    function closeRegisterModal() {
+      document.getElementById("registerModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside of the modal content
+    window.addEventListener("click", function (event) {
+      const modal = document.getElementById("registerModal");
+      if (event.target === modal) {
+        closeRegisterModal();
+      }
+    });
+
+    document.getElementById("registerForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const password = document.getElementById("password").value;
+      const eventType = document.getElementById("eventType").value
+      closeRegisterModal();
+    });
+
+    function showEventOrder() {
+      document.getElementById('eventOrderModal').style.display = 'flex';
+    }
+
+    function closeEventOrderModal(event) {
+      if (event.target === document.getElementById('eventOrderModal')) {
+        document.getElementById('eventOrderModal').style.display = 'none';
+      }
+    }
 
   </script>
 
@@ -1318,7 +1376,7 @@ details.instructions.forEach((instruction) => {
       color: white;
       border: none;
       font-size: 18px;
-      border-radius: 5px;       
+      border-radius: 5px;
       padding: 10px 20px;
       transition: background 0.3s ease;
       cursor: pointer;
@@ -1601,7 +1659,8 @@ details.instructions.forEach((instruction) => {
       <div class="row">
         <div class="col-lg-12">
           <div class="section_title mb-3">
-            <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="text-align: center; color: rgb(4, 4, 85);">Glimpses
+            <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s"
+              style="text-align: center; color: rgb(4, 4, 85);">Glimpses
             </h3>
           </div>
         </div>
@@ -1616,8 +1675,8 @@ details.instructions.forEach((instruction) => {
                 <div class="item"><img src="img/carrosel/Souvenir_Glimpses.jpg" alt=""></div>
                 <div class="item"><img src="img/carrosel/BattleOfBands_Glimpses.jpg" alt=""></div>
                 <div class="item"><img src="img/carrosel/HoistTheBanner_Glimpses.jpg" alt=""></div>
-           
-               
+
+
                 <div class="item"><img src="img/carrosel/TheArtOfColors_Glimpses.jpg" alt=""></div>
                 <div class="item"><img src="img/carrosel/TheVoice_Glimpses.jpg" alt=""></div>
                 <div class="item"><img src="img/carrosel/GhumatAarti_Glimpses.jpg" alt=""></div>
@@ -1666,7 +1725,7 @@ details.instructions.forEach((instruction) => {
       width: 55vw;
       max-width: 1300px;
       height: 100%;
-      object-fit:cover;
+      object-fit: cover;
     }
 
     .slider .buttons {
@@ -1782,19 +1841,20 @@ details.instructions.forEach((instruction) => {
 
 
 
-  <!-- Map Section -->
-<!-- Map Section -->
-<div class="section_title text-center mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" > 
-  <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="text-align: center; color: rgb(4, 4, 85);">Map</h3>
-</div>
-<main class="flex-grow w-full">
-  <div class="relative h-[50vh] max-w-[850px] mx-auto"> <!-- Added max-width and centered it -->
-    <iframe class="w-full h-full"
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15394.22519423461!2d73.9690846!3d15.291974!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfb1631736de9d%3A0x980720b4516a7a5!2sDon%20Bosco%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1683527701515!5m2!1sen!2sin"
-      style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</main>
+    <!-- Map Section -->
+    <!-- Map Section -->
+    <div class="section_title text-center mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+      <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s"
+        style="text-align: center; color: rgb(4, 4, 85);">Map</h3>
+    </div>
+    <main class="flex-grow w-full">
+      <div class="relative h-[50vh] max-w-[850px] mx-auto"> <!-- Added max-width and centered it -->
+        <iframe class="w-full h-full"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15394.22519423461!2d73.9690846!3d15.291974!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfb1631736de9d%3A0x980720b4516a7a5!2sDon%20Bosco%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1683527701515!5m2!1sen!2sin"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </main>
 
 
 
@@ -1846,105 +1906,115 @@ details.instructions.forEach((instruction) => {
   <!-- brand_area_end  -->
   <!-- footer_start  -->
   <style>
-		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-body{
-	line-height: 1.5;
-	font-family: 'Poppins', sans-serif;
-}
-*{
-	margin:0;
-	padding:0;
-	box-sizing: border-box;
-}
-.container{
-	max-width: 1170px;
-	margin:auto;
-}
-.row{
-	display: flex;
-	flex-wrap: wrap;
-}
-ul{
-	list-style: none;
-}
-.footer{
-	background-color: #24262b;
-    padding: 70px 0;
-}
-.footer-col{
-   width: 25%;
-   padding: 0 15px;
-}
-.footer-col h4{
-	font-size: 18px;
-	color: #ffffff;
-	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
-	position: relative;
-}
-.footer-col h4::before{
-	content: '';
-	position: absolute;
-	left:0;
-	bottom: -10px;
-	background-color: #e91e63;
-	height: 2px;
-	box-sizing: border-box;
-	width: 50px;
-}
-.footer-col ul li:not(:last-child){
-	margin-bottom: 10px;
-}
-.footer-col ul li a{
-	font-size: 16px;
-	text-transform: capitalize;
-	color: #ffffff;
-	text-decoration: none;
-	font-weight: 300;
-	color: #bbbbbb;
-	display: block;
-	transition: all 0.3s ease;
-}
-.footer-col ul li a:hover{
-	color: #ffffff;
-	padding-left: 8px;
-}
-.footer-col .social-links a{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-	color: #24262b;
-	background-color: #ffffff;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/*responsive*/
-@media(max-width: 767px){
-  .footer-col{
-    width: 50%;
-    margin-bottom: 30px;
-}
-}
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
-}
-}
+    body {
+      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    .container {
+      max-width: 1170px;
+      margin: auto;
+    }
 
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
+    ul {
+      list-style: none;
+    }
 
-	</style>
+    .footer {
+      background-color: #24262b;
+      padding: 70px 0;
+    }
+
+    .footer-col {
+      width: 25%;
+      padding: 0 15px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      color: #ffffff;
+      text-transform: capitalize;
+      margin-bottom: 35px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .footer-col h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: #e91e63;
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+    }
+
+    .footer-col ul li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      color: #bbbbbb;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+      padding-left: 8px;
+    }
+
+    .footer-col .social-links a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 0 10px 10px 0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+      color: #24262b;
+      background-color: #ffffff;
+    }
+
+    /*responsive*/
+    @media(max-width: 767px) {
+      .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media(max-width: 574px) {
+      .footer-col {
+        width: 100%;
+      }
+    }
+  </style>
   <footer class="footer">
     <div class="container">
       <div class="row">
@@ -1984,29 +2054,27 @@ ul{
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
-  
+
           <!-- Updated Register Button -->
           <div class="col-xl-3 col-lg-3 mt-3 mb-3">
             <div class="buy_tkt">
 
               <div class="book_btn d-none d-lg-block">
-                
-        
-              <div class="book_btn">
-                <button 
-                class="bg-blue-500 text-white px-5 py-2 hover:bg-blue-400 transition hidden md:block"
-                id="registerbtn" 
-                onclick="openRegisterModal()">Register</button>
 
+
+                <div class="book_btn">
+                  <button class="bg-blue-500 text-white px-5 py-2 hover:bg-blue-400 transition hidden md:block"
+                    id="registerbtn" onclick="openRegisterModal()">Register</button>
+
+                </div>
               </div>
             </div>
+
           </div>
-  
         </div>
       </div>
-    </div>
   </footer>
-  
+
   <!-- footer_end  -->
 
   <!-- JS here -->
