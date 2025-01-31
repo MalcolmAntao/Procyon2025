@@ -44,52 +44,69 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-  <!-- header-start hello -->
-  <header class="bg-gray-800 py-4 px-6 md:px-12 font-[Poppins] bg-gray-900 text-white top-0 z-10">
-    <div class="container mx-auto flex justify-between items-center">
-      <!-- Logo -->
-      <div class="text-blue-400 font-bold text-2xl" style="font-family: 'Lobster', cursive;">
-        PROCYON 2025
-      </div>
-
-      <!-- Navigation -->
-      <nav class="hidden md:flex gap-8">
-        <a href="#home" class="hover:text-blue-400 transition">Home</a>
-        <a href="#about" class="hover:text-blue-400 transition">About</a>
-        <a href="#schedule" class="hover:text-blue-400 transition">Schedule</a>
-        <a href="#glimpses" class="hover:text-blue-400 transition">Glimpses</a>
-        <a href="#sponsor" class="hover:text-blue-400 transition">Sponsors</a>
-        <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
-      </nav>
-
-      <!-- Register Button & Menu Icon -->
-      <div class="flex items-center gap-4">
-        <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition hidden md:block"
-          id="registerbtn" onclick="openRegisterModal()">Register</button>
-        <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div
-      class="nav-links absolute top-[-100%] left-0 w-full bg-gray-800 text-center py-4 transition-all duration-300 md:hidden z-10">
-      <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
-      <a href="#about" class="block py-2 hover:text-blue-400">About</a>
-      <a href="#schedule" class="block py-2 hover:text-blue-400">Schedule</a>
-      <a href="#glimpses" class="block py-2 hover:text-blue-400">Glimpses</a>
-      <a href="#sponsor" class="block py-2 hover:text-blue-400">Sponsors</a>
-      <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
-      <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 mt-3"
-        id="registerbtn" onclick="openRegisterModal()">Register</button>
-    </div>
-  </header>
-  <!-- header-end -->
-  <script>
-    function onToggleMenu(e) {
-      e.name = e.name === 'menu' ? 'close' : 'menu'; // Toggle between menu and close icon
-      document.querySelector('.nav-links').classList.toggle('top-[9%]'); // Toggle the visibility of the mobile menu
-    }
-  </script>
+        <header class="sticky bg-gray-900 py-4 px-6 md:px-12 font-[Poppins] text-white top-0 z-10">
+          <div class="container mx-auto flex justify-between items-center">
+              <div class="text-blue-400 font-bold text-2xl" style="font-family: 'Lobster', cursive;">
+                  PROCYON 2025
+              </div>
+      
+              <nav class="hidden md:flex gap-8">
+                  <a href="#home" class="hover:text-blue-400 transition duration-300">Home</a>
+                  <a href="#about" class="hover:text-blue-400 transition duration-300">About</a>
+                  <a href="#schedule" class="hover:text-blue-400 transition duration-300">Schedule</a>
+                  <a href="#glimpses" class="hover:text-blue-400 transition duration-300">Glimpses</a>
+                  <a href="#sponsor" class="hover:text-blue-400 transition duration-300">Sponsors</a>
+                  <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a>
+              </nav>
+      
+              <div class="flex items-center gap-4">
+                  <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 hidden md:block"
+                      onclick="openRegisterModal()">
+                      Register
+                  </button>
+                  <button onclick="toggleMenu()" class="text-3xl cursor-pointer md:hidden">
+                      <ion-icon id="menuIcon" name="menu"></ion-icon>
+                  </button>
+              </div>
+          </div>
+      
+          <!-- Mobile Menu -->
+          <div id="mobileMenu" class="absolute bg-gray-900 w-full left-0 hidden flex-col items-center text-center md:hidden">
+              <a href="#home" class="block py-3 hover:text-blue-400 transition duration-300">Home</a>
+              <a href="#about" class="block py-3 hover:text-blue-400 transition duration-300">About</a>
+              <a href="#schedule" class="block py-3 hover:text-blue-400 transition duration-300">Schedule</a>
+              <a href="#glimpses" class="block py-3 hover:text-blue-400 transition duration-300">Glimpses</a>
+              <a href="#sponsor" class="block py-3 hover:text-blue-400 transition duration-300">Sponsors</a>
+              <a href="#contact" class="block py-3 hover:text-blue-400 transition duration-300">Contact</a>
+              <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 my-3"
+                  onclick="openRegisterModal()">
+                  Register
+              </button>
+          </div>
+      </header>
+      
+      <script>
+          function toggleMenu() {
+              const mobileMenu = document.getElementById('mobileMenu');
+              const menuIcon = document.getElementById('menuIcon');
+      
+              if (mobileMenu.classList.contains('hidden')) {
+                  mobileMenu.classList.remove('hidden');
+                  mobileMenu.classList.add('flex');
+                  menuIcon.setAttribute('name', 'close');
+              } else {
+                  mobileMenu.classList.add('hidden');
+                  mobileMenu.classList.remove('flex');
+                  menuIcon.setAttribute('name', 'menu');
+              }
+          }
+      
+          function openRegisterModal() {
+              console.log('Register clicked');
+          }
+      </script>
+      
+      
   <!-- slider_area_start -->
   <div class="slider_area" id="home">
     <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
