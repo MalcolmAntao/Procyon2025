@@ -1,8 +1,8 @@
 <?php
-if (!isset($_SESSION)) {
-	session_start();
-}
+session_start(); // Start session for user authentication
+require_once "connection.php"; // Include database connection
 ?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
