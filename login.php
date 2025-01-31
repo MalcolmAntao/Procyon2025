@@ -1,70 +1,62 @@
 <?php
-// Start or resume a session
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+session_start();
+require_once "connection.php"; // Ensure you have a valid PDO connection in this file
 
-// Check if the session timeout is reached
-$session_expiration = 2 * 60; // 2 minutes in seconds
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $session_expiration)) {
-    session_unset(); // Unset all session variables
-    session_destroy(); // Destroy the session
-    header("Location: login.php"); // Redirect to the login page
-    exit;
-}
-$_SESSION['LAST_ACTIVITY'] = time(); // Update last activity timestamp
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
+    $event_category = $_POST["event-category"]; // Dropdown selection
 
-// Establish database connection
-$con = mysqli_connect(hostname: 'localhost', username: 'dbcegoaa_procyon', password: '321#Procyon', database: 'procyon2025') 
-    or die("Could not connect to MySQL: " . mysqli_error(mysql: $con));
-
-if (isset($_POST['username'])) { // Checking for 'username' key
-    $user_name = str_replace(search: ' ', replace: '', subject: $_POST['username']); // Remove spaces from username
-    $user_pass = $_POST['password'];
-    $category = $_POST['event-category']; // Updated to match 'event-category'
-
-    if ($category == 'class-event') {
-        $stmt = $con->prepare(query: "SELECT password FROM classregistration WHERE username=? AND category='class'");
-    } elseif ($category == 'department-event') {
-        $stmt = $con->prepare(query: "SELECT password FROM departmentregistration WHERE username=? AND category='department'");
-    } else {
-        displayError(); // Invalid category
+    if (empty($username) || empty($password)) {
+        die("Please fill in all fields.");
     }
 
-    $stmt->bind_param(types: "s", var: $user_name);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows == 1) {
-        $row = $result->fetch_assoc();
-        if (password_verify(password: $user_pass, hash: $row['password'])) {
-            $_SESSION['username'] = $user_name;
-            $_SESSION['event'] = ($category == 'class-event') ? 'class' : 'department';
-            $_SESSION['registered_once'] = true;
-
-            // Redirect user based on event type
-            $form_url = ($_SESSION['event'] == 'class') ? 'https://forms.gle/NLUcvgoTzEXmDW9ZA' : 'https://forms.gle/acZvy37TQiKSRzAB7';
-
-            echo "<script>
-                    if (confirm('You will be allowed to register only once. Are you sure to register now?')) {
-                        window.location.href = '$form_url';
-                    } else {
-                        window.location.href = './index.php#mu-register';
-                    }
-                  </script>";
-            exit;
+    try {
+        $pdo = new PDO($dsn, $db_username, $db_password, $options); // Ensure connection is valid
+        
+        if ($event_category == "class-event") {
+            $query = "SELECT * FROM classregistration WHERE username = :username";
+        } elseif ($event_category == "department-event") {
+            $query = "SELECT * FROM departmentregistration WHERE username = :username";
         } else {
-            displayError(); // Wrong password
+            die("Invalid event category.");
         }
-    } else {
-        displayError(); // User not found
-    }
-}
 
-function displayError(): never
-{
-    echo "<script>alert('Email, password, or category is incorrect!');</script>";
-    echo "<script>window.location.href='./index.php#mu-register';</script>";
-    exit;
+        $stmt = $pdo->prepare($query);
+        $stmt->bindParam(":username", $username, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            die("You have already registered for this event and cannot submit again.");
+        }
+
+        // Insert the new user entry (Prevent duplicate form submission)
+        if ($event_category == "class-event") {
+            $insertQuery = "INSERT INTO classregistration (username, password, category) VALUES (:username, :password, 'class')";
+        } elseif ($event_category == "department-event") {
+            $insertQuery = "INSERT INTO departmentregistration (username, password, category) VALUES (:username, :password, 'department')";
+        }
+
+        $insertStmt = $pdo->prepare($insertQuery);
+        $insertStmt->bindParam(":username", $username, PDO::PARAM_STR);
+        $insertStmt->bindParam(":password", $password, PDO::PARAM_STR);
+        $insertStmt->execute();
+
+        $_SESSION["username"] = $username;
+        $_SESSION["event_category"] = $event_category;
+
+        // Redirect based on event type (Replace with actual links)
+        if ($event_category == "class-event") {
+            header("Location: class_event_page.php"); // Replace with actual class event page link
+        } elseif ($event_category == "department-event") {
+            header("Location: department_event_page.php"); // Replace with actual department event page link
+        }
+        exit();
+    } catch (PDOException $e) {
+        die("Database error: " . $e->getMessage());
+    }
+} else {
+    die("Invalid request.");
 }
 ?>

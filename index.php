@@ -25,7 +25,8 @@ if (!isset($_SESSION)) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   <!-- CSS here -->
@@ -49,52 +50,70 @@ if (!isset($_SESSION)) {
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-  <!-- header-start hello -->
-<header class="bg-gray-800 py-4 px-6 md:px-12 font-[Poppins] bg-gray-900 text-white top-0 z-10">
-  <div class="container mx-auto flex justify-between items-center">
-      <!-- Logo -->
+  <header class="sticky bg-gray-900 py-4 px-6 md:px-12 font-[Poppins] text-white top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
       <div class="text-blue-400 font-bold text-2xl" style="font-family: 'Lobster', cursive;">
-          PROCYON 2025
+        PROCYON 2025
       </div>
-      
-      <!-- Navigation -->
+
       <nav class="hidden md:flex gap-8">
-          <a href="#home" class="hover:text-blue-400 transition">Home</a>
-          <a href="#about" class="hover:text-blue-400 transition">About</a>
-          <a href="#schedule" class="hover:text-blue-400 transition">Schedule</a>
-          <a href="#glimpses" class="hover:text-blue-400 transition">Glimpses</a>
-          <a href="#sponsor" class="hover:text-blue-400 transition">Sponsors</a>
-          <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+        <a href="#home" class="hover:text-blue-400 transition duration-300">Home</a>
+        <a href="#about" class="hover:text-blue-400 transition duration-300">About</a>
+        <a href="#schedule" class="hover:text-blue-400 transition duration-300">Schedule</a>
+        <a href="#glimpses" class="hover:text-blue-400 transition duration-300">Glimpses</a>
+        <a href="#sponsor" class="hover:text-blue-400 transition duration-300">Sponsors</a>
+        <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a>
       </nav>
-      
-      <!-- Register Button & Menu Icon -->
+
       <div class="flex items-center gap-4">
-          <button 
-          class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition hidden md:block"
-          id="registerbtn" 
-          onclick="openRegisterModal()">Register</button>
-          <ion-icon onclick="onToggleMenu(this)" name="menu" class="text-3xl cursor-pointer md:hidden"></ion-icon>
+        <button
+          class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 hidden md:block"
+          onclick="openRegisterModal()">
+          Register
+        </button>
+        <button onclick="toggleMenu()" class="text-3xl cursor-pointer md:hidden">
+          <ion-icon id="menuIcon" name="menu"></ion-icon>
+        </button>
       </div>
-  </div>
-  
-  <!-- Mobile Menu -->
-  <div class="nav-links absolute top-[-100%] left-0 w-full bg-gray-800 text-center py-4 transition-all duration-300 md:hidden z-10">
-      <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
-      <a href="#about" class="block py-2 hover:text-blue-400">About</a>
-      <a href="#schedule" class="block py-2 hover:text-blue-400">Schedule</a>
-      <a href="#glimpses" class="block py-2 hover:text-blue-400">Glimpses</a>
-      <a href="#sponsor" class="block py-2 hover:text-blue-400">Sponsors</a>
-      <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
-      <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 mt-3" id="registerbtn" onclick="openRegisterModal()">Register</button>
-  </div>
-</header>
-<!-- header-end -->
-<script>
-  function onToggleMenu(e) {
-    e.name = e.name === 'menu' ? 'close' : 'menu'; // Toggle between menu and close icon
-    document.querySelector('.nav-links').classList.toggle('top-[9%]'); // Toggle the visibility of the mobile menu
-}
-</script>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="absolute bg-gray-900 w-full left-0 hidden flex-col items-center text-center md:hidden">
+      <a href="#home" class="block py-3 hover:text-blue-400 transition duration-300">Home</a>
+      <a href="#about" class="block py-3 hover:text-blue-400 transition duration-300">About</a>
+      <a href="#schedule" class="block py-3 hover:text-blue-400 transition duration-300">Schedule</a>
+      <a href="#glimpses" class="block py-3 hover:text-blue-400 transition duration-300">Glimpses</a>
+      <a href="#sponsor" class="block py-3 hover:text-blue-400 transition duration-300">Sponsors</a>
+      <a href="#contact" class="block py-3 hover:text-blue-400 transition duration-300">Contact</a>
+      <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 my-3"
+        onclick="openRegisterModal()">
+        Register
+      </button>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        menuIcon.setAttribute('name', 'close');
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        menuIcon.setAttribute('name', 'menu');
+      }
+    }
+
+    function openRegisterModal() {
+      console.log('Register clicked');
+    }
+  </script>
+
+
   <!-- slider_area_start -->
   <div class="slider_area" id="home">
     <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
@@ -108,8 +127,10 @@ if (!isset($_SESSION)) {
               <div class="shape_2 wow fadeInDown" data-wow-duration="1s" data-wow-delay=".2s">
                 <img src="img/shape/shape_2.svg" alt="">
               </div>
-              <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s" style="position: relative";>PROCYON 2K25</h3>
-              <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s" style="position: relative";>3RD & 4TH MARCH 2025</span>
+              <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s" style="position: relative" ;>
+                PROCYON 2K25</h3>
+              <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s" style="position: relative" ;>3RD
+                & 4TH MARCH 2025</span>
             </div>
           </div>
         </div>
@@ -163,63 +184,81 @@ if (!isset($_SESSION)) {
         activities are being organized, including:
       </p>
 
-      
-      <div class="p-6 rounded-lg shadow-lg bg-gray-800 flex flex-wrap gap-4 justify-center w-full max-w-5xl bg-gray-800">
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Ghumat Aarti</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">The Voice</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Skit</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Battle Of Bands</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Food Wizard</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Hoist The Banner</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">The Art Of Colors</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">DubbItUp</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Lights Camera Action</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Slow Mo</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Step Up Revolution</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Mr. and Ms. Procyon</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Rock The Ramp</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Street Play</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Treasure Hunt</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Face Painting</h3>
-        </div>
-        <div class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-            <h3 class="text-lg text-white">Framed (On-Campus)</h3>
-        </div>
-    </div>
 
-      
-  
+      <div
+        class="p-6 rounded-lg shadow-lg bg-gray-800 flex flex-wrap gap-4 justify-center w-full max-w-5xl bg-gray-800">
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Ghumat Aarti 🪔<</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">The Voice 🎤</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Skit 👥</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Battle Of Bands 🎸</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Food Wizard 🧙‍♂️🍲</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Hoist The Banner 🏴‍☠️</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">The Art Of Colors 🎨🌈</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">DubbItUp 🎬🎤</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Lights Camera Action 💡🎥🎬<</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Slow Mo 🚴‍♂️⏳</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Step Up Revolution 💃🎶</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Mr. and Ms. Procyon 👑👫</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Rock The Ramp 👚👖👠</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Street Play 🎭🚶‍♂️</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Treasure Hunt 🏴‍☠️🗺️</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Face Painting🎨👩‍🎨</h3>
+        </div>
+        <div
+          class="bg-gray-700 text-center py-4 px-3 rounded-lg shadow-md transform transition-transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/50 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+          <h3 class="text-lg text-white">Framed (On-Campus)📸🖼️</h3>
+        </div>
+      </div>
+
+
+
 
       <div class="text-center max-w-2xl">
         <h3 class="text-black text-base leading-relaxed" style="color: rgb(10, 10, 136);">
@@ -276,7 +315,7 @@ if (!isset($_SESSION)) {
                       AM - 10:30 AM</h3>
                   </div>
                   <div class="thumb wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                    <img src="img/program_details/Inaugral.jpeg" alt="Event 1" onclick="showEventDetails('day1', 0)">
+                    <img src="img/program_details/Inaugral.jpeg" alt="Event 1">
                   </div>
                 </div>
               </div>
@@ -392,7 +431,8 @@ if (!isset($_SESSION)) {
                       10:30 AM - 1:30 PM</h3>
                   </div>
                   <div class="thumb wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
-                    <img src="img/program_details/TheArtOfColorsNew.jpeg" alt="Event 1" onclick="showEventDetails('day1', 7)">
+                    <img src="img/program_details/TheArtOfColorsNew.jpeg" alt="Event 1"
+                      onclick="showEventDetails('day1', 7)">
                   </div>
                   <h4 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s"></h4>
                 </div>
@@ -436,7 +476,7 @@ if (!isset($_SESSION)) {
                   <div class="circle_img"></div>
                   <div class="porgram_top">
                     <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s"> <i
-                        class="bx bx-calendar-event"></i>Slow Mo</span>
+                        class="bx bx-calendar-event"></i>Slow-Mo</span>
                     <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s"><i class="bx bx-time"></i> 3:00
                       PM - 3:30 PM</h3>
                   </div>
@@ -577,8 +617,10 @@ if (!isset($_SESSION)) {
       </div>
       <!-- Bottom Row: Day 1 & Day 2 -->
       <div class="button-row">
-        <button id="day1Btn" class="btn custom-btn" onclick="showEvents('day1')"><a href="#schedule">Day 1 (3rd March)</a> </button>
-        <button id="day2Btn" class="btn custom-btn" onclick="showEvents('day2')"><a href="#schedule">Day 2 (4th March)</a> </button>
+        <button id="day1Btn" class="btn custom-btn" onclick="showEvents('day1')"><a href="#schedule">Day 1 (3rd
+            March)</a> </button>
+        <button id="day2Btn" class="btn custom-btn" onclick="showEvents('day2')"><a href="#schedule">Day 2 (4th
+            March)</a> </button>
       </div>
     </div>
   </div>
@@ -675,7 +717,8 @@ if (!isset($_SESSION)) {
             3rd place in that particular event. This is applicable for all class and department events as well. Eg. In
             case of department events if a department had put a joker on a gold event and if that department has won 1st
             place in that event then all the 4 classes of that department (FE,SE,TE,BE) will receive 400 points each.
-            The joker should be submitted in the online form by 29th Feb 2025 by 2pm and is compulsory.</li>
+            The joker should be submitted in the online form by <b style="color: #000000;">29th Feb 2025 by 2pm and is
+              compulsory</b>.</li>
           <li><b style="color: #000000;">FACULTY POINTS: </b>If any faculty participates in any department event then
             that department will automatically get 25 bonus points for that respective event. Each department can have
             up to 4 faculty participants for PROCYON 2k25. These points can be applied for all the specified department
@@ -688,44 +731,52 @@ if (!isset($_SESSION)) {
 
         <h4 class="mt-4 text-center">General Instructions</h4>
         <ol class="text-justify ordered-list">
-          <li>Participants must report at least 15 mins before the start of their respective event. Failure to do so
+          <li>Participants must <b style="color: #000000;">report at least 15 mins</b> before the start of their
+            respective event. Failure to do so
             might disqualify that team from the event.</li>
           <li>Decision of judges is final. Any participant arguing with the judges will lead to his/her
-            disqualification.</li>
+            <b style="color: #000000;">disqualification</b>.
+          </li>
           <li>Vulgarity of any kind should not be portrayed in any manner, direct or indirect, and engaging in vulgar
-            activities will lead to disqualification of the entire team.</li>
-          <li>Vulgar words are prohibited on the college campus.</li>
+            activities will lead to <b style="color: #000000;">disqualification</b> of the entire team.</li>
+          <li>Vulgar words are <b style="color: #000000;">prohibited</b> on the college campus.</li>
           <li>Suicidal topics are strictly banned from being portrayed in any of the events, whether on stage or off
             stage.</li>
           <li>Participants have to strictly adhere to the timings mentioned in each of the events.</li>
           <li>Submission dates and timings for the photos and videos should be strictly adhered to. No photos or videos
             will be entertained after the appointed time has passed.</li>
-          <li>Participants have to get their own equipment for all the events mentioned.</li>
+          <li>Participants have to get their <b style="color: #000000;">own equipment</b> for all the events mentioned.
+          </li>
           <li>There will be 4 departments competing against each other: Civil department, Mechanical department, ETC/ECS
             department, Computer department.</li>
           <li>First years are clubbed into their respective department (Civil, Mech, ETC/ECS, Comp).</li>
           <li>Faculties of the Humanities Department can join any other department in the department events based on
             his/her consent.</li>
           <li>Faculty members cannot participate in class events.</li>
-          <li>Allocation of joker cards is compulsory for both department & class events.</li>
+          <li><b style="color: #000000;">Allocation of joker cards is compulsory for both department & class events.</b>
+          </li>
           <li>Registration process is strictly online on the official PROCYON website (www.procyon.dbcegoa.ac.in).</li>
           <li>Details of all events, including the registration form and links to the videos, will be hosted on the
             website.</li>
-          <li>Each department should allocate a department coordinator (any of the 4 CR’s) to submit the registration
+          <li>Each department should allocate a <b style="color: #000000;">department coordinator</b> (any of the 4
+            CR’s) to submit the registration
             form for the department events.</li>
-          <li>Each CR will be given a unique ID and password, which will enable him/her to access the registration form
+          <li>Each CR will be given a <b style="color: #000000;">unique ID and password</b>, which will enable him/her
+            to access the registration form
             and prevent misuse of the form.</li>
-          <li>Forms should be submitted before 29th FEB, 2 pm. After that, the online portal will not accept any forms,
+          <li>Forms should be submitted before <b style="color: #000000;">29th FEB, 2 pm</b>. After that, the online
+            portal will not accept any forms,
             and the teams will not be able to participate in any event they haven’t registered for.</li>
           <li>The submission of the audio and video files should be done to the respective event coordinators only.</li>
           <li>Judgement criteria given for the events mentioned in the brochure are tentative and are subject to change
             based on the decision of the judges.</li>
           <li>For the fashion show event, each department should compulsorily allocate one faculty member to ensure that
             the costumes are up to the mark.</li>
-          <li>Negative marking will take place if the team exceeds its appointed time.</li>
+          <li><b style="color: #000000;">Negative marking</b> will take place if the team exceeds its appointed time.
+          </li>
           <li>All event timings include stage setup time and performance time. No extra time will be allocated for stage
             setup.</li>
-          <li>Venues V1 & V2 will be inside the pandal area.</li>
+          <li>Venues <b style="color: #000000;">V1 & V2</b> will be inside the pandal area.</li>
         </ol>
       </div>
     </div>
@@ -780,46 +831,59 @@ if (!isset($_SESSION)) {
       border-collapse: collapse;
     }
   </style>
+  <!-- Modal Popup for Event Details -->
+  <div id="eventDetailsModal" class="modal" style="display: none">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-body">
+        <h3 id="eventTitle" class="modal-text">Event AKA</h3>
+        <p><strong class="modal-text">AKA:</strong> <span id="eventAKA" class="modal-text"></span></p>
+        <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
+        <p><strong class="modal-text">Time:</strong> <span id="eventTime" class="modal-text"></span></p>
+        <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
+        <p><strong class="modal-text">Theme:</strong> <span id="eventTheme" class="modal-text"></span></p>
+        <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
+        <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
+        <p><strong class="modal-text">Participants:</strong> <span id="eventParticipants" class="modal-text"></span></p>
+        <p><strong class="modal-text">Duration:</strong> <span id="eventDuration" class="modal-text"></span></p>
+        <p><strong class="modal-text">Judgement Criteria:</strong></p>
+        <div id="eventJudgement" class="modal-text-container"></div> <!-- Dynamic judging criteria -->
 
-   <!-- Modal Popup for Event Details -->
- <div id="eventDetailsModal" class="modal" style="display: none">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <div class="modal-body">
-      <h3 id="eventAKA" class="modal-text">Event AKA</h3>
-      <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
-      <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
-      <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
-      <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
-      <p><strong class="modal-text">Participants:</strong> <span id="eventParticipants" class="modal-text"></span></p>
-      <p><strong class="modal-text">Duration:</strong> <span id="eventDuration" class="modal-text"></span></p>
-      <p><strong class="modal-text">Judgement Criteria:</strong></p>
-<div id="eventJudgement" class="modal-text-container"></div> <!-- Dynamic judging criteria -->
-
-<p><strong class="modal-text">Instructions:</strong></p>
-<div id="eventInstructions" class="modal-text-container"></div> <!-- Dynamic instructions -->
-
-
-      <div class="coordinator-container">
-        <div class="coordinator-item">
-          <p><strong class="modal-text">Student Coordinators:</strong></p>
-          <div id="studentCoordinators" class="modal-text"></div> <!-- Dynamic student coordinators -->
-        </div>
-        <div class="coordinator-item">
-          <p><strong class="modal-text">Contact:</strong></p>
-          <div id="contactNumbers" class="modal-text"></div> <!-- Dynamic contact numbers -->
-        </div>
+        <!-- Genre Section -->
+      <div id="eventGenreSection">
+        <p><strong class="modal-text">Genre:</strong></p>
+        <div id="eventGenre" class="modal-text-container"></div> <!-- Dynamic Genre -->
       </div>
-      <br />
-      <div class="coordinator-container">
-        <div class="coordinator-item">
-          <p><strong class="modal-text">Faculty Coordinators:</strong></p>
-          <div id="facultyCoordinators" class="modal-text"></div> <!-- Dynamic faculty coordinators -->
+
+      <!-- Pantry Section -->
+      <div id="eventPantrySection">
+        <p><strong class="modal-text">Pantry:</strong></p>
+        <div id="eventPantry" class="modal-text-container"></div> <!-- Dynamic Pantry -->
+      </div>
+
+        <p><strong class="modal-text">Instructions:</strong></p>
+        <div id="eventInstructions" class="modal-text-container"></div> <!-- Dynamic instructions -->
+
+        <div class="coordinator-container">
+          <div class="coordinator-item">
+            <p><strong class="modal-text">Student Coordinators:</strong></p>
+            <div id="studentCoordinators" class="modal-text"></div> <!-- Dynamic student coordinators -->
+          </div>
+          <div class="coordinator-item">
+            <p><strong class="modal-text">Contact:</strong></p>
+            <div id="contactNumbers" class="modal-text"></div> <!-- Dynamic contact numbers -->
+          </div>
+        </div>
+        <br />
+        <div class="coordinator-container">
+          <div class="coordinator-item">
+            <p><strong class="modal-text">Faculty Coordinators:</strong></p>
+            <div id="facultyCoordinators" class="modal-text"></div> <!-- Dynamic faculty coordinators -->
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
   <!-- Event Order Modal -->
   <div id="eventOrderModal" class="modal" style="display: none;" onclick="closeEventOrderModal(event)">
@@ -909,27 +973,27 @@ if (!isset($_SESSION)) {
 
 
   <!-- Register Modal -->
-<div id="registerModal" class="modal1" style="display: none;">
-  <div class="modal-content1">
-    <span class="close" onclick="closeRegisterModal()">&times;</span>
-    <h2 style=" display: flex; font-size: 2rem; align-items: center; justify-content: center;">Login</h2>
-    <form id="registerForm" action="login.php" method="POST"> <!-- Added action and method -->
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="username" required> <!-- Changed name to 'username' -->
+  <div id="registerModal" class="modal1" style="display: none;">
+    <div class="modal-content1">
+      <span class="close" onclick="closeRegisterModal()">&times;</span>
+      <h2 style=" display: flex; font-size: 2rem; align-items: center; justify-content: center;">Login</h2>
+      <form id="registerForm" action="login.php" method="POST"> <!-- Added action and method -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="username" required> <!-- Changed name to 'username' -->
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
 
-      <label for="eventType">Event Type:</label>
-      <select id="eventType" name="event-category" required> <!-- Changed name to 'event-category' -->
-        <option value="class-event">Class</option>
-        <option value="department-event">Department</option>
-      </select>
+        <label for="eventType">Event Type:</label>
+        <select id="eventType" name="event-category" required> <!-- Changed name to 'event-category' -->
+          <option value="class-event">Class</option>
+          <option value="department-event">Department</option>
+        </select>
 
-      <button type="submit" class="submit-btn">Submit</button>
-    </form>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
   </div>
-</div>
 
 
   <style>
@@ -1095,10 +1159,14 @@ if (!isset($_SESSION)) {
         padding: 10px;
       }
     }
+
     .modal-text-container p {
-      color: white; /* Set text color to white */
-      line-height: 0.5; /* Reduce line spacing */
-      margin: 2px 0; /* Reduce margin to keep text closer */
+      color: white;
+      /* Set text color to white */
+      line-height: 0.5;
+      /* Reduce line spacing */
+      margin: 2px 0;
+      /* Reduce margin to keep text closer */
     }
   </style>
   <!-- JavaScript -->
@@ -1114,48 +1182,642 @@ if (!isset($_SESSION)) {
     }
     function showEventDetails(day, eventId) {
       const eventDetails = {
-        day1: {
-          1: {
-            aka: "Coding Blitz",
-            date: "12 Feb 2020",
-            type: "Coding",
-            scoring: "Points-based",
-            venue: "Main Hall",
-            participants: "Teams of 2",
-            duration: "2 hours",
+        day1:
+        {
+          1:
+          {
+            title: "Ghumat Aarti",
+            aka: "Ghumat Aarti",
+            date: "3rd March 2025",
+            time: "10:30 AM - 11:30 AM",
+            type: "Department",
+            scoring: "Gold",
+            venue: "Main Stage",
+            participants: "8-16 per department (including faculty)",
+            duration: "10-15 minutes (Performance + Setup)",
             judgement: [
-              "1. Code Efficiency",
-              "2. Creativity in Problem Solving",
-              "3. Optimization of Algorithms"
+              "1. Clarity of vocals over instruments",
+              "2. Coordination",
+              "3. Attire",
+              "4. Stage presence",
+              "5. Energy"
             ],
             instructions: [
-              "1. Bring a laptop.",
-              "2. Ensure your code runs efficiently.",
-              "3. Internet access will not be provided."
+              "1. Each group must have a minimum of 2 and a maximum of 4 ghumat vadaks.",
+              "2. A maximum of two faculty members can participate, earning 25 bonus points.",
+              {
+                text: "3. Each group must perform:",
+                subInstructions: [
+                  "i. One paramparik (traditional) or self-composed aarti",
+                  "ii. One gajar"
+                ]
+              },
             ],
             studentCoordinators: ["John Doe", "Alice Smith"],
             facultyCoordinators: ["Dr. Smith", "Prof. Green"],
             contactNumbers: ["+91 12345 67890", "+91 09876 54321"],
           },
-        },
-        day2: {
-          1: {
-            aka: "Design Sprint",
-            date: "13 Feb 2020",
-            type: "Design",
-            scoring: "Creativity and Feasibility",
-            venue: "Room 202",
-            participants: "Individual",
-            duration: "3 hours",
+          2:
+          {
+            title: "The Voice",
+            aka: "Solo Singing ",
+            date: "3rd March 2025",
+            time: "11:30 AM - 1:30 PM",
+            type: "Class",
+            scoring: "Silver",
+            venue: "Main Stage",
+            participants: "Solo performance only",
+            duration: "5 minutes",
             judgement: [
-              "Design Presentation Quality",
-              "Innovation and Uniqueness",
-              "Practical Feasibility"
+              "1. Voice modulation",
+              "2. Beauty & quality of tone",
+              "3. Performance",
+              "4. Stage presence",
+              "5. Coordination with music"
             ],
             instructions: [
-              "Bring a sketch pad.",
-              "Prepare a 5-minute pitch.",
-              "Presentation slides are optional."
+              "1. Participants can choose any song in any language.",
+              "2. Self-composed songs are allowed.",
+              "3. A maximum of two musicians can accompany the participant.",
+              "4. Participants will not be judged based on the musicians' skills.",
+              "5. Accompanying musicians must bring their own instruments.",
+              "6. Singers may play instruments as long as they sing as well.",
+              "7. The first 3 minutes will be for the participant’s chosen song; the next 2 minutes will be a challenge song.",
+              "8. The challenge song will be assigned by drawing lots.",
+              "9. Singers may provide karaoke tracks to the coordinators by 2nd March 2025, 5:00 PM.",
+              " 10. If the karaoke track contains any vocals (main or backup), the participant will be disqualified.",
+              " 11. Marks will be deducted if the participant exceeds the time limit.",
+              " 12. Indecent lyrics are strictly prohibited."
+            ],
+            studentCoordinators: ["Jane Doe", "Bob Smith"],
+            facultyCoordinators: ["Dr. Brown", "Prof. White"],
+            contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
+          },
+          3:
+          {
+            title: "Skit",
+            aka: "Skit",
+            date: "3rd March 2025",
+            time: "2:00 PM - 3:00 PM ",
+            type: "Department",
+            theme: "The Great Lab Escape",
+            scoring: "Gold",
+            venue: "Main Stage",
+            participants: "10-15 per department",
+            duration: "10-15 mins (including setup time)",
+            judgement: [
+              "1. Story",
+              "2. Acting",
+              "3. Stage presence",
+              "4. Role effectiveness",
+              "5. Overall performance",
+              "6. Costumes",
+              "7. Props"
+            ],
+            instructions: [
+              "1. One skit per department.",
+              "2. A maximum of two faculty participants earns 25 bonus points.",
+              "3. Suicidal topics and vulgarity are strictly banned from portrayal in the event, as they will lead to disqualification of the entire team.",
+              "4. Participants are not allowed to make any brutal jokes about faculty; this will result in reduced points.",
+              "5. The use of props is allowed; however, no extra time will be given for stage setup.",
+              "6. Marks will be deducted if the team exceeds its appointed time.",
+              "7. Faculty members cannot be given a major role.",
+              "8. The entire skit cannot be narrated by narrators."
+            ],
+            studentCoordinators: ["Jane Doe", "Bob Smith"],
+            facultyCoordinators: ["Dr. Brown", "Prof. White"],
+            contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
+          },
+          4:
+          {
+            title: "Battle Of Bands",
+            aka: "Band Performance",
+            date: "3rd March 2025",
+            time: "3:30 PM - 5:30 PM",
+            type: "Department",
+            scoring: "Gold",
+            venue: "Main Stage",
+            participants: "4-10 per department",
+            duration: "10 minutes will be provided for the initial setup when the event starts, only for the first band performance. Each team will be given 5 minutes for all necessary checks before their performance. Each performance should be a maximum of 15 minutes.",
+            judgement: [
+              "1. Rhythm & tempo",
+              "2. Complexity",
+              "3. Coordination",
+              "4. Stage presence",
+              "5. Creativity",
+              "6. Skill",
+              "7. Overall performance"
+            ],
+            genre: [
+              "1. Rock/Alternative Rock",
+              "2. Pop/Pop Rock",
+              "3. Blues/Jazz",
+              "4. Folk/Indie"
+            ],
+            instructions: [
+              "1. For setting up the instruments, an additional maximum of 5 minutes will be given.",
+              "2. Teams must bring their own instruments and equipment. Any special instruments to be used must be informed prior to the event.",
+              "3. A standard drum kit will be provided.",
+              "4. Unauthorized tampering with the stage setup and other equipment will lead to disqualification.",
+              "5.	Backing tracks and pre-recorded music are not allowed.",
+              "6.	A maximum of two faculty participants earns 25 bonus points.",
+              "7.	Any technical difficulties faced during the performance should be reported to the coordinator.",
+              "8.	Marks will be deducted if the team exceeds its appointed time.",
+              "9.	Participants must wear decent costumes. Costumes must be cross-checked with the faculty and student coordinators a day prior.",
+              "10.	Each band must have a Team Leader."
+            ],
+            studentCoordinators: ["Jane Doe", "Bob Smith"],
+            facultyCoordinators: ["Dr. Brown", "Prof. White"],
+            contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
+          },
+          5:
+          {
+            title: "Food Wizard",
+            aka: "Flameless Cooking",
+            date: "3rd March 2025",
+            time: "10:30 AM - 1:30 PM",
+            type: "Class",
+            scoring: "Bronze",
+            venue: "V2",
+            participants: "2 participants per class (One Team)",
+            duration: "3 hours",
+            judgement: [
+              "1. Taste",
+              "2. Presentation",
+              "3. Hygiene",
+              "4. Cooking process"
+            ],
+            instructions: [
+              "1. No alcohol is allowed.",
+              "2. Power supply will not be provided..",
+              "3. Participants cannot use fire or flame.",
+              "4. Participants must use at least 3 or all of the following 9 items from the pantry list provided, while preparing the dish.",
+              "5.	Participants cannot use any ingredients other than the ones mentioned above.",
+              "6.	A secret ingredient will be given by the coordinators at the beginning, and participants must make that ingredient the highlight of the dish.",
+              "7.	Marinating, if required, must be done on the spot.",
+              "8.	Gloves and head coverings are compulsory.",
+              "9.	Mobile phones cannot be used while preparing the dish.",
+              "10. One participant must be ready to explain the prepared dish to the judges, along with the list of ingredients used.",
+              "11. Participants are allowed to fetch ingredients within the given time duration.",
+              "12. It is compulsory to present the dish before or exactly at 1:30 PM.",
+              "13. Participants may bring their own aprons, gloves, and hair caps for the competition, though it is not compulsory."
+            ],
+            pantry: [
+              "1.	Eggless mayonnaise, soya sauce, mustard sauce, olive oil, ketchup",
+              "2.	Bread: poie (bakri), pav, bread, cooked tortilla/roti",
+              "3.	Chocolate",
+              "4.	Cream, milk, yogurt, coconut cream, condensed milk",
+              "5.	Sugar, salt, spices, herbs, and gelatin",
+              "6.	Cheese, butter, jam, peanut butter",
+              "7.	Biscuits",
+              "8.	Fresh or cooked vegetables (onion, tomato, beetroot, lettuce, corn, potato, lemon)",
+              "9.	Fruits (tender coconut, banana, avocado, orange, guava, watermelon, apple, chikoo)"
+            ],
+            studentCoordinators: ["Jane Doe", "Bob Smith"],
+            facultyCoordinators: ["Dr. Brown", "Prof. White"],
+            contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
+          },
+          6:
+          {
+            title: "Hoist The Banner",
+            aka: "Flag Painting",
+            date: "3rd March 2025",
+            time: "10:30 AM - 1:30 PM",
+            type: "Class",
+            theme: "Open",
+            scoring: "Bronze",
+            venue: "V1",
+            participants: "2 participants per class (One Team)",
+            duration: "3 hours",
+            judgement: [
+              "1. Color combination",
+              "2. Artistic skills",
+              "3. Portrayal of theme",
+              "4. Overall effect"
+            ],
+            instructions: [
+              "1.	Participants must bring their own materials and hoist.",
+              "2.	The flag size must be strictly 70 cm x 60 cm.",
+              "3.	The flag must be hoisted on a 2m hoist.",
+              "4.	Participants must use a white backdrop color.",
+              "5.	The flag must be sturdy and should not fall apart when waved.",
+              "6.	Participants are responsible for cleaning up their work area after the competition ends.",
+              "7.	Flags must not contain any offensive or inappropriate imagery.",
+              "8.	Judges' decisions are final and binding, and no appeals or disputes will be entertained after the winners are announced."
+            ],
+            studentCoordinators: ["Jane Doe", "Bob Smith"],
+            facultyCoordinators: ["Dr. Brown", "Prof. White"],
+            contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
+          },
+          7:
+          {
+            title: "The Art Of Colors",
+            aka: "Rangoli Making",
+            date: "3rd March 2025",
+            time: "10:30 AM - 1:30 PM",
+            type: "Class",
+            scoring: "Bronze",
+            venue: "Fiire Corridor",
+            participants: "2 participants per class (One Team)",
+            duration: "3 hours",
+            judgement: [
+              "1. Color combination",
+              "2. Artistic skills",
+              "3. Theme",
+              "4. Intricacy",
+              "5. Use of materials",
+              "6. Use of surface area"
+            ],
+            instructions: [
+              "1.	Participants must bring their own equipment and materials.",
+              "2.	Rangoli Size: 100 cm x 100 cm",
+              "3.	Participants must use color powder along with either bangles or petals. However, they cannot use a combination of both.",
+              "4.	The theme for the event will be provided two days before the event.",
+              "5.	The use of any other material must be confirmed with the coordinator.",
+              "6.	(REFERENCE NOT ALLOWED) Mobile phones and pre-made designs on paper cannot be used while making the rangoli. However, participants can carry blank paper to draw their design during the competition."
+            ],
+            studentCoordinators: ["Jane Doe", "Bob Smith"],
+            facultyCoordinators: ["Dr. Brown", "Prof. White"],
+            contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
+          },
+          8:
+          {
+            title: "DubbItUp",
+            aka: "Dubbing Competition",
+            date: "3rd March 2025",
+            time: "2:00 PM - 2:30 PM (Submission)",
+            type: "Class",
+            scoring: "Bronze",
+            venue: "Online Submission",
+            participants: "",
+            duration: "",
+            judgement: [
+              "1. Creativity",
+              "2. Dialogues",
+              "3. Overall effect"
+            ],
+            instructions: [
+              "1.	Participants will be provided with a pre-selected movie clip. The video will be the same for all participants.",
+              "2.	Participants must dub the clip in Hindi, Marathi, or Konkani, showcasing their creative versions.",
+              "3.	Changing pitch and voice using applications is allowed.",
+              "4.	Suicidal dialogues are strictly banned.",
+              "5.	Caution must be taken to refrain from displaying obscenity, vulgarity, violence, prejudice, defamation, etc., as it will lead to disqualification.",
+              "6.	Any video editing app/software can be used, but the final video file must be in MP4 format.",
+              "7.	Videos submitted after the deadline will be rejected.",
+              "8.	The dubbed video must be uploaded to Google Drive, and the event coordinator must be given access to the drive.",
+              "9.	Subtitles in English are mandatory."
+            ],
+            studentCoordinators: ["Jane Doe", "Bob Smith"],
+            facultyCoordinators: ["Dr. Brown", "Prof. White"],
+            contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
+          },
+          9:
+          {
+            title: "Lights Camera Action",
+            aka: "Short Film",
+            date: "3rd March 2025",
+            time: "2:30pm to 3:00pm (Submission)",
+            type: "Department",
+            scoring: "Silver",
+            venue: "Online Submission",
+            participants: "",
+            duration: "",
+            judgement: [
+              "1. Creativity & Originality",
+              "2. Relevance",
+              "3. Technical Quality",
+              "4. Impact",
+              "5. Acting & Direction"
+            ],
+            instructions: [
+              {
+                text: "General Guidelines:",
+                subInstructions: [
+                  "1.	Theme: Movies must adhere to the given theme, which will be provided by the event coordinators.",
+                  "2.	Duration: The short film must be between 5 to 10 minutes, including credits.",
+                  "3.	Language: Films can be in any language, but subtitles in English are mandatory for non-English content.",
+                  "4.	Eligibility: A minimum of 5 participants is required.",
+                  "5.	Originality: The movie must be original, and plagiarism will lead to disqualification.",
+                  "6.	File Format: The movie must be submitted in MP4 format.",
+                  "7.	Resolution: A minimum resolution of 720p is required.",
+                  "8.	Deadline: Entries must be submitted by the specified deadline. Late submissions will lead to disqualification.",
+                  "9.	Submission Platform: Upload the file to the designated platform (Google Drive/Google Form, as instructed by the event coordinator) and share the link or directly upload it to the competition portal."
+                ]
+              },
+              {
+                text: "Technical Requirements:",
+                subInstructions: [
+                  "1.	Video Quality: Ensure proper lighting, clarity, and sound quality.",
+                  "2.	Soundtrack: Use royalty-free music or obtain permission for copyrighted tracks.",
+                  "3.	Aspect Ratio: Maintain a standard aspect ratio."
+                ]
+              },
+              {
+                text: "Content Guidelines:",
+                subInstructions: [
+                  "1.	Prohibited Content: Movies must not include suicidal comments/scenes, vulgar scenes or language, extreme violence, explicit language, hate speech, or any offensive material.",
+                  "2.	Credits: Acknowledge all contributors in the credits section.",
+                  "3.	Non-compliance with the rules will result in disqualification.",
+                  "4.	The jury's decision will be final and binding."
+                ]
+              },
+            ],
+            studentCoordinators: ["Jane Doe", "Bob Smith"],
+            facultyCoordinators: ["Dr. Brown", "Prof. White"],
+            contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
+          },
+          10:
+          {
+            title: "Slow-Mo",
+            aka: "Slow Cycling",
+            date: "3rd March 2025",
+            time: "3:00 PM - 3:30 PM",
+            type: "Class",
+            scoring: "Fun",
+            venue: "Outside Civil Department",
+            participants: "1 per class",
+            duration: "30 Minutes",
+            judgement: [],
+            instructions: [
+              "1. Participants must bring their own bicycles.",
+              "2. Motorized bikes and scooters cannot be used.",
+              {
+                text: "3. Participants can use geared or non-geared bicycles, but cannot use:",
+                subInstructions: [
+                  "i. PMX bikes",
+                  " ii. Stunt bikes",
+                  "  iii. Fat tire bikes"
+                ]
+              },
+              "4. The decision of the judging panel will be final.",
+              "5. No modified cycles are allowed."
+            ],
+            studentCoordinators: ["Jane Doe", "Bob Smith"],
+            facultyCoordinators: ["Dr. Brown", "Prof. White"],
+            contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
+          },
+        },
+        day2:
+        {
+          1:
+          {
+            title: "Step Up Revolution",
+            aka: "Group Dance",
+            date: "4th March 2025",
+            time: "10:00 AM - 12:00 PM",
+            type: "Departmental",
+            scoring: "Gold",
+            venue: "Main Stage",
+            participants: "8-13 (including faculty), two teams per department",
+            duration: "5-7 Minutes",
+            judgement: [
+              "1. Costumes",
+              "2. Expressions",
+              "3. Choreography",
+              "4. Coordination",
+              "5. Overall performance"
+            ],
+            instructions: [
+              "1.	A maximum of two teams can participate from each department.",
+              "2.	Teams can perform any form of dance.",
+              "3.	A maximum of two faculty participants earns 25 bonus points.",
+              "4. Vulgarity of any kind should not be portrayed in any manner, as it will lead to disqualification of the entire team.",
+              "5.	Participants are responsible for their own safety.",
+              "6. Participants must wear decent costumes. Costumes must be cross-checked with the coordinators a day prior.",
+              "7.	Use of props is allowed; however, no extra time will be given for stage setup.",
+              "8.	Marks will be deducted if the team exceeds its appointed time.",
+              "9.	The music track should be submitted before 1st March, 5 PM, on a pen drive.",
+              "10.	Faculty must perform on the stage for a minimum of 2 minutes.",
+              "11.	Each student or faculty member is permitted to participate in only one team for this competition. Joining multiple teams is not allowed to ensure fair participation and equal opportunities for all."
+            ],
+            studentCoordinators: ["Jane Roe"],
+            facultyCoordinators: ["Dr. Brown"],
+            contactNumbers: ["+91 98765 43210"],
+          },
+          2:
+          {
+            title: "Mr. and Ms. Procyon",
+            aka: "Mr. & Ms. Procyon",
+            date: "4th March 2025",
+            time: "1:30 PM - 3:30 PM",
+            type: "Class",
+            scoring: "Silver",
+            venue: "Main Stage",
+            participants: "2 per class",
+            duration: "2 hours",
+            judgement: [
+              "1. Attire",
+              "2. Personality",
+              "3. Talent showcase",
+              "4. Questions fielded",
+              "5. Faculty participation",
+              "6. Community service",
+              "7. Voting poll"
+            ],
+            instructions: [
+              "1.	The dress code is decent formal.",
+              "2.	Participants should create their talent performance video that can be performed on stage if qualified for the talent round (2 minutes) and contact Student Coordinator                        for further details on video submission.",
+              "3.	Guidance on video making will be provided by Student Coordinator                     .",
+              "4.	Vulgarity of any kind should not be portrayed in any manner, as it will lead to disqualification.",
+              "5.	Participants are eligible for participation points even if there is just one entry from a class.",
+              "6.	During the voting poll, the staff (teaching & non-teaching) will vote for their favorite contestant on Monday, 3 March 2025, from 8:00 AM to 12:00 midnight.",
+              "7.	The rounds are as follows:",
+              {
+                text: "Round 1: Judgment based on the following criteria",
+                subInstructions: [
+                  "i. Introduction & ramp walk",
+                  "ii. Talent videos",
+                  "iii. Voting poll by staff (teaching & non-teaching)",
+                  "iv. Community service"
+                ]
+              },
+              {
+                text: "Round 2: Qualifying participants eligible for Round 2",
+                subInstructions: [
+                  "i. Judgment based on stage performance of the talent"
+                ]
+              },
+              {
+                text: "Round 3: Question & Answer round by the judges",
+                subInstructions: []
+              },
+            ],
+            studentCoordinators: ["Jane Roe"],
+            facultyCoordinators: ["Dr. Brown"],
+            contactNumbers: ["+91 98765 43210"],
+          },
+          3:
+          {
+            title: "Rock the Ramp",
+            aka: "Fashion Show",
+            date: "4th March 2025",
+            time: "3:30 PM - 5:30 PM",
+            type: "Departmental",
+            scoring: "Gold",
+            venue: "Main Stage",
+            participants: "12 + 3 helpers per department (including faculty)",
+            duration: "10 minutes",
+            judgement: [
+              "1. Costume",
+              "2. Theme",
+              "3. Ramp walk",
+              "4. Formations",
+              "5. Music"
+            ],
+            instructions: [
+              "1.	A maximum of two teams can participate from each department.",
+              "2.	Teams have to display their theme based on the clothing design.",
+              "3.	Vulgarity of any kind should not be portrayed in any manner, direct or indirect, and engaging in vulgar activities will lead to disqualification of the entire team.",
+              {
+                text: "4.	Costume restrictions:",
+                subInstructions: [
+                  "i. Male participants cannot be bare-chested unless majorly painted. Male participants are allowed to use full pants, half pants, or shorts only. Lungis, dhotis, and other Indian attire are permissible.",
+                  " ii. For female participants, no revealing clothing (no deep necklines or deep cuts allowed, no halter tops). If the costume is above the knees, dark or thick white leggings or dark stockings are a must."
+                ]
+              },
+              "5.	No show of inner garments will be allowed.",
+              "6.	Cross-dressing is not allowed.",
+              "7.	Use of props is allowed; however, no extra time will be given for stage setup.",
+              "8.	Each team must have one faculty member in charge.",
+              "9.	Music for the fashion show should be submitted by 3rd March, 4 PM to the student coordinator.",
+              " 10.	Marks will be deducted if the team exceeds its appointed time or violates any of the above-mentioned rules.",
+              " 11.	A maximum of two faculty participants earns 25 bonus points.",
+              " 12. Each student or faculty member is permitted to participate in only one team for this competition. Joining multiple teams is not allowed to ensure fair participation and equal opportunities for all."
+            ],
+            studentCoordinators: ["Jane Roe"],
+            facultyCoordinators: ["Dr. Brown"],
+            contactNumbers: ["+91 98765 43210"],
+          },
+          4:
+          {
+            title: "Street Play",
+            aka: "Street Play",
+            date: "4th March 2025",
+            time: "12:00 PM - 1:30 PM",
+            theme: "Election awareness",
+            type: "Department",
+            scoring: "Silver",
+            venue: "Near Chapel",
+            participants: "6 - 10",
+            duration: "10 minutes",
+            judgement: [
+              "1. Costume",
+              "2. Artistic skills",
+              "3. Portrayal of theme",
+              "4. Use of area",
+              "5. Overall performance"
+            ],
+            instructions: [
+              "1.	A maximum of two faculty participants earns 25 bonus points for that respective event.",
+              "2.	Suicidal topics are strictly banned from portrayal in the event.",
+              "3. Vulgarity of any kind should not be portrayed in any manner, as it will lead to disqualification of the entire team.",
+              "4.	Use of props is allowed; however, no extra time will be given for stage setup.",
+              "5.	Marks will be deducted if the team exceeds its appointed time."
+            ],
+            studentCoordinators: ["Jane Roe"],
+            facultyCoordinators: ["Dr. Brown"],
+            contactNumbers: ["+91 98765 43210"],
+          },
+          5:
+          {
+            title: "Treasure Hunt",
+            aka: "Treasure Hunt",
+            date: "4th March 2025",
+            time: "9:30 AM - 11:00 AM",
+            type: "Class",
+            scoring: "Bronze",
+            venue: "Round-1: SE Civil Classroom",
+            participants: "1 team per class, 2-3 members per team",
+            duration: "1 hour 30 minutes (Max)",
+            judgement: [
+              "There will be 2 rounds.",
+              "Round 1: Aptitude test/General knowledge. The top 4 highest-scoring teams will qualify for the Treasure Hunt.",
+              "Round 2: Treasure Hunt. The team that finds the treasure first wins. There are 2 treasures. The treasure you find will determine the place you win."
+            ],
+            instructions: [
+              "1.	All teams must register through their CR. (Note: To ease the selection process, CRs can use a first-come, first-served basis.)",
+              "2.	One team per class, with at most 3 members each.",
+              "3.	Participants must arrive by 9:15 AM sharp; failure to do so will result in disqualification of the team.",
+              "4.	All team members must have their ID cards for verification.",
+              "5.	Other details will be communicated 1 day prior to the event.",
+              "6.	The decision of the faculty coordinators is final.",
+              "7.	The faculty coordinator will track the progress of the treasure hunt and announce the winner to avoid any discrepancies.",
+              "8.	Each class is allowed to form only one team, comprising 2-3 members."
+            ],
+            studentCoordinators: ["Jane Roe"],
+            facultyCoordinators: ["Dr. Brown"],
+            contactNumbers: ["+91 98765 43210"],
+          },
+          6:
+          {
+            title: "Face Painting",
+            aka: "Face Painting",
+            date: "4th March 2025",
+            time: "11:00 AM - 1:00 PM",
+            type: "Class",
+            scoring: "Bronze",
+            venue: "Near Chapel",
+            participants: "2-3",
+            duration: "2 hours",
+            judgement: [
+              "1. Color combination",
+              "2. Intricacy",
+              "3. Overall presentation"
+            ],
+            instructions: [
+              "1.	There can be at most 2 face painters and 1 model.",
+              "2.	Skin-safe adhesives and adhesive removers must be used.",
+              "3.	Participants should bring their own colors, brushes, etc.",
+              "4.	The topic will be given on the spot.",
+              "5.	The decision of the judges will be final and binding.",
+              {
+                text: "6.	Competitors MAY NOT use:",
+                subInstructions: [
+                  "i. Acrylic paints and other commercial paints including tempera paint, craft paint, textile paint, airbrush paint (such as Createx brand and other brands), etc.",
+                  " ii. An airbrush system.",
+                  "iii. Stencils or stamps of any kind",
+                  " iv. Masks",
+                  "  v. Prosthetic pieces that are glued or taped to the face (i.e. fake cuts, scars, warts, noses, etc.)",
+                  " vi. Special effects contact lenses"
+                ]
+              },
+              "7.	Regular prescription eyeglasses or contact lenses will be allowed for the models and the artists."
+            ],
+            studentCoordinators: ["Jane Roe"],
+            facultyCoordinators: ["Dr. Brown"],
+            contactNumbers: ["+91 98765 43210"],
+          },
+          7:
+          {
+            title: "Framed",
+            aka: "Photography",
+            date: "4th March 2025",
+            time: "1 to 1:30PM (Submission)",
+            theme: "Will be shared on 4th March @ 11 AM",
+            type: "Class",
+            scoring: "Bronze",
+            venue: "Online Submission",
+            participants: "2 per class (One team)",
+            judgement: [
+              "1. Creativity",
+              "2. Lighting",
+              "3. Visual appeal",
+              "4. Presentation of topic",
+              "5. Overall effect"
+            ],
+            instructions: [
+              "1.	Each team must submit 2 photos (1 photo per participant).",
+              "2.	The event spans 2 days, each with a separate theme.",
+              "3.	Photos must be in JPEG, JPG, or PNG format only.",
+              "4.	Photos should be taken within the given time period.",
+              "5.	Use of mobiles and DSLR cameras is allowed.",
+              "6.	Use of drones and action cameras is strictly prohibited.",
+              "7.	Basic editing (only cropping) is allowed.",
+              "8.	Advanced editing, which includes creating illusions, deceptions, or manipulations, or adding and removing significant elements, is prohibited and will lead to disqualification.",
+              "9.	Participants must provide a unique caption for each image submitted. Rename the image files as 'day_1' and 'day_2' before submission.",
+              "10.	The photograph must be original, and no watermark of any kind should be present.",
+              "11.	Late submissions will be disqualified.",
+              "12.	The theme for this event will be shared later."
             ],
             studentCoordinators: ["Jane Roe"],
             facultyCoordinators: ["Dr. Brown"],
@@ -1163,69 +1825,162 @@ if (!isset($_SESSION)) {
           },
         },
       };
-    
+
       const details = eventDetails[day][eventId];
       if (details) {
-        document.getElementById("eventAKA").innerText = details.aka;
-        document.getElementById("eventDate").innerText = details.date;
-        document.getElementById("eventType").innerText = details.type;
-        document.getElementById("eventScoring").innerText = details.scoring;
-        document.getElementById("eventVenue").innerText = details.venue;
-        document.getElementById("eventParticipants").innerText = details.participants;
-        document.getElementById("eventDuration").innerText = details.duration;
-    
-       // Display Judging Criteria
-    const judgementContainer = document.getElementById("eventJudgement");
-    judgementContainer.innerHTML = ""; // Clear previous content
-    details.judgement.forEach((point) => {
-      const p = document.createElement("p");
-      p.innerText = point;
-      p.classList.add("modal-text-container"); // Apply styling
-      judgementContainer.appendChild(p);
-    });
-    
-    // Display Instructions
-    const instructionsContainer = document.getElementById("eventInstructions");
-    instructionsContainer.innerHTML = ""; // Clear previous content
-    details.instructions.forEach((instruction) => {
-      const p = document.createElement("p");
-      p.innerText = instruction;
-      p.classList.add("modal-text-container"); // Apply styling
-      instructionsContainer.appendChild(p);
-    });
-    
-    
+        // Dynamically handle each field
+        const fields = [
+          { key: "title", elementId: "eventTitle" },
+          { key: "aka", elementId: "eventAKA" },
+          { key: "date", elementId: "eventDate" },
+          { key: "time", elementId: "eventTime" },
+          { key: "type", elementId: "eventType" },
+          { key: "theme", elementId: "eventTheme" },
+          { key: "scoring", elementId: "eventScoring" },
+          { key: "venue", elementId: "eventVenue" },
+          { key: "participants", elementId: "eventParticipants" },
+          { key: "duration", elementId: "eventDuration" },
+        ];
+
+        fields.forEach((field) => {
+          const element = document.getElementById(field.elementId);
+          if (details[field.key]) {
+            element.innerText = details[field.key];
+            element.parentElement.style.display = "block"; // Show parent container if hidden
+          } else {
+            element.parentElement.style.display = "none"; // Hide parent container if undefined
+          }
+        });
+
+        // Display Judging Criteria
+        const judgementContainer = document.getElementById("eventJudgement");
+        if (details.judgement && details.judgement.length > 0) {
+          judgementContainer.innerHTML = ""; // Clear previous content
+          details.judgement.forEach((point) => {
+            const p = document.createElement("p");
+            p.innerText = point;
+            p.classList.add("modal-text-container");
+            judgementContainer.appendChild(p);
+          });
+          judgementContainer.parentElement.style.display = "block";
+        } else {
+          judgementContainer.parentElement.style.display = "none";
+        }
+        // Display Pantry
+const pantrySection = document.getElementById("eventPantrySection");
+const pantryContainer = document.getElementById("eventPantry");
+if (details.pantry && details.pantry.length > 0) {
+  pantryContainer.innerHTML = ""; // Clear previous content
+  details.pantry.forEach((item) => {
+    const p = document.createElement("p");
+    p.innerText = item;
+    p.classList.add("modal-text-container");
+    pantryContainer.appendChild(p);
+  });
+  pantrySection.style.display = "block"; // Show the entire section if data exists
+} else {
+  pantryContainer.innerHTML = ""; // Clear any previous content
+  pantrySection.style.display = "none"; // Hide the entire section if data is absent
+}
+
+// Display Genre
+const genreSection = document.getElementById("eventGenreSection");
+const genreContainer = document.getElementById("eventGenre");
+if (details.genre && details.genre.length > 0) {
+  genreContainer.innerHTML = ""; // Clear previous content
+  details.genre.forEach((item) => {
+    const p = document.createElement("p");
+    p.innerText = item;
+    p.classList.add("modal-text-container");
+    genreContainer.appendChild(p);
+  });
+  genreSection.style.display = "block"; // Show the entire section if data exists
+} else {
+  genreContainer.innerHTML = ""; // Clear any previous content
+  genreSection.style.display = "none"; // Hide the entire section if data is absent
+}
+
+        // Display Instructions
+        const instructionsContainer = document.getElementById("eventInstructions");
+        if (details.instructions && details.instructions.length > 0) {
+          instructionsContainer.innerHTML = ""; // Clear previous content
+          details.instructions.forEach((instruction) => {
+            if (typeof instruction === "string") {
+              const p = document.createElement("p");
+              p.innerText = instruction;
+              p.classList.add("modal-text-container");
+              instructionsContainer.appendChild(p);
+            } else if (typeof instruction === "object") {
+              const mainInstruction = document.createElement("p");
+              mainInstruction.innerText = instruction.text;
+              mainInstruction.classList.add("modal-text-container");
+              instructionsContainer.appendChild(mainInstruction);
+
+              if (instruction.subInstructions) {
+                instruction.subInstructions.forEach((subInstruction) => {
+                  const subP = document.createElement("p");
+                  subP.style.color = "white";
+                  subP.innerText = `    ${subInstruction}`;
+                  subP.style.marginLeft = "20px";
+                  subP.classList.add("modal-text-container");
+                  instructionsContainer.appendChild(subP);
+                });
+              }
+            }
+          });
+          instructionsContainer.parentElement.style.display = "block";
+        } else {
+          instructionsContainer.parentElement.style.display = "none";
+        }
+
         // Display Student Coordinators
         const studentCoordinatorContainer = document.getElementById("studentCoordinators");
-        studentCoordinatorContainer.innerHTML = "";
-        details.studentCoordinators.forEach((coordinator) => {
-          const coordinatorItem = document.createElement("p");
-          coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
-          studentCoordinatorContainer.appendChild(coordinatorItem);
-        });
-    
+        if (details.studentCoordinators && details.studentCoordinators.length > 0) {
+          studentCoordinatorContainer.innerHTML = "";
+          details.studentCoordinators.forEach((coordinator) => {
+            const coordinatorItem = document.createElement("p");
+            coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
+            studentCoordinatorContainer.appendChild(coordinatorItem);
+          });
+          studentCoordinatorContainer.parentElement.style.display = "block";
+        } else {
+          studentCoordinatorContainer.parentElement.style.display = "none";
+        }
+
         // Display Faculty Coordinators
         const facultyCoordinatorContainer = document.getElementById("facultyCoordinators");
-        facultyCoordinatorContainer.innerHTML = "";
-        details.facultyCoordinators.forEach((coordinator) => {
-          const coordinatorItem = document.createElement("p");
-          coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
-          facultyCoordinatorContainer.appendChild(coordinatorItem);
-        });
-    
+        if (details.facultyCoordinators && details.facultyCoordinators.length > 0) {
+          facultyCoordinatorContainer.innerHTML = "";
+          details.facultyCoordinators.forEach((coordinator) => {
+            const coordinatorItem = document.createElement("p");
+            coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
+            facultyCoordinatorContainer.appendChild(coordinatorItem);
+          });
+          facultyCoordinatorContainer.parentElement.style.display = "block";
+        } else {
+          facultyCoordinatorContainer.parentElement.style.display = "none";
+        }
+
         // Display Contact Numbers
         const contactContainer = document.getElementById("contactNumbers");
-        contactContainer.innerHTML = "";
-        details.contactNumbers.forEach((contact) => {
-          const contactItem = document.createElement("p");
-          contactItem.innerHTML = `<strong>${contact}</strong>`;
-          contactContainer.appendChild(contactItem);
-        });
+        if (details.contactNumbers && details.contactNumbers.length > 0) {
+          contactContainer.innerHTML = "";
+          details.contactNumbers.forEach((contact) => {
+            const contactItem = document.createElement("p");
+            contactItem.innerHTML = `<strong>${contact}</strong>`;
+            contactContainer.appendChild(contactItem);
+          });
+          contactContainer.parentElement.style.display = "block";
+        } else {
+          contactContainer.parentElement.style.display = "none";
+        }
       }
-    
+
+
+
       const modal = document.getElementById("eventDetailsModal");
       modal.style.display = "flex";
-    
+
       // Close modal on outside click
       modal.addEventListener("click", function (e) {
         if (e.target === modal) {
@@ -1233,62 +1988,62 @@ if (!isset($_SESSION)) {
         }
       });
     }
-    
-        function closeModal() {
-          const modal = document.getElementById("eventDetailsModal");
-          modal.style.display = "none";
+
+    function closeModal() {
+      const modal = document.getElementById("eventDetailsModal");
+      modal.style.display = "none";
+    }
+
+
+    function showGeneralRules() {
+      const modal = document.getElementById("generalRulesModal");
+      modal.style.display = "flex";
+
+      // Close modal on outside click
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeGeneralRulesModal();
         }
-    
-    
-        function showGeneralRules() {
-          const modal = document.getElementById("generalRulesModal");
-          modal.style.display = "flex";
-    
-          // Close modal on outside click
-          modal.addEventListener('click', function (e) {
-            if (e.target === modal) {
-              closeGeneralRulesModal();
-            }
-          });
-        }
-    
-        function closeGeneralRulesModal() {
-          const modal = document.getElementById("generalRulesModal");
-          modal.style.display = "none";
-        }
-        function openRegisterModal() {
-          document.getElementById("registerModal").style.display = "flex";
-        }
-    
-        function closeRegisterModal() {
-          document.getElementById("registerModal").style.display = "none";
-        }
-    
-        // Close modal when clicking outside of the modal content
-        window.addEventListener("click", function (event) {
-          const modal = document.getElementById("registerModal");
-          if (event.target === modal) {
-            closeRegisterModal();
-          }
-        });
-    
-        document.getElementById("registerForm").addEventListener("submit", function (event) {
-          event.preventDefault();
-          const name = document.getElementById("name").value;
-          const password = document.getElementById("password").value;
-          const eventType = document.getElementById("eventType").value
-          closeRegisterModal();
-        });
-    
-        function showEventOrder() {
-          document.getElementById('eventOrderModal').style.display = 'flex';
-        }
-    
-        function closeEventOrderModal(event) {
-          if (event.target === document.getElementById('eventOrderModal')) {
-            document.getElementById('eventOrderModal').style.display = 'none';
-          }
-        }
+      });
+    }
+
+    function closeGeneralRulesModal() {
+      const modal = document.getElementById("generalRulesModal");
+      modal.style.display = "none";
+    }
+    function openRegisterModal() {
+      document.getElementById("registerModal").style.display = "flex";
+    }
+
+    function closeRegisterModal() {
+      document.getElementById("registerModal").style.display = "none";
+    }
+
+    // Close modal when clicking outside of the modal content
+    window.addEventListener("click", function (event) {
+      const modal = document.getElementById("registerModal");
+      if (event.target === modal) {
+        closeRegisterModal();
+      }
+    });
+
+    document.getElementById("registerForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const password = document.getElementById("password").value;
+      const eventType = document.getElementById("eventType").value
+      closeRegisterModal();
+    });
+
+    function showEventOrder() {
+      document.getElementById('eventOrderModal').style.display = 'flex';
+    }
+
+    function closeEventOrderModal(event) {
+      if (event.target === document.getElementById('eventOrderModal')) {
+        document.getElementById('eventOrderModal').style.display = 'none';
+      }
+    }
 
   </script>
 
@@ -1300,7 +2055,7 @@ if (!isset($_SESSION)) {
       color: white;
       border: none;
       font-size: 18px;
-      border-radius: 5px;       
+      border-radius: 5px;
       padding: 10px 20px;
       transition: background 0.3s ease;
       cursor: pointer;
@@ -1583,7 +2338,8 @@ if (!isset($_SESSION)) {
       <div class="row">
         <div class="col-lg-12">
           <div class="section_title mb-3">
-            <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="text-align: center; color: rgb(4, 4, 85);">Glimpses
+            <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s"
+              style="text-align: center; color: rgb(4, 4, 85);">Glimpses
             </h3>
           </div>
         </div>
@@ -1598,8 +2354,8 @@ if (!isset($_SESSION)) {
                 <div class="item"><img src="img/carrosel/Souvenir_Glimpses.jpg" alt=""></div>
                 <div class="item"><img src="img/carrosel/BattleOfBands_Glimpses.jpg" alt=""></div>
                 <div class="item"><img src="img/carrosel/HoistTheBanner_Glimpses.jpg" alt=""></div>
-           
-               
+
+
                 <div class="item"><img src="img/carrosel/TheArtOfColors_Glimpses.jpg" alt=""></div>
                 <div class="item"><img src="img/carrosel/TheVoice_Glimpses.jpg" alt=""></div>
                 <div class="item"><img src="img/carrosel/GhumatAarti_Glimpses.jpg" alt=""></div>
@@ -1648,7 +2404,7 @@ if (!isset($_SESSION)) {
       width: 55vw;
       max-width: 1300px;
       height: 100%;
-      object-fit:cover;
+      object-fit: cover;
     }
 
     .slider .buttons {
@@ -1764,19 +2520,20 @@ if (!isset($_SESSION)) {
 
 
 
-  <!-- Map Section -->
-<!-- Map Section -->
-<div class="section_title text-center mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" > 
-  <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s" style="text-align: center; color: rgb(4, 4, 85);">Map</h3>
-</div>
-<main class="flex-grow w-full">
-  <div class="relative h-[50vh] max-w-[850px] mx-auto"> <!-- Added max-width and centered it -->
-    <iframe class="w-full h-full"
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15394.22519423461!2d73.9690846!3d15.291974!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfb1631736de9d%3A0x980720b4516a7a5!2sDon%20Bosco%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1683527701515!5m2!1sen!2sin"
-      style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</main>
+    <!-- Map Section -->
+    <!-- Map Section -->
+    <div class="section_title text-center mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+      <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s"
+        style="text-align: center; color: rgb(4, 4, 85);">Map</h3>
+    </div>
+    <main class="flex-grow w-full">
+      <div class="relative h-[50vh] max-w-[850px] mx-auto"> <!-- Added max-width and centered it -->
+        <iframe class="w-full h-full"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15394.22519423461!2d73.9690846!3d15.291974!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfb1631736de9d%3A0x980720b4516a7a5!2sDon%20Bosco%20College%20Of%20Engineering!5e0!3m2!1sen!2sin!4v1683527701515!5m2!1sen!2sin"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </main>
 
 
 
@@ -1789,8 +2546,8 @@ if (!isset($_SESSION)) {
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <div class="section_title text-center mb-30">
-            <h4 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">Sponsors</h4>
+          <div class="section_title text-center mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".3s">
+            <h3 style="color: rgb(4, 4, 85);">Sponsors</h3>
           </div>
         </div>
       </div>
@@ -1828,105 +2585,115 @@ if (!isset($_SESSION)) {
   <!-- brand_area_end  -->
   <!-- footer_start  -->
   <style>
-		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-body{
-	line-height: 1.5;
-	font-family: 'Poppins', sans-serif;
-}
-*{
-	margin:0;
-	padding:0;
-	box-sizing: border-box;
-}
-.container{
-	max-width: 1170px;
-	margin:auto;
-}
-.row{
-	display: flex;
-	flex-wrap: wrap;
-}
-ul{
-	list-style: none;
-}
-.footer{
-	background-color: #24262b;
-    padding: 70px 0;
-}
-.footer-col{
-   width: 25%;
-   padding: 0 15px;
-}
-.footer-col h4{
-	font-size: 18px;
-	color: #ffffff;
-	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
-	position: relative;
-}
-.footer-col h4::before{
-	content: '';
-	position: absolute;
-	left:0;
-	bottom: -10px;
-	background-color: #e91e63;
-	height: 2px;
-	box-sizing: border-box;
-	width: 50px;
-}
-.footer-col ul li:not(:last-child){
-	margin-bottom: 10px;
-}
-.footer-col ul li a{
-	font-size: 16px;
-	text-transform: capitalize;
-	color: #ffffff;
-	text-decoration: none;
-	font-weight: 300;
-	color: #bbbbbb;
-	display: block;
-	transition: all 0.3s ease;
-}
-.footer-col ul li a:hover{
-	color: #ffffff;
-	padding-left: 8px;
-}
-.footer-col .social-links a{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-	color: #24262b;
-	background-color: #ffffff;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/*responsive*/
-@media(max-width: 767px){
-  .footer-col{
-    width: 50%;
-    margin-bottom: 30px;
-}
-}
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
-}
-}
+    body {
+      line-height: 1.5;
+      font-family: 'Poppins', sans-serif;
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    .container {
+      max-width: 1170px;
+      margin: auto;
+    }
 
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
 
+    ul {
+      list-style: none;
+    }
 
-	</style>
+    .footer {
+      background-color: #24262b;
+      padding: 70px 0;
+    }
+
+    .footer-col {
+      width: 25%;
+      padding: 0 15px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      color: #ffffff;
+      text-transform: capitalize;
+      margin-bottom: 35px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .footer-col h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: #e91e63;
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+    }
+
+    .footer-col ul li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      color: #bbbbbb;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+      padding-left: 8px;
+    }
+
+    .footer-col .social-links a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 0 10px 10px 0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+      color: #24262b;
+      background-color: #ffffff;
+    }
+
+    /*responsive*/
+    @media(max-width: 767px) {
+      .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media(max-width: 574px) {
+      .footer-col {
+        width: 100%;
+      }
+    }
+  </style>
   <footer class="footer">
     <div class="container">
       <div class="row">
@@ -1966,29 +2733,27 @@ ul{
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
-  
+
           <!-- Updated Register Button -->
           <div class="col-xl-3 col-lg-3 mt-3 mb-3">
             <div class="buy_tkt">
 
               <div class="book_btn d-none d-lg-block">
-                
-        
-              <div class="book_btn">
-                <button 
-                class="bg-blue-500 text-white px-5 py-2 hover:bg-blue-400 transition hidden md:block"
-                id="registerbtn" 
-                onclick="openRegisterModal()">Register</button>
 
+
+                <div class="book_btn">
+                  <button class="bg-blue-500 text-white px-5 py-2 hover:bg-blue-400 transition hidden md:block"
+                    id="registerbtn" onclick="openRegisterModal()">Register</button>
+
+                </div>
               </div>
             </div>
+
           </div>
-  
         </div>
       </div>
-    </div>
   </footer>
-  
+
   <!-- footer_end  -->
 
   <!-- JS here -->
