@@ -13,11 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     try {
+        // Assuming the connection parameters are in connection.php
         $pdo = new PDO($dsn, $db_username, $db_password, $options); // Ensure connection is valid
 
         // Convert input username to lowercase & remove extra spaces
         $username = strtolower(str_replace(' ', '', $username));
 
+        // Check the event category and prepare the query accordingly
         if ($event_category == "class-event") {
             $query = "SELECT * FROM classregistration WHERE REPLACE(LOWER(username), ' ', '') = :username AND password = :password";
         } elseif ($event_category == "department-event") {
@@ -27,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
+        // Prepare and execute the query
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(":username", $username, PDO::PARAM_STR);
         $stmt->bindParam(":password", $password, PDO::PARAM_STR);
@@ -38,20 +41,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
+        // Store session variables
         $_SESSION["username"] = $username;
         $_SESSION["event_category"] = $event_category;
 
         // Define Google Form links
-        $classEventForm = "https://forms.gle/9Q9Lg4a4E3dYNK8bA"; // Replace with actual link
-        $departmentEventForm = "https://forms.gle/9Q9Lg4a4E3dYNK8bA"; // Replace with actual link
+        $classEventForm = "https://forms.gle/9Q9Lg4a4E3dYNK8bA"; // Replace with actual link for class event
+        $departmentEventForm = "https://forms.gle/9Q9Lg4a4E3dYNK8bA"; // Replace with actual link for department event
 
-        // Redirect based on event type
+        // Redirect to the appropriate Google Form based on event type
         if ($event_category == "class-event") {
-            echo "<script>window.location.href = '$classEventForm';</script>";
+            header("Location: $classEventForm"); // Redirect to class form
+            exit();
         } elseif ($event_category == "department-event") {
-            echo "<script>window.location.href = '$departmentEventForm';</script>";
+            header("Location: $departmentEventForm"); // Redirect to department form
+            exit();
         }
-        exit();
     } catch (PDOException $e) {
         echo "Database error: " . $e->getMessage();
         exit();
