@@ -14,10 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $pdo = new PDO($dsn, $db_username, $db_password, $options); // Ensure connection is valid
         
+        // Convert input username to lowercase
+        $username = strtolower($username);
+
         if ($event_category == "class-event") {
-            $query = "SELECT * FROM classregistration WHERE username = :username";
+            $query = "SELECT * FROM classregistration WHERE LOWER(username) = :username";
         } elseif ($event_category == "department-event") {
-            $query = "SELECT * FROM departmentregistration WHERE username = :username";
+            $query = "SELECT * FROM departmentregistration WHERE LOWER(username) = :username";
         } else {
             die("Invalid event category.");
         }
