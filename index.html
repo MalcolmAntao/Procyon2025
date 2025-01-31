@@ -44,69 +44,70 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <header class="sticky bg-gray-900 py-4 px-6 md:px-12 font-[Poppins] text-white top-0 z-10">
-          <div class="container mx-auto flex justify-between items-center">
-              <div class="text-blue-400 font-bold text-2xl" style="font-family: 'Lobster', cursive;">
-                  PROCYON 2025
-              </div>
-      
-              <nav class="hidden md:flex gap-8">
-                  <a href="#home" class="hover:text-blue-400 transition duration-300">Home</a>
-                  <a href="#about" class="hover:text-blue-400 transition duration-300">About</a>
-                  <a href="#schedule" class="hover:text-blue-400 transition duration-300">Schedule</a>
-                  <a href="#glimpses" class="hover:text-blue-400 transition duration-300">Glimpses</a>
-                  <a href="#sponsor" class="hover:text-blue-400 transition duration-300">Sponsors</a>
-                  <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a>
-              </nav>
-      
-              <div class="flex items-center gap-4">
-                  <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 hidden md:block"
-                      onclick="openRegisterModal()">
-                      Register
-                  </button>
-                  <button onclick="toggleMenu()" class="text-3xl cursor-pointer md:hidden">
-                      <ion-icon id="menuIcon" name="menu"></ion-icon>
-                  </button>
-              </div>
-          </div>
-      
-          <!-- Mobile Menu -->
-          <div id="mobileMenu" class="absolute bg-gray-900 w-full left-0 hidden flex-col items-center text-center md:hidden">
-              <a href="#home" class="block py-3 hover:text-blue-400 transition duration-300">Home</a>
-              <a href="#about" class="block py-3 hover:text-blue-400 transition duration-300">About</a>
-              <a href="#schedule" class="block py-3 hover:text-blue-400 transition duration-300">Schedule</a>
-              <a href="#glimpses" class="block py-3 hover:text-blue-400 transition duration-300">Glimpses</a>
-              <a href="#sponsor" class="block py-3 hover:text-blue-400 transition duration-300">Sponsors</a>
-              <a href="#contact" class="block py-3 hover:text-blue-400 transition duration-300">Contact</a>
-              <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 my-3"
-                  onclick="openRegisterModal()">
-                  Register
-              </button>
-          </div>
-      </header>
-      
-      <script>
-          function toggleMenu() {
-              const mobileMenu = document.getElementById('mobileMenu');
-              const menuIcon = document.getElementById('menuIcon');
-      
-              if (mobileMenu.classList.contains('hidden')) {
-                  mobileMenu.classList.remove('hidden');
-                  mobileMenu.classList.add('flex');
-                  menuIcon.setAttribute('name', 'close');
-              } else {
-                  mobileMenu.classList.add('hidden');
-                  mobileMenu.classList.remove('flex');
-                  menuIcon.setAttribute('name', 'menu');
-              }
-          }
-      
-          function openRegisterModal() {
-              console.log('Register clicked');
-          }
-      </script>
-      
-      
+  <header class="sticky bg-gray-900 py-4 px-6 md:px-12 font-[Poppins] text-white top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="text-blue-400 font-bold text-2xl" style="font-family: 'Lobster', cursive;">
+        PROCYON 2025
+      </div>
+
+      <nav class="hidden md:flex gap-8">
+        <a href="#home" class="hover:text-blue-400 transition duration-300">Home</a>
+        <a href="#about" class="hover:text-blue-400 transition duration-300">About</a>
+        <a href="#schedule" class="hover:text-blue-400 transition duration-300">Schedule</a>
+        <a href="#glimpses" class="hover:text-blue-400 transition duration-300">Glimpses</a>
+        <a href="#sponsor" class="hover:text-blue-400 transition duration-300">Sponsors</a>
+        <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button
+          class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 hidden md:block"
+          onclick="openRegisterModal()">
+          Register
+        </button>
+        <button onclick="toggleMenu()" class="text-3xl cursor-pointer md:hidden">
+          <ion-icon id="menuIcon" name="menu"></ion-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="absolute bg-gray-900 w-full left-0 hidden flex-col items-center text-center md:hidden">
+      <a href="#home" class="block py-3 hover:text-blue-400 transition duration-300">Home</a>
+      <a href="#about" class="block py-3 hover:text-blue-400 transition duration-300">About</a>
+      <a href="#schedule" class="block py-3 hover:text-blue-400 transition duration-300">Schedule</a>
+      <a href="#glimpses" class="block py-3 hover:text-blue-400 transition duration-300">Glimpses</a>
+      <a href="#sponsor" class="block py-3 hover:text-blue-400 transition duration-300">Sponsors</a>
+      <a href="#contact" class="block py-3 hover:text-blue-400 transition duration-300">Contact</a>
+      <button class="bg-blue-500 text-white px-5 py-2 rounded-full hover:bg-blue-400 transition duration-300 my-3"
+        onclick="openRegisterModal()">
+        Register
+      </button>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      const mobileMenu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        menuIcon.setAttribute('name', 'close');
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+        menuIcon.setAttribute('name', 'menu');
+      }
+    }
+
+    function openRegisterModal() {
+      console.log('Register clicked');
+    }
+  </script>
+
+
   <!-- slider_area_start -->
   <div class="slider_area" id="home">
     <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
@@ -815,7 +816,6 @@
       border-collapse: collapse;
     }
   </style>
-
   <!-- Modal Popup for Event Details -->
   <div id="eventDetailsModal" class="modal" style="display: none">
     <div class="modal-content">
@@ -1162,9 +1162,9 @@
     }
     function showEventDetails(day, eventId) {
       const eventDetails = {
-        day1: 
+        day1:
         {
-          1: 
+          1:
           {
             title: "Ghumat Aarti",
             aka: "Ghumat Aarti",
@@ -1225,9 +1225,9 @@
               "7. The first 3 minutes will be for the participant’s chosen song; the next 2 minutes will be a challenge song.",
               "8. The challenge song will be assigned by drawing lots.",
               "9. Singers may provide karaoke tracks to the coordinators by 2nd March 2025, 5:00 PM.",
-            " 10. If the karaoke track contains any vocals (main or backup), the participant will be disqualified.",
-            " 11. Marks will be deducted if the participant exceeds the time limit.",
-            " 12. Indecent lyrics are strictly prohibited."
+              " 10. If the karaoke track contains any vocals (main or backup), the participant will be disqualified.",
+              " 11. Marks will be deducted if the participant exceeds the time limit.",
+              " 12. Indecent lyrics are strictly prohibited."
             ],
             studentCoordinators: ["Jane Doe", "Bob Smith"],
             facultyCoordinators: ["Dr. Brown", "Prof. White"],
@@ -1235,7 +1235,7 @@
           },
           3:
           {
-            title:"Skit",
+            title: "Skit",
             aka: "Skit",
             date: "3rd March 2025",
             time: "2:00 PM - 3:00 PM ",
@@ -1270,7 +1270,7 @@
           },
           4:
           {
-            title:"Battle Of Bands",
+            title: "Battle Of Bands",
             aka: "Band Performance",
             date: "3rd March 2025",
             time: "3:30 PM - 5:30 PM",
@@ -1312,7 +1312,7 @@
           },
           5:
           {
-            title:"Food Wizard",
+            title: "Food Wizard",
             aka: "Flameless Cooking",
             date: "3rd March 2025",
             time: "10:30 AM - 1:30 PM",
@@ -1391,7 +1391,7 @@
           },
           7:
           {
-            title:"The Art Of Colors",
+            title: "The Art Of Colors",
             aka: "Rangoli Making",
             date: "3rd March 2025",
             time: "10:30 AM - 1:30 PM",
@@ -1420,7 +1420,7 @@
             facultyCoordinators: ["Dr. Brown", "Prof. White"],
             contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
           },
-          8: 
+          8:
           {
             title: "DubbItUp",
             aka: "Dubbing Competition",
@@ -1525,8 +1525,8 @@
                 text: "3. Participants can use geared or non-geared bicycles, but cannot use:",
                 subInstructions: [
                   "i. PMX bikes",
-                " ii. Stunt bikes",
-              "  iii. Fat tire bikes"
+                  " ii. Stunt bikes",
+                  "  iii. Fat tire bikes"
                 ]
               },
               "4. The decision of the judging panel will be final.",
@@ -1537,9 +1537,9 @@
             contactNumbers: ["+91 54321 67890", "+91 09876 12345"],
           },
         },
-        day2: 
+        day2:
         {
-          1: 
+          1:
           {
             title: "Step Up Revolution",
             aka: "Group Dance",
@@ -1574,7 +1574,7 @@
             facultyCoordinators: ["Dr. Brown"],
             contactNumbers: ["+91 98765 43210"],
           },
-          2: 
+          2:
           {
             title: "Mr. and Ms. Procyon",
             aka: "Mr. & Ms. Procyon",
@@ -1602,31 +1602,31 @@
               "5.	Participants are eligible for participation points even if there is just one entry from a class.",
               "6.	During the voting poll, the staff (teaching & non-teaching) will vote for their favorite contestant on Monday, 3 March 2025, from 8:00 AM to 12:00 midnight.",
               "7.	The rounds are as follows:",
-                  {
-                  text: "Round 1: Judgment based on the following criteria",
-                  subInstructions: [
-                   "i. Introduction & ramp walk",
+              {
+                text: "Round 1: Judgment based on the following criteria",
+                subInstructions: [
+                  "i. Introduction & ramp walk",
                   "ii. Talent videos",
-                 "iii. Voting poll by staff (teaching & non-teaching)",
+                  "iii. Voting poll by staff (teaching & non-teaching)",
                   "iv. Community service"
-                  ]
-                 },
-                 {
+                ]
+              },
+              {
                 text: "Round 2: Qualifying participants eligible for Round 2",
                 subInstructions: [
                   "i. Judgment based on stage performance of the talent"
                 ]
-                },
-                {
+              },
+              {
                 text: "Round 3: Question & Answer round by the judges",
                 subInstructions: []
-                },
-              ],
+              },
+            ],
             studentCoordinators: ["Jane Roe"],
             facultyCoordinators: ["Dr. Brown"],
             contactNumbers: ["+91 98765 43210"],
           },
-          3: 
+          3:
           {
             title: "Rock the Ramp",
             aka: "Fashion Show",
@@ -1652,7 +1652,7 @@
                 text: "4.	Costume restrictions:",
                 subInstructions: [
                   "i. Male participants cannot be bare-chested unless majorly painted. Male participants are allowed to use full pants, half pants, or shorts only. Lungis, dhotis, and other Indian attire are permissible.",
-                " ii. For female participants, no revealing clothing (no deep necklines or deep cuts allowed, no halter tops). If the costume is above the knees, dark or thick white leggings or dark stockings are a must."
+                  " ii. For female participants, no revealing clothing (no deep necklines or deep cuts allowed, no halter tops). If the costume is above the knees, dark or thick white leggings or dark stockings are a must."
                 ]
               },
               "5.	No show of inner garments will be allowed.",
@@ -1660,15 +1660,15 @@
               "7.	Use of props is allowed; however, no extra time will be given for stage setup.",
               "8.	Each team must have one faculty member in charge.",
               "9.	Music for the fashion show should be submitted by 3rd March, 4 PM to the student coordinator.",
-            " 10.	Marks will be deducted if the team exceeds its appointed time or violates any of the above-mentioned rules.",
-            " 11.	A maximum of two faculty participants earns 25 bonus points.",
-            " 12. Each student or faculty member is permitted to participate in only one team for this competition. Joining multiple teams is not allowed to ensure fair participation and equal opportunities for all."
+              " 10.	Marks will be deducted if the team exceeds its appointed time or violates any of the above-mentioned rules.",
+              " 11.	A maximum of two faculty participants earns 25 bonus points.",
+              " 12. Each student or faculty member is permitted to participate in only one team for this competition. Joining multiple teams is not allowed to ensure fair participation and equal opportunities for all."
             ],
             studentCoordinators: ["Jane Roe"],
             facultyCoordinators: ["Dr. Brown"],
             contactNumbers: ["+91 98765 43210"],
           },
-          4: 
+          4:
           {
             title: "Street Play",
             aka: "Street Play",
@@ -1698,7 +1698,7 @@
             facultyCoordinators: ["Dr. Brown"],
             contactNumbers: ["+91 98765 43210"],
           },
-          5: 
+          5:
           {
             title: "Treasure Hunt",
             aka: "Treasure Hunt",
@@ -1728,9 +1728,9 @@
             facultyCoordinators: ["Dr. Brown"],
             contactNumbers: ["+91 98765 43210"],
           },
-          6: 
+          6:
           {
-            title:"Face Painting",
+            title: "Face Painting",
             aka: "Face Painting",
             date: "4th March 2025",
             time: "11:00 AM - 1:00 PM",
@@ -1754,11 +1754,11 @@
                 text: "6.	Competitors MAY NOT use:",
                 subInstructions: [
                   "i. Acrylic paints and other commercial paints including tempera paint, craft paint, textile paint, airbrush paint (such as Createx brand and other brands), etc.",
-                " ii. An airbrush system.",
-                "iii. Stencils or stamps of any kind",
-                " iv. Masks",
-                "  v. Prosthetic pieces that are glued or taped to the face (i.e. fake cuts, scars, warts, noses, etc.)",
-                " vi. Special effects contact lenses"
+                  " ii. An airbrush system.",
+                  "iii. Stencils or stamps of any kind",
+                  " iv. Masks",
+                  "  v. Prosthetic pieces that are glued or taped to the face (i.e. fake cuts, scars, warts, noses, etc.)",
+                  " vi. Special effects contact lenses"
                 ]
               },
               "7.	Regular prescription eyeglasses or contact lenses will be allowed for the models and the artists."
@@ -1767,7 +1767,7 @@
             facultyCoordinators: ["Dr. Brown"],
             contactNumbers: ["+91 98765 43210"],
           },
-          7: 
+          7:
           {
             aka: "Design Sprint",
             date: "13 Feb 2020",
@@ -1802,82 +1802,121 @@
 
       const details = eventDetails[day][eventId];
       if (details) {
-        document.getElementById("eventTitle").innerText = details.title;
-        document.getElementById("eventAKA").innerText = details.aka;
-        document.getElementById("eventDate").innerText = details.date;
-        document.getElementById("eventTime").innerText = details.time;
-        document.getElementById("eventType").innerText = details.type;
-        document.getElementById("eventScoring").innerText = details.scoring;
-        document.getElementById("eventVenue").innerText = details.venue;
-        document.getElementById("eventParticipants").innerText = details.participants;
-        document.getElementById("eventDuration").innerText = details.duration;
+        // Dynamically handle each field
+        const fields = [
+          { key: "title", elementId: "eventTitle" },
+          { key: "aka", elementId: "eventAKA" },
+          { key: "date", elementId: "eventDate" },
+          { key: "time", elementId: "eventTime" },
+          { key: "type", elementId: "eventType" },
+          { key: "theme", elementId: "eventTheme" },
+          { key: "scoring", elementId: "eventScoring" },
+          { key: "venue", elementId: "eventVenue" },
+          { key: "participants", elementId: "eventParticipants" },
+          { key: "duration", elementId: "eventDuration" },
+        ];
 
-        // Display Judging Criteria
-        const judgementContainer = document.getElementById("eventJudgement");
-        judgementContainer.innerHTML = ""; // Clear previous content
-        details.judgement.forEach((point) => {
-          const p = document.createElement("p");
-          p.innerText = point;
-          p.classList.add("modal-text-container"); // Apply styling
-          judgementContainer.appendChild(p);
-        });
-
-        // Display Instructions
-        const instructionsContainer = document.getElementById("eventInstructions");
-        instructionsContainer.innerHTML = ""; // Clear previous content
-        details.instructions.forEach((instruction) => {
-          if (typeof instruction === "string") {
-            const p = document.createElement("p");
-            p.innerText = instruction;
-            p.classList.add("modal-text-container"); // Apply styling
-            instructionsContainer.appendChild(p);
-          } else if (typeof instruction === "object") {
-            const mainInstruction = document.createElement("p");
-            mainInstruction.innerText = instruction.text;
-            mainInstruction.classList.add("modal-text-container");
-            instructionsContainer.appendChild(mainInstruction);
-
-            if (instruction.subInstructions) {
-              instruction.subInstructions.forEach((subInstruction) => {
-                const subP = document.createElement("p");
-                subP.innerText = `    ${subInstruction}`; // Add tab-like spacing
-                subP.style.marginLeft = "20px"; // Or use CSS classes for consistent styling
-                subP.classList.add("modal-text-container");
-                instructionsContainer.appendChild(subP);
-              });
-            }
+        fields.forEach((field) => {
+          const element = document.getElementById(field.elementId);
+          if (details[field.key]) {
+            element.innerText = details[field.key];
+            element.parentElement.style.display = "block"; // Show parent container if hidden
+          } else {
+            element.parentElement.style.display = "none"; // Hide parent container if undefined
           }
         });
 
+        // Display Judging Criteria
+        const judgementContainer = document.getElementById("eventJudgement");
+        if (details.judgement && details.judgement.length > 0) {
+          judgementContainer.innerHTML = ""; // Clear previous content
+          details.judgement.forEach((point) => {
+            const p = document.createElement("p");
+            p.innerText = point;
+            p.classList.add("modal-text-container");
+            judgementContainer.appendChild(p);
+          });
+          judgementContainer.parentElement.style.display = "block";
+        } else {
+          judgementContainer.parentElement.style.display = "none";
+        }
 
+        // Display Instructions
+        const instructionsContainer = document.getElementById("eventInstructions");
+        if (details.instructions && details.instructions.length > 0) {
+          instructionsContainer.innerHTML = ""; // Clear previous content
+          details.instructions.forEach((instruction) => {
+            if (typeof instruction === "string") {
+              const p = document.createElement("p");
+              p.innerText = instruction;
+              p.classList.add("modal-text-container");
+              instructionsContainer.appendChild(p);
+            } else if (typeof instruction === "object") {
+              const mainInstruction = document.createElement("p");
+              mainInstruction.innerText = instruction.text;
+              mainInstruction.classList.add("modal-text-container");
+              instructionsContainer.appendChild(mainInstruction);
+
+              if (instruction.subInstructions) {
+                instruction.subInstructions.forEach((subInstruction) => {
+                  const subP = document.createElement("p");
+                  subP.innerText = `    ${subInstruction}`;
+                  subP.style.marginLeft = "20px";
+                  subP.classList.add("modal-text-container");
+                  instructionsContainer.appendChild(subP);
+                });
+              }
+            }
+          });
+          instructionsContainer.parentElement.style.display = "block";
+        } else {
+          instructionsContainer.parentElement.style.display = "none";
+        }
 
         // Display Student Coordinators
         const studentCoordinatorContainer = document.getElementById("studentCoordinators");
-        studentCoordinatorContainer.innerHTML = "";
-        details.studentCoordinators.forEach((coordinator) => {
-          const coordinatorItem = document.createElement("p");
-          coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
-          studentCoordinatorContainer.appendChild(coordinatorItem);
-        });
+        if (details.studentCoordinators && details.studentCoordinators.length > 0) {
+          studentCoordinatorContainer.innerHTML = "";
+          details.studentCoordinators.forEach((coordinator) => {
+            const coordinatorItem = document.createElement("p");
+            coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
+            studentCoordinatorContainer.appendChild(coordinatorItem);
+          });
+          studentCoordinatorContainer.parentElement.style.display = "block";
+        } else {
+          studentCoordinatorContainer.parentElement.style.display = "none";
+        }
 
         // Display Faculty Coordinators
         const facultyCoordinatorContainer = document.getElementById("facultyCoordinators");
-        facultyCoordinatorContainer.innerHTML = "";
-        details.facultyCoordinators.forEach((coordinator) => {
-          const coordinatorItem = document.createElement("p");
-          coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
-          facultyCoordinatorContainer.appendChild(coordinatorItem);
-        });
+        if (details.facultyCoordinators && details.facultyCoordinators.length > 0) {
+          facultyCoordinatorContainer.innerHTML = "";
+          details.facultyCoordinators.forEach((coordinator) => {
+            const coordinatorItem = document.createElement("p");
+            coordinatorItem.innerHTML = `<strong>${coordinator}</strong>`;
+            facultyCoordinatorContainer.appendChild(coordinatorItem);
+          });
+          facultyCoordinatorContainer.parentElement.style.display = "block";
+        } else {
+          facultyCoordinatorContainer.parentElement.style.display = "none";
+        }
 
         // Display Contact Numbers
         const contactContainer = document.getElementById("contactNumbers");
-        contactContainer.innerHTML = "";
-        details.contactNumbers.forEach((contact) => {
-          const contactItem = document.createElement("p");
-          contactItem.innerHTML = `<strong>${contact}</strong>`;
-          contactContainer.appendChild(contactItem);
-        });
+        if (details.contactNumbers && details.contactNumbers.length > 0) {
+          contactContainer.innerHTML = "";
+          details.contactNumbers.forEach((contact) => {
+            const contactItem = document.createElement("p");
+            contactItem.innerHTML = `<strong>${contact}</strong>`;
+            contactContainer.appendChild(contactItem);
+          });
+          contactContainer.parentElement.style.display = "block";
+        } else {
+          contactContainer.parentElement.style.display = "none";
+        }
       }
+
+
 
       const modal = document.getElementById("eventDetailsModal");
       modal.style.display = "flex";
