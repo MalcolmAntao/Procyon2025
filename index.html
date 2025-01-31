@@ -826,6 +826,7 @@
         <p><strong class="modal-text">Date:</strong> <span id="eventDate" class="modal-text"></span></p>
         <p><strong class="modal-text">Time:</strong> <span id="eventTime" class="modal-text"></span></p>
         <p><strong class="modal-text">Type:</strong> <span id="eventType" class="modal-text"></span></p>
+        <p><strong class="modal-text">Theme:</strong> <span id="eventTheme" class="modal-text"></span></p>
         <p><strong class="modal-text">Scoring:</strong> <span id="eventScoring" class="modal-text"></span></p>
         <p><strong class="modal-text">Venue:</strong> <span id="eventVenue" class="modal-text"></span></p>
         <p><strong class="modal-text">Participants:</strong> <span id="eventParticipants" class="modal-text"></span></p>
@@ -833,9 +834,15 @@
         <p><strong class="modal-text">Judgement Criteria:</strong></p>
         <div id="eventJudgement" class="modal-text-container"></div> <!-- Dynamic judging criteria -->
 
+        <p><strong class="modal-text">Genre:</strong></p>
+        <div id="eventGenre" class="modal-text-container"></div> <!-- Dynamic Genre  -->
+
+        <p><strong class="modal-text">Pantry:</strong></p>
+        <div id="eventPantry" class="modal-text-container"></div> <!-- Dynamic Pantry  -->
+
+
         <p><strong class="modal-text">Instructions:</strong></p>
         <div id="eventInstructions" class="modal-text-container"></div> <!-- Dynamic instructions -->
-
 
         <div class="coordinator-container">
           <div class="coordinator-item">
@@ -1324,7 +1331,16 @@
               "1. No alcohol is allowed.",
               "2. Power supply will not be provided..",
               "3. Participants cannot use fire or flame.",
-              "4. Participants must use at least 3 or all of the following 9 items from the pantry list provided, while preparing the dish."
+              "4. Participants must use at least 3 or all of the following 9 items from the pantry list provided, while preparing the dish.",
+              "5.	Participants cannot use any ingredients other than the ones mentioned above.",
+              "6.	A secret ingredient will be given by the coordinators at the beginning, and participants must make that ingredient the highlight of the dish.",
+              "7.	Marinating, if required, must be done on the spot.",
+              "8.	Gloves and head coverings are compulsory.",
+              "9.	Mobile phones cannot be used while preparing the dish.",
+              "10. One participant must be ready to explain the prepared dish to the judges, along with the list of ingredients used.",
+              "11. Participants are allowed to fetch ingredients within the given time duration.",
+              "12. It is compulsory to present the dish before or exactly at 1:30 PM.",
+              "13. Participants may bring their own aprons, gloves, and hair caps for the competition, though it is not compulsory."
             ],
             pantry: [
               "1.	Eggless mayonnaise, soya sauce, mustard sauce, olive oil, ketchup",
@@ -1335,16 +1351,7 @@
               "6.	Cheese, butter, jam, peanut butter",
               "7.	Biscuits",
               "8.	Fresh or cooked vegetables (onion, tomato, beetroot, lettuce, corn, potato, lemon)",
-              "9.	Fruits (tender coconut, banana, avocado, orange, guava, watermelon, apple, chikoo)",
-              "•	Participants cannot use any ingredients other than the ones mentioned above.",
-              "•	A secret ingredient will be given by the coordinators at the beginning, and participants must make that ingredient the highlight of the dish.",
-              "•	Marinating, if required, must be done on the spot.",
-              "•	Gloves and head coverings are compulsory.",
-              "•	Mobile phones cannot be used while preparing the dish.",
-              "•	One participant must be ready to explain the prepared dish to the judges, along with the list of ingredients used.",
-              "•	Participants are allowed to fetch ingredients within the given time duration.",
-              "•	It is compulsory to present the dish before or exactly at 1:30 PM.",
-              "•	Participants may bring their own aprons, gloves, and hair caps for the competition, though it is not compulsory."
+              "9.	Fruits (tender coconut, banana, avocado, orange, guava, watermelon, apple, chikoo)"
             ],
             studentCoordinators: ["Jane Doe", "Bob Smith"],
             facultyCoordinators: ["Dr. Brown", "Prof. White"],
